@@ -20,4 +20,6 @@ setTopic();
 bot.launch();
 if (bot) console.log("---bot is running---");
 
-cron.schedule("0 9-21 * * *", broadcastFact);
+cron.schedule("*/30 9-21 * * *", broadcastFact, {
+  timezone: "Asia/Kolkata",
+});

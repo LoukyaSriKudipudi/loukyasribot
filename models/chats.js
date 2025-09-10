@@ -5,6 +5,7 @@ const chatSchema = new mongoose.Schema({
   topicId: { type: Number, default: null },
   chatTitle: { type: String },
   createdAt: { type: Date, default: Date.now },
+  lastFactMessageId: { type: Number, default: null },
 });
 
 module.exports = mongoose.model("Chat", chatSchema);

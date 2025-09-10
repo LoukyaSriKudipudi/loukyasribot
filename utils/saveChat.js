@@ -1,6 +1,6 @@
 const Chat = require("../models/chats");
 
-async function saveChat(chatId, topicId, chatTitle) {
+async function saveChat(chatId, topicId, chatTitle, lastFactMessageId = null) {
   try {
     const existing = await Chat.findOne({ chatId });
 
@@ -8,10 +8,11 @@ async function saveChat(chatId, topicId, chatTitle) {
       if (existing.topicId !== topicId) {
         existing.topicId = topicId;
         existing.chatTitle = chatTitle;
+        if (lastFactMessageId !== null) existing.lastFactMessageId = lastFactMessageId;
         await existing.save();
       }
     } else {
-      const chat = new Chat({ chatId, topicId, chatTitle });
+      const chat = new Chat({ chatId, topicId, chatTitle, lastFactMessageId  });
       await chat.save();
     }
   } catch (err) {
