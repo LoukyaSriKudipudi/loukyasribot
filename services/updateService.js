@@ -7,13 +7,15 @@ async function broadcastFact() {
   const batchSize = 100;
   let skip = 0;
 
+  const fact = getFact();
+  const message = `📝 ${fact}`;
+
   while (true) {
     const chats = await getChatsBatch(skip, batchSize);
     if (chats.length === 0) break;
 
     for (const { chatId, topicId, chatTitle, lastFactMessageId } of chats) {
       try {
-        // Delete previous fact if exists
         if (lastFactMessageId) {
           try {
             await bot.telegram.deleteMessage(chatId, lastFactMessageId);
@@ -25,19 +27,14 @@ async function broadcastFact() {
           }
         }
 
-        // Send new fact
-        const fact = getFact();
-        const message = `📝 ${fact}`;
+        // Use the same fact for all
         const sentMessage = await bot.telegram.sendMessage(chatId, message, {
           ...(topicId ? { message_thread_id: topicId } : {}),
           parse_mode: "Markdown",
         });
 
-        console.log("sentmessage" + JSON.stringify(sentMessage, null, 2));
-
         console.log(`✅ Sent new fact to ${chatId}`);
 
-        // Save new message ID for next deletion
         await saveChat(chatId, topicId, chatTitle, sentMessage.message_id);
       } catch (err) {
         console.error(`❌ Failed for ${chatId}: ${err.message}`);

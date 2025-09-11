@@ -14,4 +14,23 @@ function getFact() {
   return fact;
 }
 
+const Chat = require("../models/chats");
+const bot = require("../utils/telegramBot");
+bot.command("startfacts", async (ctx) => {
+  await Chat.updateOne(
+    { chatId: ctx.chat.id },
+    { $set: { factsEnabled: true, chatTitle: ctx.chat.title } },
+    { upsert: true }
+  );
+  ctx.reply("✅ Facts enabled in this chat.");
+});
+
+bot.command("stopfacts", async (ctx) => {
+  await Chat.updateOne(
+    { chatId: ctx.chat.id },
+    { $set: { factsEnabled: false } }
+  );
+  ctx.reply("🛑 Facts disabled in this chat.");
+});
+
 module.exports = { getFact };

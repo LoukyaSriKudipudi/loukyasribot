@@ -6,6 +6,7 @@ const chatSchema = new mongoose.Schema({
   chatTitle: { type: String },
   createdAt: { type: Date, default: Date.now },
   lastFactMessageId: { type: Number, default: null },
+  factsEnabled: { type: Boolean, default: true },
 });
 
 module.exports = mongoose.model("Chat", chatSchema);
