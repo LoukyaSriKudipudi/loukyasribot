@@ -5,18 +5,22 @@ async function saveChat(chatId, topicId, chatTitle, lastFactMessageId = null) {
     const existing = await Chat.findOne({ chatId });
 
     if (existing) {
-      // always update chatTitle and topicId if provided
       existing.topicId = topicId ?? existing.topicId;
       existing.chatTitle = chatTitle ?? existing.chatTitle;
 
-      // always update lastFactMessageId if provided
       if (lastFactMessageId !== null) {
         existing.lastFactMessageId = lastFactMessageId;
       }
 
       await existing.save();
     } else {
-      const chat = new Chat({ chatId, topicId, chatTitle, lastFactMessageId });
+      const chat = new Chat({
+        chatId,
+        topicId,
+        chatTitle,
+        lastFactMessageId,
+        factsEnabled: true,
+      });
       await chat.save();
     }
   } catch (err) {
