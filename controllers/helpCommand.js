@@ -8,35 +8,29 @@ bot.command("help", async (ctx) => {
   const helpMessage = `
 🤖 *Available Commands*:
 
-/save <text>  
-_Save a new message (max 250 chars). Stored securely with encryption._
+/loukya <question>   
+_Get a quick answer directly (can be used in direct messages)_
 
-/history  
-_View all your saved messages (auto-decrypted). Shows message IDs._
+/replyloukya <text>  
+_Use as a reply to another message to get a reply from me_
 
-/delete <id>  
-_Delete a specific message by its ID._
+/answerloukya <question>  
+_Use as a reply to another message to get a detailed answer from me_
 
-/deleteAll  
-_Delete all your saved messages._
+/explainloukya <text>   
+_Use as a reply to another message to get a clear, concise explanation from me_
 
-/search <keyword>  
-_Search saved messages by keyword._
+/startfacts  
+_Enable fact broadcasts in this chat_
 
-/stats  
-_View statistics about your saved messages._
-
-/ask <question> 🤖  
-_Ask the AI a question and get a concise 5-line summary answer_
-
-/translate <language> <text> 🌐  
-_Translate text to a specified language using AI_
+/stopfacts  
+_Disable fact broadcasts in this chat_
 
 /help  
 _Show this help message._
 
 🔒 *Note:* All messages are stored in encrypted form for your privacy.
-  `;
+`;
 
   await bot.telegram.sendMessage(chatId, helpMessage, {
     ...(topicId ? { message_thread_id: topicId } : {}),

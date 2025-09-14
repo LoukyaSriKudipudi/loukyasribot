@@ -25,11 +25,16 @@ const { broadcastFact } = require("./services/updateService");
 require("./services/ask");
 require("./services/translate");
 
+// event record
+const eventRecordBot = require("./utils/eventRecordBot");
+
 start();
 newMember();
 setTopic();
 bot.launch();
 if (bot) console.log("---bot is running---");
+eventRecordBot.launch();
+if (eventRecordBot) console.log("---event record bot is running---");
 
 cron.schedule("*/30 9-21 * * *", broadcastFact, {
   timezone: "Asia/Kolkata",

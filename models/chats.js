@@ -2,11 +2,12 @@ const mongoose = require("mongoose");
 
 const chatSchema = new mongoose.Schema({
   chatId: { type: Number, required: true, unique: true },
-  topicId: { type: Number, default: null },
+  topicId: { type: Number },
   chatTitle: { type: String },
-  createdAt: { type: Date, default: Date.now },
+  factsEnabled: { type: Boolean, default: false },
   lastFactMessageId: { type: Number, default: null },
-  factsEnabled: { type: Boolean, default: true },
+  quizEnabled: { type: Boolean, default: false },
+  lastQuizMessageId: { type: Number, default: null },
 });
 
 module.exports = mongoose.model("Chat", chatSchema);

@@ -26,7 +26,10 @@ module.exports = () => {
           }
         );
 
-        return ctx.reply(`Welcome back ${first_name}!`);
+        return ctx.reply(
+          `👋 Welcome back, ${first_name}!\n\n` +
+            `Glad to see you again. Use /help anytime to check available commands.`
+        );
       }
 
       await User.create({
@@ -39,11 +42,16 @@ module.exports = () => {
       });
 
       // Greeting (from old handler)
-      ctx.reply(
+      await ctx.reply(
         `👋 Hello ${first_name}!\n\n` +
           `I am @${ctx.botInfo.username}, your exam preparation assistant.\n\n` +
-          `➡️ Add me to a group for updates.\n` +
+          `➡️ Add me to a group for daily updates.\n` +
           `➡️ Use /settopic in a topic if you want updates there.\n\n` +
+          `🤖 AI Commands you can use:\n` +
+          `   • /loukya <question> → Quick answer\n` +
+          `   • /replyloukya <text> → Get a reply\n` +
+          `   • /answerloukya <question> → Detailed answer\n` +
+          `   • /explainloukya <text> → Clear explanation with context\n\n` +
           `🛠️ Use /help to see all available commands.\n\n` +
           `📌 I will start sending facts once I'm added to a group!`
       );

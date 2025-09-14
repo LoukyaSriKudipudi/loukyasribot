@@ -1,0 +1,14 @@
+
+=== 2025-09-14T08:37:40.180Z ===
+User: Ṛta (6747845599)
+Query: Give a clear and simple explanation of the following text.
+
+"📝 రాష్ట్రపతికి క్షమాభిక్షా అధికారం ఉంది. ఆయన మరణదండన శిక్ష సహా ఏ శిక్షనైనా తగ్గించగలరు లేదా రద్దు చేయగలరు. ఇది న్యాయ సవరణ శక్తి."
+Response: Here's a simple explanation of the Telugu text:
+
+"The President has the power to grant pardons. He can reduce or cancel any punishment, including a death sentence. This is the power of judicial review."
+
+In even simpler terms:
+• The President can forgive or lessen punishments for crimes.
+• This includes forgiving death penalties.
+• This power is part of how the justice system can be reviewed.

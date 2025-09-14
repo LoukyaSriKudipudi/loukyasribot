@@ -1,7 +1,23 @@
 const { message } = require("telegraf/filters");
 const bot = require("../utils/telegramBot");
 const { GoogleGenAI } = require("@google/genai");
-const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+
+function getAPIKey() {
+  const time = new Date().getHours();
+  console.log("Current hour:", time);
+
+  if (time >= 9 && time < 11) return process.env.GEMINI_API_KEY1;
+  else if (time >= 11 && time < 13) return process.env.GEMINI_API_KEY2;
+  else if (time >= 13 && time < 16) return process.env.GEMINI_API_KEY3;
+  else if (time >= 16 && time < 19) return process.env.GEMINI_API_KEY4;
+  else if (time >= 19 && time < 22) return process.env.GEMINI_API_KEY1;
+  else if (time >= 22 || time < 2) return process.env.GEMINI_API_KEY2;
+  else if (time >= 2 && time < 5) return process.env.GEMINI_API_KEY3;
+  else if (time >= 5 && time < 9) return process.env.GEMINI_API_KEY4;
+  else return process.env.GEMINI_API_KEY1;
+}
+
+const ai = new GoogleGenAI({ apiKey: getAPIKey() });
 const fs = require("fs");
 const path = require("path");
 function splitMessage(text, limit = 3000) {
@@ -22,7 +38,6 @@ function cleanText(text) {
     .trim();
 }
 
-// ✅ /loukya - only for direct queries
 bot.command("loukya", async (ctx) => {
   let query = ctx.message.text.split(" ").slice(1).join(" ");
 
@@ -53,10 +68,9 @@ bot.command("loukya", async (ctx) => {
     const userName = ctx.from.first_name || "unknown";
     const fileName = `user_${userId}.txt`;
 
-    // Save query and response together
     const logDir = path.join(__dirname, "..", "localDB");
     if (!fs.existsSync(logDir)) {
-      fs.mkdirSync(logDir, { recursive: true }); // ensure folder exists
+      fs.mkdirSync(logDir, { recursive: true });
     }
 
     const filePath = path.join(logDir, fileName);
@@ -79,7 +93,6 @@ bot.command("loukya", async (ctx) => {
   }
 });
 
-// ✅ /explainloukya - only for replies
 bot.command("replyloukya", async (ctx) => {
   if (!ctx.message.reply_to_message) {
     return ctx.reply("❌ Please reply to a message with /explainloukya.");
@@ -109,10 +122,9 @@ bot.command("replyloukya", async (ctx) => {
     const userName = ctx.from.first_name || "unknown";
     const fileName = `user_${userId}.txt`;
 
-    // Save query and response together
     const logDir = path.join(__dirname, "..", "localDB");
     if (!fs.existsSync(logDir)) {
-      fs.mkdirSync(logDir, { recursive: true }); // ensure folder exists
+      fs.mkdirSync(logDir, { recursive: true });
     }
 
     const filePath = path.join(logDir, fileName);
@@ -145,8 +157,9 @@ bot.command("explainloukya", async (ctx) => {
     return ctx.reply("❌ The replied message has no text to explain.");
   }
 
-  // 🟢 Add custom instruction
-  let query = `Explain the following text in detail and give useful context:\n\n"${originalText}"`;
+  let query = `Explain this text in a clear and simple way as if you are talking to a beginner. 
+Use a conversational style, with step-by-step explanation, examples if needed, 
+and avoid just repeating the same words. Here is the text:\n\n"${originalText}"`;
 
   try {
     const loadingMsg = await ctx.reply("⏳ Processing...");
@@ -167,10 +180,9 @@ bot.command("explainloukya", async (ctx) => {
     const userName = ctx.from.first_name || "unknown";
     const fileName = `user_${userId}.txt`;
 
-    // Save query and response together
     const logDir = path.join(__dirname, "..", "localDB");
     if (!fs.existsSync(logDir)) {
-      fs.mkdirSync(logDir, { recursive: true }); // ensure folder exists
+      fs.mkdirSync(logDir, { recursive: true });
     }
 
     const filePath = path.join(logDir, fileName);
@@ -203,8 +215,7 @@ bot.command("answerloukya", async (ctx) => {
     return ctx.reply("❌ The replied message has no text to answer.");
   }
 
-  // 🟢 Add custom instruction for answering
-  let query = `Answer the following question clearly and concisely:\n\n"${originalText}"`;
+  let query = `Give a direct, clear, and concise answer to the following question. \n\n"${originalText}"`;
 
   try {
     const loadingMsg = await ctx.reply("⏳ Processing...");
@@ -225,7 +236,6 @@ bot.command("answerloukya", async (ctx) => {
     const userName = ctx.from.first_name || "unknown";
     const fileName = `user_${userId}.txt`;
 
-    // Save query and response together
     const logDir = path.join(__dirname, "..", "localDB");
     if (!fs.existsSync(logDir)) {
       fs.mkdirSync(logDir, { recursive: true });
