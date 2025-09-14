@@ -29,7 +29,9 @@ async function broadcastFact() {
 
         // Use the same fact for all
         const sentMessage = await bot.telegram.sendMessage(chatId, message, {
-          ...(topicId ? { message_thread_id: topicId } : {}),
+          ...(topicId
+            ? { message_thread_id: topicId, protect_content: true }
+            : { protect_content: true }),
           parse_mode: "Markdown",
         });
 

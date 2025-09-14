@@ -22,7 +22,16 @@ bot.command("startfacts", async (ctx) => {
     { $set: { factsEnabled: true, chatTitle: ctx.chat.title } },
     { upsert: true }
   );
-  ctx.reply("✅ Facts enabled in this chat.");
+
+  setTimeout(() => {
+    ctx.deleteMessage(ctx.message.message_id);
+  }, 3000);
+
+  const message = await ctx.reply("✅ Facts enabled in this chat.");
+
+  setTimeout(() => {
+    ctx.telegram.deleteMessage(ctx.chat.id, message.message_id);
+  }, 30000);
 });
 
 bot.command("stopfacts", async (ctx) => {
@@ -30,7 +39,14 @@ bot.command("stopfacts", async (ctx) => {
     { chatId: ctx.chat.id },
     { $set: { factsEnabled: false } }
   );
-  ctx.reply("🛑 Facts disabled in this chat.");
+  setTimeout(() => {
+    ctx.deleteMessage(ctx.message.message_id);
+  }, 3000);
+
+  const message = await ctx.reply("🛑 Facts disabled in this chat.");
+  setTimeout(() => {
+    ctx.telegram.deleteMessage(ctx.chat.id, message.message_id);
+  }, 30000);
 });
 
 module.exports = { getFact };
