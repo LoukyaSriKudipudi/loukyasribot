@@ -11,7 +11,7 @@ const start = require("./handlers/start");
 const newMember = require("./handlers/newMember");
 const setTopic = require("./handlers/setTopic");
 
-// load controllers
+// Load controllers
 require("./controllers/history");
 require("./controllers/deleteAllMessages");
 require("./controllers/deleteMessage");
@@ -20,22 +20,31 @@ require("./controllers/searchMessages");
 require("./controllers/saveMessage");
 require("./controllers/helpCommand");
 
-// services
+// Services
 const { broadcastFact } = require("./services/updateService");
+const { broadcastQuiz } = require("./services/broadcastQuiz"); // <-- import quiz
 require("./services/ask");
 require("./services/translate");
 
-// event record
+// Event record
 const eventRecordBot = require("./utils/eventRecordBot");
 
+// Start handlers
 start();
 newMember();
 setTopic();
+
+// Launch bots
 bot.launch();
 if (bot) console.log("---bot is running---");
 eventRecordBot.launch();
 if (eventRecordBot) console.log("---event record bot is running---");
 
+// Cron jobs
 cron.schedule("*/30 9-21 * * *", broadcastFact, {
+  timezone: "Asia/Kolkata",
+});
+
+cron.schedule("*/15,45 9-21 * * *", broadcastQuiz, {
   timezone: "Asia/Kolkata",
 });
