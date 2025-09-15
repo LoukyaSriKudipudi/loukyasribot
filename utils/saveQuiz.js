@@ -19,7 +19,7 @@ async function saveQuiz(chatId, topicId, chatTitle, lastQuizMessageId = null) {
         chatId,
         topicId,
         chatTitle,
-        quizEnabled: true,
+        quizEnabled: false,
         lastQuizMessageId,
       });
       await chat.save();

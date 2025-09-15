@@ -19,7 +19,7 @@ async function saveChat(chatId, topicId, chatTitle, lastFactMessageId = null) {
         topicId,
         chatTitle,
         lastFactMessageId,
-        factsEnabled: true,
+        factsEnabled: false,
       });
       await chat.save();
     }

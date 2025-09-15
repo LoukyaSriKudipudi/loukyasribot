@@ -46,16 +46,16 @@ async function broadcastFact() {
 
     for (const { chatId, topicId, chatTitle, lastFactMessageId } of chats) {
       try {
-        if (lastFactMessageId) {
-          try {
-            await bot.telegram.deleteMessage(chatId, lastFactMessageId);
-            logs.push(`🗑 Deleted previous fact in ${chatTitle} (${chatId})`);
-          } catch (err) {
-            logs.push(
-              `⚠ Could not delete previous message in ${chatTitle} (${chatId}): ${err.message}`
-            );
-          }
-        }
+        // if (lastFactMessageId) {
+        //   try {
+        //     await bot.telegram.deleteMessage(chatId, lastFactMessageId);
+        //     logs.push(`🗑 Deleted previous fact in ${chatTitle} (${chatId})`);
+        //   } catch (err) {
+        //     logs.push(
+        //       `⚠ Could not delete previous message in ${chatTitle} (${chatId}): ${err.message}`
+        //     );
+        //   }
+        // }
 
         // Send fact
         const sentMessage = await bot.telegram.sendMessage(chatId, message, {

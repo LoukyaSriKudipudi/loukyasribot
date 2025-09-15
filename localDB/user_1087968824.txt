@@ -204,3 +204,160 @@ It was a brilliant move because:
 3.  It inspired others: Seeing Gandhi and his followers take this stand encouraged millions of other Indians to also refuse to buy the taxed salt and to make their own.
 
 So, the Salt March was like a big, peaceful "no!" to an unfair British rule, and it was a huge step towards India eventually gaining its independence. It showed the world that you could stand up for what's right without resorting to violence.
+
+=== 2025-09-14T12:37:59.277Z ===
+User: Group (1087968824)
+Query: Give a direct, clear, and concise answer to the following question. 
+
+"❓ Which of the following statements regarding the powers of the Rajya Sabha are correct?
+
+A) Rajya Sabha can authorize Parliament to make laws on subjects in the State List.
+B) Rajya Sabha can initiate Money Bills.
+C) Rajya Sabha can remove the Vice President from office.
+D) Rajya Sabha shares equal power with Lok Sabha in passing ordinary bills."
+Response: A, C, and D are correct.
+
+=== 2025-09-14T12:38:35.938Z ===
+User: Group (1087968824)
+Query: Give a direct, clear, and concise answer to the following question. 
+
+"❓ Which of the following statements regarding the powers of the Rajya Sabha are correct?
+
+A) Rajya Sabha can authorize Parliament to make laws on subjects in the State List.
+B) Rajya Sabha can initiate Money Bills.
+C) Rajya Sabha can remove the Vice President from office.
+D) Rajya Sabha shares equal power with Lok Sabha in passing ordinary bills."
+Response: A, C, D
+
+=== 2025-09-14T12:39:06.050Z ===
+User: Group (1087968824)
+Query: Give a direct, clear, and concise answer to the following question. 
+
+"❓ Which of the following statements regarding the powers of the Rajya Sabha are correct?
+
+A) Rajya Sabha can authorize Parliament to make laws on subjects in the State List.
+B) Rajya Sabha can initiate Money Bills.
+C) Rajya Sabha can remove the Vice President from office.
+D) Rajya Sabha shares equal power with Lok Sabha in passing ordinary bills."
+Response: A, C, and D.
+
+=== 2025-09-14T12:39:19.792Z ===
+User: Group (1087968824)
+Query: ❓ Which of the following statements regarding the powers of the Rajya Sabha are correct?
+
+A) Rajya Sabha can authorize Parliament to make laws on subjects in the State List.
+B) Rajya Sabha can initiate Money Bills.
+C) Rajya Sabha can remove the Vice President from office.
+D) Rajya Sabha shares equal power with Lok Sabha in passing ordinary bills.
+Response: Let's analyze each statement to determine its correctness:
+• A) Rajya Sabha can authorize Parliament to make laws on subjects in the State List.
+• Correct. Article 249 of the Constitution grants the Rajya Sabha the power to pass a resolution by a two-thirds majority declaring that a subject in the State List has assumed national importance. This empowers Parliament to legislate on that subject for a period of one year.
+• B) Rajya Sabha can initiate Money Bills.
+• Incorrect. Money Bills can only be introduced in the Lok Sabha, as per Article 110 of the Constitution. The Rajya Sabha has no power to initiate them.
+• C) Rajya Sabha can remove the Vice President from office.
+• Correct. Article 67(b) states that the Vice President can be removed by a resolution of the Council of States (Rajya Sabha) passed by a majority of all the then members of the Council and agreed to by a majority of all the then members of the House of the People (Lok Sabha). However, the initial notice for removal must be given to the Vice President in the Rajya Sabha.
+• D) Rajya Sabha shares equal power with Lok Sabha in passing ordinary bills.
+• Correct. For ordinary bills, both the Lok Sabha and the Rajya Sabha have equal powers. A bill can be introduced in either House, and it must be passed by both Houses in its original form or with amendments agreed to by both. If there's a disagreement, a joint sitting of both Houses can be convened.
+
+Therefore, the correct statements are A, C, and D.
+
+The final answer is $\boxed{A, C, D}$.
+
+=== 2025-09-14T12:39:47.407Z ===
+User: Group (1087968824)
+Query: Explain this text in a clear and simple way as if you are talking to a beginner. 
+Use a conversational style, with step-by-step explanation, examples if needed, 
+and avoid just repeating the same words. Here is the text:
+
+"❓ Which of the following statements regarding the powers of the Rajya Sabha are correct?
+
+A) Rajya Sabha can authorize Parliament to make laws on subjects in the State List.
+B) Rajya Sabha can initiate Money Bills.
+C) Rajya Sabha can remove the Vice President from office.
+D) Rajya Sabha shares equal power with Lok Sabha in passing ordinary bills."
+Response: Hey there! Let's break down these questions about the Rajya Sabha, which is one of the two houses of our Parliament in India. Think of it like this: Parliament is the place where laws are made, and it has two main parts. The Rajya Sabha is one of them.
+
+We're going to look at what the Rajya Sabha can and can't do, and figure out which of these statements are actually true. Imagine we're checking off a list!
+
+Here's what each option says and why it's right or wrong, explained super simply:
+
+A) Rajya Sabha can authorize Parliament to make laws on subjects in the State List.
+• What does this mean? Okay, so there are different lists of things the government can make laws about. Some things are for the central government (like defense), some are for the state governments (like police or agriculture). These are called the "State List." Normally, only the state governments can make laws on these topics.
+• What the Rajya Sabha can do: But, if the Rajya Sabha decides that something on the State List is really important for the whole country, it can pass a special resolution. This resolution basically says, "Hey Parliament, you can step in and make a law about this state subject for a while."
+• Is this correct? Yes, this is correct! This is a pretty unique power the Rajya Sabha has.
+
+B) Rajya Sabha can initiate Money Bills.
+• What does this mean? "Money Bills" are special types of laws that deal with money matters, like taxes or how the government spends money.
+• Who starts Money Bills? Now, for these very important money laws, there's a rule: they must be introduced in the Lok Sabha (the other house of Parliament) first. The Rajya Sabha can't be the place where they start.
+• Is this correct? No, this is incorrect. The Lok Sabha has the sole power to introduce Money Bills. The Rajya Sabha can discuss them and suggest changes, but they can't start them.
+
+C) Rajya Sabha can remove the Vice President from office.
+• What does this mean? The Vice President is the second-highest office in the country. Removing someone from such a high position is a big deal.
+• How is the VP removed? For removing the Vice President, it's a bit different. The process starts with a resolution. This resolution has to be passed by a special majority in the Rajya Sabha, and then it needs to be agreed to by the Lok Sabha. So, the Rajya Sabha takes the first major step.
+• Is this correct? Yes, this is correct! The Rajya Sabha plays a key role in the removal of the Vice President.
+
+D) Rajya Sabha shares equal power with Lok Sabha in passing ordinary bills.
+• What does this mean? "Ordinary bills" are just regular laws that aren't about money or constitutional changes.
+• How are ordinary bills passed? For an ordinary bill to become a law, it has to be approved by both the Lok Sabha and the Rajya Sabha. They both have to agree on it. If there's a disagreement, there are ways to sort it out, but both houses are essential.
+• Is this correct? Yes, this is correct! For most laws, the Rajya Sabha and Lok Sabha have pretty much the same say.
+
+So, let's look at our list again and see which ones we ticked as correct:
+• A) Rajya Sabha can authorize Parliament to make laws on subjects in the State List. - Correct!
+• B) Rajya Sabha can initiate Money Bills. - Incorrect!
+• C) Rajya Sabha can remove the Vice President from office. - Correct!
+• D) Rajya Sabha shares equal power with Lok Sabha in passing ordinary bills. - Correct!
+
+Therefore, the correct statements are A, C, and D. You've got it!
+
+=== 2025-09-14T13:49:29.567Z ===
+User: Group (1087968824)
+Query: Give a direct, clear, and concise answer to the following question. 
+
+"❓ Which of the following provisions are part of the Basic Structure of the Indian Constitution as per Supreme Court judgments?
+
+A) Secularism
+B) Separation of Powers
+C) Directive Principles of State Policy
+D) Parliamentary Sovereignty"
+Response: A) Secularism
+B) Separation of Powers
+
+=== 2025-09-14T13:49:43.697Z ===
+User: Group (1087968824)
+Query: Explain this text in a clear and simple way as if you are talking to a beginner. 
+Use a conversational style, with step-by-step explanation, examples if needed, 
+and avoid just repeating the same words. Here is the text:
+
+"❓ Which of the following provisions are part of the Basic Structure of the Indian Constitution as per Supreme Court judgments?
+
+A) Secularism
+B) Separation of Powers
+C) Directive Principles of State Policy
+D) Parliamentary Sovereignty"
+Response: Hey there! Let's break down this question about the Indian Constitution. It's like trying to figure out the most important ingredients in a delicious recipe.
+
+Imagine the Indian Constitution is a really important book that sets the rules for how India should be run. Now, the Supreme Court of India, which is like the ultimate judge, has said that some parts of this book are super, super important. They call these parts the "Basic Structure."
+
+Think of it like this: If you tried to change these "basic structure" parts, it would be like trying to change the fundamental flavor of that recipe. You'd end up with something totally different, and not in a good way! The Supreme Court basically said that these core elements can't be changed, even if Parliament (the law-making body) wants to.
+
+So, the question is asking us: Which of these options are those super important, unchangeable "basic structure" parts according to the Supreme Court?
+
+Let's look at each option like we're tasting different ingredients:
+
+A) Secularism: This means that the government treats all religions equally. It doesn't favor one religion over others, and people are free to practice their own faith. The Supreme Court has said this is a key part of the basic structure. It's like saying the recipe must have a certain balance of sweet and savory to be what it is.
+
+B) Separation of Powers: This is a pretty cool idea. It means that the government's jobs are divided into three main parts:
+• Making laws (like a group of people writing the recipe) - this is the Legislature.
+• Enforcing laws (like the people who run the kitchen) - this is the Executive.
+• Interpreting laws (like the food critics who say if the dish is good or not) - this is the Judiciary.
+The idea is that these different parts should be separate and check each other to make sure no one person or group has too much power. The Supreme Court has also said that this separation is a crucial part of the basic structure. It's like making sure you have separate cooks, dishwashers, and taste-testers so the whole process works smoothly and fairly.
+
+C) Directive Principles of State Policy: These are more like guidelines or goals that the government should try to achieve. They are very important for making India a better place, things like ensuring everyone has a job, fair wages, and good education. However, unlike the "basic structure" parts, these are not directly enforceable by courts. This means if the government doesn't achieve these goals immediately, you can't sue them for it. The Supreme Court has ruled that these are NOT part of the basic structure. They are like suggestions in the recipe book that are good to follow, but if you miss one, the whole dish isn't ruined.
+
+D) Parliamentary Sovereignty: This means that Parliament has the supreme power to make laws. In many countries, Parliament's laws are the highest. However, in India, because of the "basic structure" doctrine, Parliament's power is limited. They can't pass laws that go against the fundamental principles of the Constitution. So, while Parliament is very important, it's not absolutely sovereign in the way some other countries' parliaments are. The Supreme Court has said that absolute Parliamentary Sovereignty is NOT part of the basic structure. It's like saying the recipe writer can make changes, but they can't change the core ingredients that make it a specific dish.
+
+So, to sum it up:
+
+The Supreme Court has clearly stated that Secularism and the Separation of Powers are fundamental pillars, or the "basic structure," of the Indian Constitution that cannot be easily altered. The other two, while important in their own ways, are not considered part of this unchangeable core.
+
+Therefore, when you look at the options, the ones that are part of the Basic Structure are A) Secularism and B) Separation of Powers.

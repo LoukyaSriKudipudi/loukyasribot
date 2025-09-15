@@ -41,10 +41,10 @@ eventRecordBot.launch();
 if (eventRecordBot) console.log("---event record bot is running---");
 
 // Cron jobs
-cron.schedule("*/30 9-21 * * *", broadcastFact, {
+cron.schedule("0 9-21 * * *", broadcastFact, {
   timezone: "Asia/Kolkata",
 });
 
-cron.schedule("*/15,45 9-21 * * *", broadcastQuiz, {
-  timezone: "Asia/Kolkata",
-});
+// cron.schedule("15,45 9-21 * * *", broadcastQuiz, {
+//   timezone: "Asia/Kolkata",
+// });

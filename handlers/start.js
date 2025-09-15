@@ -53,7 +53,7 @@ module.exports = () => {
           `   • /answerloukya <question> → Detailed answer\n` +
           `   • /explainloukya <text> → Clear explanation with context\n\n` +
           `🛠️ Use /help to see all available commands.\n\n` +
-          `📌 I will start sending facts once I'm added to a group!`
+          `📌 I will start sending facts once you use /startfacts in a group or here!`
       );
 
       console.log("New User Saved:", id);

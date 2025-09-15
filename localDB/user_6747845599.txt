@@ -12,3 +12,44 @@ In even simpler terms:
 • The President can forgive or lessen punishments for crimes.
 • This includes forgiving death penalties.
 • This power is part of how the justice system can be reviewed.
+
+=== 2025-09-14T13:50:35.540Z ===
+User: Ṛta (6747845599)
+Query: Give a direct, clear, and concise answer to the following question. 
+
+"❓ Which of the following provisions are part of the Basic Structure of the Indian Constitution as per Supreme Court judgments?
+
+A) Secularism
+B) Separation of Powers
+C) Directive Principles of State Policy
+D) Parliamentary Sovereignty"
+Response: A) Secularism
+B) Separation of Powers
+
+=== 2025-09-14T17:38:14.797Z ===
+User: Ṛta (6747845599)
+Query: kottha app cheddam anukuntunna, node.js app ideas emaina cheppu. essays em rayaku, simple ga cheppu
+Response: Sure, here are some Node.js app ideas, presented simply:
+
+For Beginners:
+• URL Shortener: Takes a long URL and gives you a short, unique one.
+• Simple To-Do List: Create, read, update, and delete tasks. Can be web-based.
+• Basic Chat App: Users can connect and send messages to each other in real-time.
+• File Uploader: Allow users to upload files to your server.
+• Contact Book: Store and manage contacts with names, emails, and phone numbers.
+
+Intermediate Level:
+• E-commerce Product Catalog: Display products, search functionality, and basic product details.
+• Blog Platform: Users can create posts, comment, and manage content.
+• Task Management Tool (Advanced): Add features like deadlines, assignments, progress tracking.
+• Real-time Polling App: Users can create polls and others can vote. Results update live.
+• Image Gallery: Upload and display images, with features like albums or tags.
+
+More Advanced/Specific:
+• API for a Mobile App: Build the backend API for a mobile application (e.g., social media, fitness tracker).
+• IoT Data Collector: Receive data from IoT devices and store/process it.
+• Notification Service: Send push notifications or email alerts based on certain events.
+• Meeting Scheduler: Allow users to find common available times for meetings.
+• Simple Social Network: User profiles, posting, following, liking.
+
+Pick one that sounds interesting and achievable for you!
