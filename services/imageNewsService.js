@@ -1,7 +1,7 @@
 const bot = require("../utils/telegramBot");
-const { getChatsBatch, saveChat } = require("../utils/saveChat");
-const { getFact } = require("./factsService");
+const { getChatsBatch } = require("../utils/saveChat");
 const eventRecordBot = require("../utils/eventRecordBot");
+const path = require("path");
 
 async function recordEvent(message) {
   try {
@@ -12,6 +12,7 @@ async function recordEvent(message) {
 
     return await eventRecordBot.telegram.sendMessage(groupId, message, {
       ...(topicId ? { message_thread_id: topicId } : {}),
+      parse_mode: "Markdown",
     });
   } catch (err) {
     if (err.response && err.response.error_code === 429) {
@@ -20,17 +21,30 @@ async function recordEvent(message) {
       await new Promise((res) => setTimeout(res, retryAfter));
       return recordEvent(message);
     }
-    console.error("⚠ Failed to record event:", err.message);
+    console.error("⚠ Failed to record news event:", err.message);
   }
 }
 
-async function broadcastFact() {
+async function broadcastNewsWithImage() {
   const delayPerMessage = 3000;
   const batchSize = 100;
   let skip = 0;
 
-  const fact = getFact();
-  const message = `📝 ${fact}`;
+  const newsCaption = `
+📰 *యునెస్కో ఇండియా*
+
+🇮🇳 *భారత్ యొక్క తాత్కాలిక వరల్డ్ హెరిటేజ్ జాబితాలో చేరిన 7 కొత్త సహజ స్థలాలు:*  
+
+🌋 డెక్కన్ ట్రాప్స్ (మహారాష్ట్ర)  
+🏝️ సెయింట్ మేరీస్ దీవులు (కర్ణాటక)  
+🕳️ మేఘాలయన్ యుగ గుహలు (మెఘాలయ)  
+⛰️ నాగా హిల్ ఓఫియోలైట్ (నాగాలాండ్)  
+🟤 ఎర్ర మట్టి దిబ్బలు (ఆంధ్రప్రదేశ్)  
+⛩️ తిరుమల కొండలు (ఆంధ్రప్రదేశ్)  
+🏞️ వర్కల యొక్క సహజ వారసత్వం (కేరళ)  
+`;
+
+  const imageUrl = path.join(__dirname, "..", "localDB", "image.png");
 
   const allSuccessChats = [];
   const allFailedChats = [];
@@ -43,54 +57,35 @@ async function broadcastFact() {
     const failedChatsBatch = [];
     const logs = [];
 
-    for (const { chatId, topicId, chatTitle, lastFactMessageId } of chats) {
+    for (const { chatId, topicId, chatTitle } of chats) {
       try {
-        // if (lastFactMessageId) {
-        //   try {
-        //     await bot.telegram.deleteMessage(chatId, lastFactMessageId);
-        //     logs.push(`🗑 Deleted previous fact in ${chatTitle} (${chatId})`);
-        //   } catch (err) {
-        //     logs.push(
-        //       `⚠ Could not delete previous message in ${chatTitle} (${chatId}): ${err.message}`
-        //     );
-        //   }
-        // }
-
-        // Send fact
-        const sentMessage = await bot.telegram.sendMessage(chatId, message, {
-          ...(topicId
-            ? { message_thread_id: topicId, protect_content: true }
-            : { protect_content: true }),
+        await bot.telegram.sendPhoto(chatId, imageUrl, {
+          caption: newsCaption,
           parse_mode: "Markdown",
+          ...(topicId ? { message_thread_id: topicId } : {}),
         });
 
-        logs.push(`✅ Sent new fact to ${chatTitle} (${chatId})`);
+        logs.push(`✅ Sent news to ${chatTitle} (${chatId})`);
         successChatsBatch.push(chatTitle);
         allSuccessChats.push(chatTitle);
-
-        await saveChat(chatId, topicId, chatTitle, sentMessage.message_id);
       } catch (err) {
         logs.push(`❌ Failed for ${chatTitle} (${chatId}): ${err.message}`);
         failedChatsBatch.push(chatTitle);
         allFailedChats.push(chatTitle);
       }
 
-      // delay between sending messages
       await new Promise((res) => setTimeout(res, delayPerMessage));
     }
 
-    // send logs for this batch
     const now = new Date();
     const timestampIST = now.toLocaleString("en-IN", {
       timeZone: "Asia/Kolkata",
       hour12: false,
     });
 
-    const batchTotal = successChatsBatch.length + failedChatsBatch.length;
     await recordEvent(
-      `📦 Finished batch at ${timestampIST}\n\n` +
+      `📦 Finished news batch at ${timestampIST}\n\n` +
         `📊 Batch Summary:\n` +
-        `• Total chats: ${batchTotal}\n` +
         `• ✅ Success: ${successChatsBatch.length} → ${
           successChatsBatch.join(", ") || "None"
         }\n` +
@@ -103,18 +98,16 @@ async function broadcastFact() {
     skip += batchSize;
   }
 
-  // final summary
   const now = new Date();
   const timestampIST = now.toLocaleString("en-IN", {
     timeZone: "Asia/Kolkata",
     hour12: false,
   });
 
-  const total = allSuccessChats.length + allFailedChats.length;
   await recordEvent(
-    `✅ Finished broadcasting all facts at ${timestampIST}\n\n` +
+    `✅ Finished broadcasting news at ${timestampIST}\n\n` +
       `📊 Final Summary:\n` +
-      `• Total chats: ${total}\n` +
+      `• Total chats: ${allSuccessChats.length + allFailedChats.length}\n` +
       `• ✅ Success: ${allSuccessChats.length} → ${
         allSuccessChats.join(", ") || "None"
       }\n` +
@@ -124,4 +117,4 @@ async function broadcastFact() {
   );
 }
 
-module.exports = { broadcastFact };
+module.exports = { broadcastNewsWithImage };

@@ -1,6 +1,7 @@
 const { saveChat } = require("../utils/saveChat");
 const bot = require("../utils/telegramBot");
 const User = require("../models/userModel");
+const { Markup } = require("telegraf");
 
 module.exports = () => {
   bot.start(async (ctx) => {
@@ -28,7 +29,15 @@ module.exports = () => {
 
         return ctx.reply(
           `👋 Welcome back, ${first_name}!\n\n` +
-            `Glad to see you again. Use /help anytime to check available commands.`
+            `Glad to see you again. Use /help anytime to check available commands.`,
+          Markup.inlineKeyboard([
+            [
+              Markup.button.url(
+                "➕ Add me to your Group",
+                `https://t.me/${ctx.botInfo.username}?startgroup=true`
+              ),
+            ],
+          ])
         );
       }
 
@@ -41,7 +50,7 @@ module.exports = () => {
         lastActive: new Date(),
       });
 
-      // Greeting (from old handler)
+      // Greeting with Add to Group button
       await ctx.reply(
         `👋 Hello ${first_name}!\n\n` +
           `I am @${ctx.botInfo.username}, your exam preparation assistant.\n\n` +
@@ -53,7 +62,15 @@ module.exports = () => {
           `   • /answerloukya <question> → Detailed answer\n` +
           `   • /explainloukya <text> → Clear explanation with context\n\n` +
           `🛠️ Use /help to see all available commands.\n\n` +
-          `📌 I will start sending facts once you use /startfacts in a group or here!`
+          `📌 I will start sending facts once you use /startfacts in a group or here!`,
+        Markup.inlineKeyboard([
+          [
+            Markup.button.url(
+              "➕ Add me to your Group",
+              `https://t.me/${ctx.botInfo.username}?startgroup=true`
+            ),
+          ],
+        ])
       );
 
       console.log("New User Saved:", id);

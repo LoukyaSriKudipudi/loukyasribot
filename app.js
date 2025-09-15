@@ -22,7 +22,9 @@ require("./controllers/helpCommand");
 
 // Services
 const { broadcastFact } = require("./services/updateService");
-const { broadcastQuiz } = require("./services/broadcastQuiz"); // <-- import quiz
+const { broadcastQuiz } = require("./services/broadcastQuiz");
+const { broadcastQuizQuestion } = require("./services/quizQuestionsService");
+
 require("./services/ask");
 require("./services/translate");
 
@@ -40,11 +42,27 @@ if (bot) console.log("---bot is running---");
 eventRecordBot.launch();
 if (eventRecordBot) console.log("---event record bot is running---");
 
-// Cron jobs
-cron.schedule("0 9-21 * * *", broadcastFact, {
+// Facts
+cron.schedule("50 8-20 * * *", broadcastFact, {
   timezone: "Asia/Kolkata",
 });
+
+// Quizzes
+// cron.schedule("*/30 9-21 * * *", broadcastQuizQuestion, {
+//   timezone: "Asia/Kolkata",
+// });
 
 // cron.schedule("15,45 9-21 * * *", broadcastQuiz, {
 //   timezone: "Asia/Kolkata",
 // });
+
+// new broadcast
+// const { broadcastNews } = require("./services/messageNewsService");
+// broadcastNews();
+
+// new with image
+// const { broadcastNewsWithImage } = require("./services/imageNewsService");
+// broadcastNewsWithImage();
+
+// forward news
+require("./services/forwardService");

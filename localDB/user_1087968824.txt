@@ -361,3 +361,25 @@ So, to sum it up:
 The Supreme Court has clearly stated that Secularism and the Separation of Powers are fundamental pillars, or the "basic structure," of the Indian Constitution that cannot be easily altered. The other two, while important in their own ways, are not considered part of this unchangeable core.
 
 Therefore, when you look at the options, the ones that are part of the Basic Structure are A) Secularism and B) Separation of Powers.
+
+=== 2025-09-15T06:46:35.079Z ===
+User: Group (1087968824)
+Query: Give a direct, clear, and concise answer to the following question. 
+
+"బాబర్
+Terayi
+Bangar
+Khadar
+Meanings చెప్పండి simple ga"
+Response: Here are the simple meanings:
+• Babar: Wild, untamed land (usually forested and marshy).
+• Terayi: Plain land, flat ground.
+• Bangar: Old alluvial soil, higher ground, less fertile.
+• Khadar: New alluvial soil, lower ground, more fertile.
+
+=== 2025-09-15T13:23:03.129Z ===
+User: Group (1087968824)
+Query: /loukya భారత రాజ్యాంగంలో ‘సార్వత్రిక ఓటు హక్కు’ ఎప్పటి నుంచి అమల్లోకి వచ్చింది?
+Response: భారత రాజ్యాంగంలో సార్వత్రిక ఓటు హక్కు (Universal Adult Franchise) అనేది 26 జనవరి 1950 నుండి అమల్లోకి వచ్చింది.
+
+అంటే, భారత రాజ్యాంగం అమలులోకి వచ్చినప్పటి నుండి 18 ఏళ్లు నిండిన ప్రతి పౌరుడికి ఓటు వేసే హక్కు లభించింది.

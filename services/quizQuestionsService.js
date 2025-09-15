@@ -1,7 +1,24 @@
 const bot = require("../utils/telegramBot");
-const { getChatsBatch, saveChat } = require("../utils/saveChat");
-const { getFact } = require("./factsService");
+const { getChatsBatch } = require("../utils/saveChat");
+const path = require("path");
+const fs = require("fs");
 const eventRecordBot = require("../utils/eventRecordBot");
+
+const quizQuestionsFile = path.join(
+  __dirname,
+  "..",
+  "localDB",
+  "quizQuestions.json"
+);
+
+const quizQuestions = JSON.parse(fs.readFileSync(quizQuestionsFile));
+
+let index = 0;
+function getQuizQuestion() {
+  const quizQuestion = quizQuestions[index];
+  index = (index + 1) % quizQuestions.length;
+  return quizQuestion;
+}
 
 async function recordEvent(message) {
   try {
@@ -20,17 +37,17 @@ async function recordEvent(message) {
       await new Promise((res) => setTimeout(res, retryAfter));
       return recordEvent(message);
     }
-    console.error("⚠ Failed to record event:", err.message);
+    console.error("⚠ Failed to record quiz event:", err.message);
   }
 }
 
-async function broadcastFact() {
+async function broadcastQuizQuestion() {
   const delayPerMessage = 3000;
   const batchSize = 100;
   let skip = 0;
 
-  const fact = getFact();
-  const message = `📝 ${fact}`;
+  const quizQuestion = getQuizQuestion();
+  const { question, options, correct, explanation } = quizQuestion;
 
   const allSuccessChats = [];
   const allFailedChats = [];
@@ -43,54 +60,37 @@ async function broadcastFact() {
     const failedChatsBatch = [];
     const logs = [];
 
-    for (const { chatId, topicId, chatTitle, lastFactMessageId } of chats) {
+    for (const { chatId, topicId, chatTitle } of chats) {
       try {
-        // if (lastFactMessageId) {
-        //   try {
-        //     await bot.telegram.deleteMessage(chatId, lastFactMessageId);
-        //     logs.push(`🗑 Deleted previous fact in ${chatTitle} (${chatId})`);
-        //   } catch (err) {
-        //     logs.push(
-        //       `⚠ Could not delete previous message in ${chatTitle} (${chatId}): ${err.message}`
-        //     );
-        //   }
-        // }
-
-        // Send fact
-        const sentMessage = await bot.telegram.sendMessage(chatId, message, {
-          ...(topicId
-            ? { message_thread_id: topicId, protect_content: true }
-            : { protect_content: true }),
-          parse_mode: "Markdown",
+        await bot.telegram.sendQuiz(chatId, question, options, {
+          correct_option_id: correct,
+          explanation: explanation,
+          is_anonymous: true,
+          ...(topicId ? { message_thread_id: topicId } : {}),
         });
 
-        logs.push(`✅ Sent new fact to ${chatTitle} (${chatId})`);
+        logs.push(`✅ Sent quiz to ${chatTitle} (${chatId})`);
         successChatsBatch.push(chatTitle);
         allSuccessChats.push(chatTitle);
-
-        await saveChat(chatId, topicId, chatTitle, sentMessage.message_id);
       } catch (err) {
         logs.push(`❌ Failed for ${chatTitle} (${chatId}): ${err.message}`);
         failedChatsBatch.push(chatTitle);
         allFailedChats.push(chatTitle);
       }
 
-      // delay between sending messages
       await new Promise((res) => setTimeout(res, delayPerMessage));
     }
 
-    // send logs for this batch
+    // 📦 log after each batch
     const now = new Date();
     const timestampIST = now.toLocaleString("en-IN", {
       timeZone: "Asia/Kolkata",
       hour12: false,
     });
 
-    const batchTotal = successChatsBatch.length + failedChatsBatch.length;
     await recordEvent(
-      `📦 Finished batch at ${timestampIST}\n\n` +
+      `📦 Finished quiz batch at ${timestampIST}\n\n` +
         `📊 Batch Summary:\n` +
-        `• Total chats: ${batchTotal}\n` +
         `• ✅ Success: ${successChatsBatch.length} → ${
           successChatsBatch.join(", ") || "None"
         }\n` +
@@ -103,18 +103,17 @@ async function broadcastFact() {
     skip += batchSize;
   }
 
-  // final summary
+  // ✅ final summary
   const now = new Date();
   const timestampIST = now.toLocaleString("en-IN", {
     timeZone: "Asia/Kolkata",
     hour12: false,
   });
 
-  const total = allSuccessChats.length + allFailedChats.length;
   await recordEvent(
-    `✅ Finished broadcasting all facts at ${timestampIST}\n\n` +
+    `✅ Finished broadcasting all quizzes at ${timestampIST}\n\n` +
       `📊 Final Summary:\n` +
-      `• Total chats: ${total}\n` +
+      `• Total chats: ${allSuccessChats.length + allFailedChats.length}\n` +
       `• ✅ Success: ${allSuccessChats.length} → ${
         allSuccessChats.join(", ") || "None"
       }\n` +
@@ -124,4 +123,4 @@ async function broadcastFact() {
   );
 }
 
-module.exports = { broadcastFact };
+module.exports = { broadcastQuizQuestion };
