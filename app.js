@@ -43,14 +43,14 @@ eventRecordBot.launch();
 if (eventRecordBot) console.log("---event record bot is running---");
 
 // Facts
-cron.schedule("50 8-20 * * *", broadcastFact, {
+cron.schedule("45 8-20 * * *", broadcastFact, {
   timezone: "Asia/Kolkata",
 });
 
-// Quizzes
-// cron.schedule("*/30 9-21 * * *", broadcastQuizQuestion, {
-//   timezone: "Asia/Kolkata",
-// });
+// Quizzes;
+cron.schedule("15 9-21 * * *", broadcastQuizQuestion, {
+  timezone: "Asia/Kolkata",
+});
 
 // cron.schedule("15,45 9-21 * * *", broadcastQuiz, {
 //   timezone: "Asia/Kolkata",
@@ -64,5 +64,5 @@ cron.schedule("50 8-20 * * *", broadcastFact, {
 // const { broadcastNewsWithImage } = require("./services/imageNewsService");
 // broadcastNewsWithImage();
 
-// forward news
+// forward news from loukya sri group
 require("./services/forwardService");

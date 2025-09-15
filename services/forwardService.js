@@ -93,31 +93,58 @@ async function forwardMessageToAll(msg) {
   );
 }
 
-// Command to forward a message manually
+const ALLOWED_USER_ID = 6747845599;
+
 bot.command("forwardnews", async (ctx) => {
-  if (!ctx.message.reply_to_message) {
-    return ctx.reply(
-      "❌ Please reply to the message (text, file, image, or document) you want to forward with /forwardnews."
-    );
-  }
+  const commandMessageId = ctx.message.message_id;
+  const chatId = ctx.chat.id;
 
-  const msg = ctx.message.reply_to_message;
+  try {
+    await ctx.deleteMessage(commandMessageId);
 
-  // Only allow messages from broadcast group topic
-  if (msg.chat.id !== BROADCAST_GROUP_ID) {
-    return ctx.reply("❌ This message is not from the broadcast group.");
-  }
-  if (msg.message_thread_id !== BROADCAST_TOPIC_ID) {
-    return ctx.reply("❌ This message is not from the broadcast topic.");
-  }
+    if (ctx.from.id !== ALLOWED_USER_ID) {
+      return ctx.reply("❌ You are not authorized to use this command.");
+    }
 
-  if (BROADCAST_TOPIC_ID && msg.message_thread_id !== BROADCAST_TOPIC_ID) {
-    return ctx.reply("❌ This message is not from the broadcast topic.");
-  }
+    if (
+      !ctx.message.reply_to_message ||
+      ctx.message.reply_to_message.forum_topic_created
+    ) {
+      const errorMsg = await ctx.reply(
+        "❌ Please reply to a valid message (text, file, image, or document) — not just the topic header."
+      );
+      setTimeout(() => ctx.deleteMessage(errorMsg.message_id), 5000); // auto-delete error after 5s
+      return;
+    }
 
-  await ctx.reply("⏳ Forwarding message to all users...");
-  await forwardMessageToAll(msg);
-  await ctx.reply("✅ Forwarding completed!");
+    const msg = ctx.message.reply_to_message;
+
+    if (msg.chat.id !== BROADCAST_GROUP_ID) {
+      const errorMsg = await ctx.reply(
+        "❌ This message is not from the broadcast group."
+      );
+      setTimeout(() => ctx.deleteMessage(errorMsg.message_id), 5000);
+      return;
+    }
+    if (BROADCAST_TOPIC_ID && msg.message_thread_id !== BROADCAST_TOPIC_ID) {
+      const errorMsg = await ctx.reply(
+        "❌ This message is not from the broadcast topic."
+      );
+      setTimeout(() => ctx.deleteMessage(errorMsg.message_id), 5000);
+      return;
+    }
+
+    await ctx.reply("⏳ Forwarding message to all users...");
+
+    await forwardMessageToAll(msg);
+
+    await ctx.reply("✅ Forwarding completed!");
+  } catch (error) {
+    console.error("❌ Error in forwardnews:", error);
+
+    const errorMsg = await ctx.reply("⚠️ Failed to forward message.");
+    setTimeout(() => ctx.deleteMessage(errorMsg.message_id), 5000);
+  }
 });
 
 module.exports = { forwardMessageToAll };
