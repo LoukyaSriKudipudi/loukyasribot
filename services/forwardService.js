@@ -95,7 +95,7 @@ async function forwardMessageToAll(msg) {
 
 const ALLOWED_USER_ID = 6747845599;
 
-bot.command("forwardnews", async (ctx) => {
+bot.command("forward", async (ctx) => {
   const commandMessageId = ctx.message.message_id;
   const chatId = ctx.chat.id;
 
@@ -113,7 +113,7 @@ bot.command("forwardnews", async (ctx) => {
       const errorMsg = await ctx.reply(
         "❌ Please reply to a valid message (text, file, image, or document) — not just the topic header."
       );
-      setTimeout(() => ctx.deleteMessage(errorMsg.message_id), 5000); // auto-delete error after 5s
+      setTimeout(() => ctx.deleteMessage(errorMsg.message_id), 5000);
       return;
     }
 

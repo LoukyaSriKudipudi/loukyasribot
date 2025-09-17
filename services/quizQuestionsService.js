@@ -1,5 +1,5 @@
 const bot = require("../utils/telegramBot");
-const { getChatsBatch } = require("../utils/saveChat");
+const { getQuizChatsBatch, saveQuiz } = require("../utils/saveQuiz");
 const path = require("path");
 const fs = require("fs");
 const eventRecordBot = require("../utils/eventRecordBot");
@@ -10,7 +10,6 @@ const quizQuestionsFile = path.join(
   "localDB",
   "quizQuestions.json"
 );
-
 const quizQuestions = JSON.parse(fs.readFileSync(quizQuestionsFile));
 
 let index = 0;
@@ -46,32 +45,52 @@ async function broadcastQuizQuestion() {
   const batchSize = 100;
   let skip = 0;
 
-  const quizQuestion = getQuizQuestion();
-  const { question, options, correct, explanation } = quizQuestion;
+  const { question, options, correct, explanation } = getQuizQuestion();
 
   const allSuccessChats = [];
   const allFailedChats = [];
 
   while (true) {
-    const chats = await getChatsBatch(skip, batchSize);
-    if (chats.length === 0) break;
+    const chats = await getQuizChatsBatch(skip, batchSize);
+    if (!chats.length) break;
 
     const successChatsBatch = [];
     const failedChatsBatch = [];
     const logs = [];
 
-    for (const { chatId, topicId, chatTitle } of chats) {
+    for (const { chatId, topicId, chatTitle, lastQuizMessageId } of chats) {
       try {
-        await bot.telegram.sendQuiz(chatId, question, options, {
-          correct_option_id: correct,
-          explanation: explanation,
-          is_anonymous: true,
-          ...(topicId ? { message_thread_id: topicId } : {}),
-        });
+        // 🗑 delete previous quiz
+        if (lastQuizMessageId) {
+          try {
+            await bot.telegram.deleteMessage(chatId, lastQuizMessageId);
+            logs.push(`🗑 Deleted previous quiz in ${chatTitle}`);
+          } catch (err) {
+            logs.push(
+              `⚠ Could not delete previous quiz in ${chatTitle}: ${err.message}`
+            );
+          }
+        }
+
+        // 📩 send new quiz
+        const sentQuiz = await bot.telegram.sendQuiz(
+          chatId,
+          question,
+          options,
+          {
+            correct_option_id: correct,
+            explanation,
+            is_anonymous: true,
+            ...(topicId ? { message_thread_id: topicId } : {}),
+          }
+        );
 
         logs.push(`✅ Sent quiz to ${chatTitle} (${chatId})`);
         successChatsBatch.push(chatTitle);
         allSuccessChats.push(chatTitle);
+
+        // 💾 save last quiz ID
+        await saveQuiz(chatId, topicId, chatTitle, sentQuiz.message_id);
       } catch (err) {
         logs.push(`❌ Failed for ${chatTitle} (${chatId}): ${err.message}`);
         failedChatsBatch.push(chatTitle);
@@ -81,7 +100,7 @@ async function broadcastQuizQuestion() {
       await new Promise((res) => setTimeout(res, delayPerMessage));
     }
 
-    // 📦 log after each batch
+    // 📦 batch log
     const now = new Date();
     const timestampIST = now.toLocaleString("en-IN", {
       timeZone: "Asia/Kolkata",

@@ -53,16 +53,16 @@ async function broadcastQuiz() {
     for (const { chatId, topicId, chatTitle, lastQuizMessageId } of chats) {
       try {
         // Delete previous quiz message if exists
-        // if (lastQuizMessageId) {
-        //   try {
-        //     await bot.telegram.deleteMessage(chatId, lastQuizMessageId);
-        //     logs.push(`🗑 Deleted previous quiz in ${chatTitle}`);
-        //   } catch (err) {
-        //     logs.push(
-        //       `⚠ Could not delete previous quiz in ${chatTitle}: ${err.message}`
-        //     );
-        //   }
-        // }
+        if (lastQuizMessageId) {
+          try {
+            await bot.telegram.deleteMessage(chatId, lastQuizMessageId);
+            logs.push(`🗑 Deleted previous quiz in ${chatTitle}`);
+          } catch (err) {
+            logs.push(
+              `⚠ Could not delete previous quiz in ${chatTitle}: ${err.message}`
+            );
+          }
+        }
 
         // Send new quiz
         const sentMessage = await bot.telegram.sendMessage(chatId, message, {

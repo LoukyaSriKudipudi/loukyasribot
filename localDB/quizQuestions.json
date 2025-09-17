@@ -1,174 +1,518 @@
 [
   {
-    "question": "🌿 ‘క్లోరోఫిల్’ మొక్కలో ప్రధానంగా ఏ ఆర్గనెల్ లో ఉంటుంది?",
-    "options": [
-      "క్లోరోప్లాస్ట్",
-      "మైటోకాండ్రియా",
-      "న్యూక్లియస్",
-      "ఎండోప్లాస్మిక్ రటిక్యూలం"
-    ],
-    "correct": 0,
-    "explanation": "క్లోరోఫిల్ క్లోరోప్లాస్ట్ లోనే ఉంటుంది, ఇది ఫోటోసింథసిస్ ప్రక్రియకు ప్రధాన కేంద్రం."
-  },
-  {
-    "question": "🇮🇳 జలియన్‌వాలా బాగ్ హత్యకాండం ఏ సంవత్సరంలో జరిగింది?",
-    "options": ["1919", "1920", "1922", "1925"],
-    "correct": 0,
-    "explanation": "1919 ఏప్రిల్ 13న జలియన్‌వాలా బాగ్ లో బ్రిటిష్ అధికారుల చేత శతాబ్దాలుగా నిర్హతులైన నిరుపయోగ ప్రజలపై కాల్పులు జరిగాయి."
-  },
-  {
-    "question": "🌊 Which Indian river forms the largest delta in the world?",
-    "options": ["Ganga-Brahmaputra", "Godavari", "Krishna", "Mahanadi"],
-    "correct": 0,
-    "explanation": "The Ganga-Brahmaputra delta, also known as the Sundarbans delta, is the largest delta in the world."
-  },
-  {
-    "question": "🧬 Isotopes of an element లో ఏం సామాన్యం ఉంటుంది?",
-    "options": [
-      "Same number of protons",
-      "Same number of neutrons",
-      "Same atomic mass",
-      "Same chemical behavior but different protons"
-    ],
-    "correct": 0,
-    "explanation": "Isotopes లో proton సంఖ్య ఒకే ఉంటుంది, కానీ neutron సంఖ్య వేరుగా ఉంటుంది."
-  },
-  {
-    "question": "🧪 Avogadro Constant ను ఎలాంటి యూనిట్స్ లో కొలుస్తారు?",
-    "options": [
-      "Particles per mole",
-      "Moles per liter",
-      "Grams per mole",
-      "Atoms per gram"
-    ],
-    "correct": 0,
-    "explanation": "Avogadro Constant 6.022 × 10^23 particles per moleగా ఉంటుంది."
-  },
-  {
-    "question": "🧬 Organic chemistry లో ‘Functional Group’ యొక్క ప్రధాన ఉపయోగం ఏమిటి?",
-    "options": [
-      "Chemical reactivity నిర్దేశించడం",
-      "Atomic mass పెంచడం",
-      "Density మార్చడం",
-      "Phase change చేయడం"
-    ],
-    "correct": 0,
-    "explanation": "Functional group molecule యొక్క chemical reactivity మరియు properties ను నిర్దేశిస్తుంది."
-  },
-  {
-    "question": "🕌 ఖిల్జీ వంశంలో ‘అలౌద్దీన్ ఖిల్జీ’ ప్రధానంగా ఏ విధానాల కోసం ప్రసిద్ధి చెందాడు?",
-    "options": [
-      "సైనిక విస్తరణ మరియు వాణిజ్య నియంత్రణ",
-      "పారిశుధ్య మరియు విద్యా సంస్కరణలు",
-      "విజయవంతమైన కవి వృత్తి",
-      "పట్టణ పునర్నిర్మాణం"
-    ],
-    "correct": 0,
-    "explanation": "అలౌద్దీన్ ఖిల్జీ తన సైనిక వ్యూహాలు మరియు మార్కెట్ నియంత్రణ విధానాల కోసం ప్రసిద్ధి చెందాడు."
-  },
-  {
-    "question": "🧬 DNA యొక్క నిర్మాణం ఎవరు కనుగొన్నారు?",
-    "options": [
-      "వాట్సన్ మరియు క్రిక్",
-      "చాగ్రిన్ మరియు ఫ్లెమింగ్",
-      "మెండల్ మరియు ఫ్రాంక్లిన్",
-      "హూబ్ మరియు లీ"
-    ],
-    "correct": 0,
-    "explanation": "1953 లో వాట్సన్ మరియు క్రిక్ DNA యొక్క డబుల్ హెలిక్స్ నిర్మాణాన్ని కనుగొన్నారు."
-  },
-  {
-    "question": "⚛️ Quantum tunneling ప్రధానంగా ఏ ఫెనామినాకు ఉపయోగపడుతుంది?",
-    "options": ["Nuclear Fusion", "Gravity", "Refraction", "Magnetism"],
-    "correct": 0,
-    "explanation": "Quantum tunneling కారణంగా పరమాణు కొలలోని న్యూట్రాన్‌లు అడ్డంకులు దాటగలుగుతాయి, ఇది Nuclear Fusion కు అవసరం."
-  },
-  {
-    "question": "📖 హైకోర్ట్ లో జ్యుడీషియల్ రివ్యూ యొక్క హక్కు ఏ ఆర్టికల్ ద్వారా వస్తుంది?",
-    "options": ["217", "226", "32", "245"],
+    "question": "హరప్పా నాగరికతలో 'గ్రేట్ బాత్' ఏ నగరంలో కనుగొనబడింది?",
+    "options": ["హరప్పా", "మొహంజో-దారో", "లోథాల్", "కాళిబంగన్"],
     "correct": 1,
-    "explanation": "ఆర్టికల్ 226 ద్వారా హైకోర్ట్ పిటిషన్ ద్వారా జ్యుడీషియల్ రివ్యూ సాధ్యం అవుతుంది."
+    "explanation": "'గ్రేట్ బాత్' అనేది మొహంజో-దారోలోని ప్రధాన నిర్మాణాలలో ఒకటి."
   },
   {
-    "question": "📜 రాజ్యాంగంలో ఆర్టికల్ 14 ఏ హక్కును వివరిస్తుంది?",
+    "question": "Which of the following is an example of a cold desert in India?",
+    "options": ["Thar Desert", "Rann of Kutch", "Ladakh", "Chambal Valley"],
+    "correct": 2,
+    "explanation": "Ladakh is a cold desert located in the Union Territory of Ladakh, known for its high altitude and extreme climatic conditions."
+  },
+  {
+    "question": "The Indian Ocean Tsunami in 2004 was triggered by:",
     "options": [
-      "స్వేచ్ఛా హక్కు",
-      "సమానత్వపు హక్కు",
-      "మత స్వేచ్ఛా హక్కు",
-      "విద్య మరియు సంస్కృతి హక్కు"
+      "A cyclone in the Bay of Bengal",
+      "An undersea earthquake off Sumatra",
+      "Volcanic eruption in the Indian Ocean",
+      "Tectonic movement in the Pacific Ocean"
     ],
     "correct": 1,
-    "explanation": "ఆర్టికల్ 14 ప్రకారం, చట్టం ముందు అందరూ సమానులే మరియు చట్టం యొక్క సమాన రక్షణకు అందరూ అర్హులు."
+    "explanation": "The 2004 Indian Ocean Tsunami was caused by a massive undersea earthquake (magnitude 9.1-9.3) off the coast of Sumatra, Indonesia."
   },
   {
-    "question": "📜 ‘రాజ్యసభ’ (Council of States) సభ్యుల కాల పరిమితి ఎంత?",
+    "question": "Which of the following is/are examples of Fundamental Duties under the Indian Constitution?",
     "options": [
-      "5 సంవత్సరాలు",
-      "6 సంవత్సరాలు",
-      "ఏడాదికి 2 సంవత్సరాలు",
-      "కాలపరిమితి ఉండదు"
+      "To respect the Constitution and national symbols",
+      "To safeguard public property",
+      "To promote harmony and spirit of common brotherhood",
+      "All of the above"
+    ],
+    "correct": 3,
+    "explanation": "All listed options are Fundamental Duties of Indian citizens under Article 51A of the Constitution, added by the 42nd Amendment Act."
+  },
+  {
+    "question": "The Battle of Buxar (1764) was fought between:",
+    "options": [
+      "British East India Company and the Mughal Emperor with allies",
+      "British and Marathas only",
+      "Mughals and French East India Company",
+      "None of the above"
+    ],
+    "correct": 0,
+    "explanation": "The Battle of Buxar was fought between the British East India Company and the combined forces of Mughal Emperor Shah Alam II, Nawab of Bengal Mir Qasim, and Nawab of Awadh Shuja-ud-Daula."
+  },
+  {
+    "question": "Which of the following pairs is correctly matched regarding Indian rivers and origin?",
+    "options": [
+      "Ganga – Gangotri Glacier",
+      "Yamuna – Yamunotri Glacier",
+      "Godavari – Western Ghats",
+      "All of the above"
+    ],
+    "correct": 3,
+    "explanation": "Ganga originates from Gangotri Glacier, Yamuna from Yamunotri Glacier, and Godavari from the Western Ghats (at Trimbakeshwar, Nashik)."
+  },
+  {
+    "question": "Consider the following statements about the National Human Rights Commission (NHRC) of India:",
+    "options": [
+      "It was established under the Protection of Human Rights Act, 1993",
+      "It is headed by the Chief Justice of India",
+      "It inquires into violation of human rights and recommends action",
+      "Only A and C"
+    ],
+    "correct": 3,
+    "explanation": "NHRC was established under the Protection of Human Rights Act, 1993. It is headed by a retired Chief Justice of India or a retired Supreme Court Judge and has powers to inquire and recommend actions on human rights violations."
+  },
+  {
+    "question": "Which of the following correctly defines the term 'Greenfield Airport Project'?",
+    "options": [
+      "Modernization of an existing airport",
+      "Construction of a new airport from scratch",
+      "Expansion of airport terminals",
+      "Privatization of airport management"
     ],
     "correct": 1,
-    "explanation": "రాజ్యసభ సభ్యుల కాల పరిమితి 6 సంవత్సరాలు. ప్రతి 2 సంవత్సరాలకు మూడింట ఒక వంతు సభ్యులు పదవీ విరమణ చేస్తారు."
+    "explanation": "A Greenfield Airport Project refers to the construction of a completely new airport on a new site, unlike a brownfield project which involves upgrading an existing one."
   },
   {
-    "question": "📊 Arithmetic Progression లో nవ పదం formula ఏది?",
+    "question": "Which of the following is/are included in the Union List under the Indian Constitution?",
     "options": [
-      "an = a + (n-1)d",
-      "an = a × n × d",
-      "an = a / n + d",
-      "an = a - nd"
+      "Defense of India",
+      "Currency and coinage",
+      "Foreign affairs",
+      "All of the above"
     ],
-    "correct": 0,
-    "explanation": "AP లో nవ పదం = first term + (n-1) × common difference."
+    "correct": 3,
+    "explanation": "The Union List includes subjects on which only the Parliament can legislate, including defense, currency, and foreign affairs, as mentioned in the Seventh Schedule."
   },
   {
-    "question": "🧪 Covalent bond లో sharing ఎలా జరుగుతుంది?",
+    "question": "The 'rain shadow effect' is prominently observed in which Indian region?",
     "options": [
-      "Electron pair sharing",
-      "Proton sharing",
-      "Neutron sharing",
-      "Ion exchange"
+      "Gangetic Plains",
+      "Leeward side of Western Ghats",
+      "Coastal Andhra",
+      "Ganga Delta"
     ],
-    "correct": 0,
-    "explanation": "Covalent bond లో రెండు atoms electrons ను పంచుకుంటాయి, stable molecule కోసం."
-  },
-  {
-    "question": "🦠 వైరస్ ని జీవిగా పరిగణించకపోవడానికి ప్రధాన కారణం ఏది?",
-    "options": [
-      "స్వతంత్ర శ్వాసక్రియ లేదా పునరుత్పత్తి చేయలేవు",
-      "ఇది చిన్నది",
-      "DNA కలిగి ఉండదు",
-      "రెప్లికేషన్ కోసం ప్రాణుల అవసరం లేదు"
-    ],
-    "correct": 0,
-    "explanation": "వైరస్ స్వతంత్రంగా శ్వాసక్రియ, పెరుగుదల లేదా పునరుత్పత్తి చేయలేనందున అది జీవి కాదని పరిగణించబడుతుంది."
-  },
-  {
-    "question": "🌌 Cosmic Microwave Background (CMB) Radiation ప్రధానంగా ఏది చూపిస్తుంది?",
-    "options": [
-      "Big Bang Model",
-      "Black Hole",
-      "Star Formation",
-      "Planet Formation"
-    ],
-    "correct": 0,
-    "explanation": "CMB radiation ప్రపంచ విశ్వం యొక్క ప్రాథమిక స్థితిని సూచిస్తుంది, ఇది Big Bang సిద్దాంతాన్ని సపోర్ట్ చేస్తుంది."
-  },
-  {
-    "question": "🌐 Where do the rivers Bhagirathi and Alaknanda merge to form the Ganga?",
-    "options": ["Karnaprayag", "Devprayag", "Vishnuprayag", "Rudraprayag"],
     "correct": 1,
-    "explanation": "Bhagirathi and Alaknanda rivers merge at Devprayag in Uttarakhand to form the Ganga river."
+    "explanation": "The leeward side of the Western Ghats receives much less rainfall because the Ghats block the moisture-laden monsoon winds, creating a rain shadow."
   },
   {
-    "question": "🛰️ GPS లో distance కొలవడానికి ఉపయోగించే waves ఏవి?",
+    "question": "The Himalayan range was formed due to the collision of which tectonic plates?",
+    "options": [
+      "Indian and Eurasian plates",
+      "African and Eurasian plates",
+      "Pacific and Australian plates",
+      "Indian and African plates"
+    ],
+    "correct": 0,
+    "explanation": "The Himalayan mountains were formed about 50 million years ago from the slow, continuous collision of the Indian tectonic plate with the Eurasian plate."
+  },
+  {
+    "question": "Who was the founder of the 'Ghadar Party'?",
+    "options": [
+      "Lala Hardayal",
+      "Ganesh Savarkar",
+      "Bipin Chandra Pal",
+      "Aurobindo Ghosh"
+    ],
+    "correct": 0,
+    "explanation": "The Ghadar Party, an Indian revolutionary organization, was founded by Lala Hardayal in the United States in 1913 to overthrow British rule in India."
+  },
+  {
+    "question": "Which of the following Fundamental Rights is available only to Indian citizens and not to foreigners?",
+    "options": [
+      "Equality before law",
+      "Freedom of speech and expression",
+      "Protection of life and personal liberty",
+      "Freedom of religion"
+    ],
+    "correct": 1,
+    "explanation": "Freedom of speech and expression (Article 19) is a right reserved exclusively for Indian citizens. Other rights, like those listed in Articles 14, 20, 21, and 25, are available to all persons."
+  },
+  {
+    "question": "The famous poet and scholar Amir Khusro was a contemporary of which of the following rulers?",
+    "options": ["Iltutmish", "Alauddin Khilji", "Akbar", "Ibrahim Lodi"],
+    "correct": 1,
+    "explanation": "Amir Khusro was a court poet and musician during the reign of Alauddin Khilji and several other Delhi Sultanate rulers, serving from the reign of Balban to Ghiyasuddin Tughlaq."
+  },
+  {
+    "question": "Which of the following movements in India was started by Mahatma Gandhi in 1919 to protest against the Rowlatt Act?",
+    "options": [
+      "Non-Cooperation Movement",
+      "Civil Disobedience Movement",
+      "Khilafat Movement",
+      "Satyagraha"
+    ],
+    "correct": 3,
+    "explanation": "Mahatma Gandhi started the Satyagraha Movement in 1919 against the Rowlatt Act, which gave the British government repressive powers to suppress political activities."
+  },
+  {
+    "question": "The term ‘Hind Mazdoor Sabha’ is associated with:",
+    "options": [
+      "Trade Union Movement",
+      "Peasant Movement",
+      "Freedom Struggle",
+      "Judicial Reforms"
+    ],
+    "correct": 0,
+    "explanation": "The Hind Mazdoor Sabha (HMS) was a trade union federation established in 1948 to represent workers' rights and interests."
+  },
+  {
+    "question": "Which of the following pairs is correctly matched?",
+    "options": [
+      "Pitt’s India Act – 1784",
+      "Regulating Act – 1793",
+      "Charter Act – 1835",
+      "Indian Councils Act – 1909 (Montagu-Chelmsford Reforms)"
+    ],
+    "correct": 0,
+    "explanation": "Pitt’s India Act was passed in 1784 to establish control of the British Parliament over the East India Company’s administration."
+  },
+  {
+    "question": "The ‘Poona Pact’ of 1932 was signed between:",
+    "options": [
+      "Gandhi and Ambedkar",
+      "Gandhi and Jinnah",
+      "Nehru and Subhas Bose",
+      "Tilak and Annie Besant"
+    ],
+    "correct": 0,
+    "explanation": "The Poona Pact of 1932 was signed between Mahatma Gandhi and Dr. B. R. Ambedkar. It was an agreement to reserve seats for the Depressed Classes in legislatures instead of a separate electorate."
+  },
+  {
+    "question": "Which of the following Gupta rulers is associated with the title ‘Napoleon of India’?",
+    "options": [
+      "Samudragupta",
+      "Chandragupta I",
+      "Chandragupta II",
+      "Skandagupta"
+    ],
+    "correct": 0,
+    "explanation": "Samudragupta earned the title ‘Napoleon of India’ from historian A. V. Smith due to his extensive military conquests across the Indian subcontinent."
+  },
+  {
+    "question": "The Doctrine of Lapse was introduced by which Governor-General of India?",
+    "options": [
+      "Lord Cornwallis",
+      "Lord Dalhousie",
+      "Lord Curzon",
+      "Lord Wellesley"
+    ],
+    "correct": 1,
+    "explanation": "The Doctrine of Lapse was introduced by Lord Dalhousie to annex Indian princely states where the ruler died without a natural male heir."
+  },
+  {
+    "question": "Consider the following statements about the Indian Constitution:",
+    "options": [
+      "It is the longest written constitution in the world.",
+      "It provides for a federal system with unitary bias.",
+      "It has a parliamentary system of government.",
+      "All of the above."
+    ],
+    "correct": 3,
+    "explanation": "The Indian Constitution is indeed the longest written constitution. It establishes a parliamentary system and is quasi-federal, meaning it is federal in form but has a strong unitary bias, especially during emergencies."
+  },
+  {
+    "question": "Which of the following rivers does NOT originate from the Himalayas?",
+    "options": ["Ganga", "Yamuna", "Godavari", "Saraswati"],
+    "correct": 2,
+    "explanation": "The Godavari originates from the Western Ghats (Trimbakeshwar), not the Himalayas. Ganga and Yamuna originate from Himalayan glaciers."
+  },
+  {
+    "question": "The 'Permanent Settlement' of 1793 was associated with which region in India?",
+    "options": ["Bengal", "Mysore", "Punjab", "Awadh"],
+    "correct": 0,
+    "explanation": "The Permanent Settlement of 1793, introduced by Lord Cornwallis, fixed the land revenue of Bengal, Bihar, and Orissa in perpetuity with the zamindars."
+  },
+  {
+    "question": "Which of the following is a correct statement regarding the Fundamental Rights in India?",
+    "options": [
+      "They are justiciable and enforceable by courts.",
+      "They can be suspended only during a national emergency.",
+      "They include the Right to Property after 1978.",
+      "All of the above."
+    ],
+    "correct": 0,
+    "explanation": "Fundamental Rights are justiciable, meaning they can be enforced by the courts. The Right to Property was removed from the list of Fundamental Rights in 1978 by the 44th Amendment."
+  },
+  {
+    "question": "Who among the following was the founder of the Brahmo Samaj?",
+    "options": [
+      "Raja Ram Mohan Roy",
+      "Dayanand Saraswati",
+      "Swami Vivekananda",
+      "Keshab Chandra Sen"
+    ],
+    "correct": 0,
+    "explanation": "Raja Ram Mohan Roy founded the Brahmo Samaj in 1828 to reform Hindu society and promote monotheism."
+  },
+  {
+    "question": "Consider the following statements about the Right to Information Act, 2005:",
+    "options": [
+      "It applies to all public authorities in India.",
+      "It allows citizens to access information held by government bodies.",
+      "It covers private companies receiving government funds.",
+      "All of the above."
+    ],
+    "correct": 3,
+    "explanation": "The RTI Act applies to all public authorities and bodies that are substantially financed by the government, allowing citizens to seek information to promote transparency."
+  },
+  {
+    "question": "Which of the following is true regarding the ‘Simla Convention’ of 1914?",
+    "options": [
+      "It was signed between British India, Tibet, and China.",
+      "It fixed the boundary between India and Nepal.",
+      "It recognized British suzerainty over Tibet.",
+      "It resulted in the partition of Bengal."
+    ],
+    "correct": 0,
+    "explanation": "The Simla Convention of 1914 was signed between British India, Tibet, and China to define the status of Tibet and its boundaries, including the McMahon Line."
+  },
+  {
+    "question": "Under the Indian Constitution, which of the following statements is correct regarding the Directive Principles of State Policy?",
+    "options": [
+      "They are justiciable and enforceable by the courts.",
+      "They aim to establish social and economic democracy.",
+      "They override Fundamental Rights in case of conflict.",
+      "They are guidelines for the judiciary only."
+    ],
+    "correct": 1,
+    "explanation": "Directive Principles aim to establish social and economic democracy. Unlike Fundamental Rights, they are non-justiciable and cannot be enforced by courts, but they are fundamental in the governance of the country."
+  },
+  {
+    "question": "The Tropic of Cancer passes through which of the following Indian states?",
+    "options": ["Rajasthan", "Gujarat", "Madhya Pradesh", "All of the above"],
+    "correct": 3,
+    "explanation": "The Tropic of Cancer passes through eight Indian states: Gujarat, Rajasthan, Madhya Pradesh, Chhattisgarh, Jharkhand, West Bengal, Tripura, and Mizoram."
+  },
+  {
+    "question": "Which of the following statements is true regarding the Goods and Services Tax (GST) in India?",
+    "options": [
+      "It is a dual system with Centre and State levying tax.",
+      "It replaced multiple indirect taxes levied by Centre and States.",
+      "GST rates are fixed uniformly across all states for all goods.",
+      "Both A and B."
+    ],
+    "correct": 3,
+    "explanation": "GST is a dual system (CGST and SGST/UTGST) and replaced multiple indirect taxes like VAT, Service Tax, and Excise Duty. However, rates are not uniform across all states for all goods and services, as they are decided by the GST Council."
+  },
+  {
+    "question": "Consider the following about the Battle of Plassey (1757):",
+    "options": [
+      "It was fought between Siraj-ud-Daula and the British East India Company.",
+      "Robert Clive played a key role in the victory.",
+      "It marked the beginning of British political control in Bengal.",
+      "All of the above."
+    ],
+    "correct": 3,
+    "explanation": "The Battle of Plassey was a decisive victory for the British East India Company, led by Robert Clive, over the Nawab of Bengal, Siraj-ud-Daula. It marked the start of British rule in Bengal and eventually, in India."
+  },
+  {
+    "question": "Which of the following is/are features of the Indian federal system?",
+    "options": [
+      "Division of powers between Centre and States.",
+      "Supremacy of the Constitution over both levels of government.",
+      "Existence of a bicameral legislature at the Centre.",
+      "All of the above."
+    ],
+    "correct": 3,
+    "explanation": "India’s federal system is characterized by a clear division of powers (Union, State, and Concurrent Lists), the supremacy of the Constitution, and a bicameral legislature at the Centre (Lok Sabha and Rajya Sabha)."
+  },
+  {
+    "question": "The concept of 'Minimum Government, Maximum Governance' is associated with:",
+    "options": [
+      "Swadeshi Movement",
+      "NITI Aayog",
+      "Lal Bahadur Shastri",
+      "New Public Management reforms"
+    ],
+    "correct": 1,
+    "explanation": "'Minimum Government, Maximum Governance' is a slogan associated with the reforms initiated by the current government and the role of NITI Aayog in promoting policy efficiency."
+  },
+  {
+    "question": "Which of the following pairs is correctly matched regarding Indian National Congress sessions?",
+    "options": [
+      "Lahore Session 1929 – Purna Swaraj resolution",
+      "Bombay Session 1920 – Non-Cooperation Movement launch",
+      "Calcutta Session 1905 – Partition of Bengal protest",
+      "All of the above"
+    ],
+    "correct": 3,
+    "explanation": "The Lahore Session (1929) under Nehru declared Purna Swaraj. The Non-Cooperation Movement was endorsed at the Calcutta (1920) and Nagpur (1920) sessions. The Calcutta Session of 1905 protested the Partition of Bengal."
+  },
+  {
+    "question": "The term 'Green Revolution' in India refers to:",
+    "options": [
+      "Introduction of modern agricultural technology",
+      "Promotion of organic farming",
+      "Expansion of forest cover",
+      "Increase in fish production"
+    ],
+    "correct": 0,
+    "explanation": "The Green Revolution was a period of agricultural modernization in India in the 1960s, involving the use of high-yield variety seeds, fertilizers, and irrigation to increase food grain production."
+  },
+  {
+    "question": "Consider the following about the Indian Judiciary:",
+    "options": [
+      "Supreme Court has original, appellate, and advisory jurisdiction.",
+      "High Courts have appellate and original jurisdiction.",
+      "Subordinate courts exercise both civil and criminal jurisdiction.",
+      "All of the above."
+    ],
+    "correct": 3,
+    "explanation": "The Indian judiciary is a hierarchical structure. The Supreme Court has the specified jurisdictions, High Courts have appellate and original jurisdiction, and subordinate courts handle both civil and criminal cases."
+  },
+  {
+    "question": "Which of the following statements is true regarding the Indian monsoon?",
+    "options": [
+      "Southwest monsoon starts from the Bay of Bengal.",
+      "Northeast monsoon affects mainly Tamil Nadu.",
+      "Monsoon withdrawal occurs first in northwest India.",
+      "All of the above."
+    ],
+    "correct": 1,
+    "explanation": "The Northeast monsoon brings winter rainfall primarily to the coasts of Tamil Nadu. The Southwest monsoon originates from both the Arabian Sea and the Bay of Bengal, and its withdrawal begins in northwest India."
+  },
+  {
+    "question": "Which of the following rivers is a tributary of the Ganga?",
+    "options": ["Yamuna", "Godavari", "Narmada", "Mahanadi"],
+    "correct": 0,
+    "explanation": "The Yamuna is the second-largest tributary river of the Ganga by discharge and the longest tributary in India. The other rivers are part of separate river systems."
+  },
+  {
+    "question": "The Reserve Bank of India (RBI) was nationalized in which year?",
+    "options": ["1935", "1947", "1949", "1951"],
+    "correct": 2,
+    "explanation": "The RBI was established in 1935 under the RBI Act, 1934, but was nationalized in 1949 to bring it under government control."
+  },
+  {
+    "question": "Which of the following is a correct statement about the Preamble of the Indian Constitution?",
+    "options": [
+      "It declares India to be a sovereign, socialist, secular, and democratic republic.",
+      "It guarantees Fundamental Rights to citizens.",
+      "It is justiciable in courts.",
+      "It was added in the 42nd Amendment in 1976."
+    ],
+    "correct": 0,
+    "explanation": "The Preamble outlines the nature of the Indian state. It is a part of the Constitution but is not enforceable in courts and was not 'added' by the 42nd Amendment, which only added the words 'Socialist,' 'Secular,' and 'Integrity'."
+  },
+  {
+    "question": "In which year was the 'National Commission for Scheduled Castes' established?",
+    "options": ["1990", "1995", "2004", "2009"],
+    "correct": 2,
+    "explanation": "The National Commission for Scheduled Castes was established in 2004 by the 89th Constitutional Amendment Act, which bifurcated the National Commission for SCs and STs."
+  },
+  {
+    "question": "The Battle of Plassey was fought in which year?",
+    "options": ["1757", "1764", "1773", "1857"],
+    "correct": 0,
+    "explanation": "The Battle of Plassey was fought on 23 June 1757, between the British East India Company and the Nawab of Bengal, Siraj-ud-Daulah."
+  },
+  {
+    "question": "The first women to become a Chief Minister of any state in India was?",
+    "options": [
+      "Nandini Satpathy",
+      "J. Jayalalithaa",
+      "Sucheta Kripalani",
+      "Mayawati"
+    ],
+    "correct": 2,
+    "explanation": "Sucheta Kripalani became the Chief Minister of Uttar Pradesh in 1963, making her the first woman to hold that position in any Indian state."
+  },
+  {
+    "question": "What is the primary function of the 'Lok Adalat' in India?",
+    "options": [
+      "To settle disputes through arbitration and compromise",
+      "To handle cases of political disputes",
+      "To resolve criminal cases of serious nature",
+      "To provide legal aid to the poor"
+    ],
+    "correct": 0,
+    "explanation": "Lok Adalats are a forum where cases pending in courts or at the pre-litigation stage are settled amicably through negotiation and compromise, providing a cheaper and faster way to justice."
+  },
+  {
+    "question": "The Governor of a State in India is appointed by the?",
+    "options": [
+      "Prime Minister",
+      "Chief Minister",
+      "President",
+      "Chief Justice of India"
+    ],
+    "correct": 2,
+    "explanation": "As per Article 155 of the Constitution of India, the Governor is appointed by the President by warrant under his hand and seal."
+  },
+  {
+    "question": "భారత రాజ్యాంగంలోని ఏ భాగంలో ప్రాథమిక హక్కులు ఉన్నాయి?",
+    "options": ["భాగం-I", "భాగం-II", "భాగం-III", "భాగం-IV"],
+    "correct": 2,
+    "explanation": "ప్రాథమిక హక్కులు రాజ్యాంగంలోని భాగం-III (ఆర్టికల్స్ 12-35) లో పేర్కొనబడ్డాయి."
+  },
+  {
+    "question": "The 'Drain of Wealth' theory was propounded by?",
+    "options": [
+      "Jawaharlal Nehru",
+      "Dadabhai Naoroji",
+      "Bipin Chandra Pal",
+      "Mahatma Gandhi"
+    ],
+    "correct": 1,
+    "explanation": "Dadabhai Naoroji, known as the 'Grand Old Man of India,' presented the 'Drain of Wealth' theory in his book Poverty and Un-British Rule in India."
+  },
+  {
+    "question": "రాజ్యాంగంలో 'హక్కుల బిల్లు' అని దేనిని పిలుస్తారు?",
+    "options": [
+      "ప్రవేశిక (Preamble)",
+      "ప్రాథమిక హక్కులు",
+      "రాష్ట్ర విధానాల నిర్దేశిక సూత్రాలు",
+      "ప్రాథమిక విధులు"
+    ],
+    "correct": 1,
+    "explanation": "పౌరుల హక్కులను పేర్కొంటుంది కాబట్టి ప్రాథమిక హక్కులను 'భారత రాజ్యాంగం యొక్క హక్కుల బిల్లు'గా పరిగణిస్తారు."
+  },
+  {
+    "question": "The first national park established in India was?",
+    "options": [
+      "Kanha National Park",
+      "Kaziranga National Park",
+      "Jim Corbett National Park",
+      "Periyar National Park"
+    ],
+    "correct": 2,
+    "explanation": "Jim Corbett National Park, originally named Hailey National Park, was established in 1936 in Uttarakhand, making it the first national park in India."
+  },
+  {
+    "question": "భారత ఆర్థిక వ్యవస్థలో 'ఫిస్కల్ డెఫిసిట్' అంటే ఏమిటి?",
+    "options": [
+      "రాబడి కంటే ఖర్చు తక్కువగా ఉండటం",
+      "అంతర్జాతీయ వాణిజ్యం నుండి వచ్చే లోటు",
+      "ప్రభుత్వ మొత్తం ఖర్చు మరియు రుణాన్ని మినహాయించిన రాబడి మధ్య వ్యత్యాసం",
+      "ప్రభుత్వ ఆదాయం మరియు పన్నుల మధ్య వ్యత్యాసం"
+    ],
+    "correct": 2,
+    "explanation": "ఫిస్కల్ డెఫిసిట్ అంటే ప్రభుత్వం యొక్క మొత్తం ఖర్చు మరియు రుణాన్ని మినహాయించి, మొత్తం రాబడి మధ్య వ్యత్యాసం."
+  },
+  {
+    "question": "Which of the following mountain ranges is home to the highest peak in the Western Ghats?",
+    "options": [
+      "Nilgiri Hills",
+      "Anamalai Hills",
+      "Cardamom Hills",
+      "Palani Hills"
+    ],
+    "correct": 1,
+    "explanation": "The Anamalai Hills are home to Anamudi Peak, which at 2,695 meters, is the highest peak in the Western Ghats and in Southern India."
+  },
+  {
+    "question": "GPS లో distance కొలవడానికి ఉపయోగించే waves ఏవి?",
     "options": ["Radio waves", "Microwaves", "Sound waves", "Light waves"],
     "correct": 1,
-    "explanation": "GPS system microwaves ద్వారా satellites signal కొలుస్తుంది, distance మరియు location గుర్తించడానికి."
+    "explanation": "GPS వ్యవస్థలో ఉపగ్రహాల నుండి వచ్చే సంకేతాలు మైక్రోవేవ్ ఫ్రీక్వెన్సీలో ఉండే రేడియో తరంగాలు. వీటి ప్రయాణ సమయాన్ని కొలవడం ద్వారా దూరాన్ని లెక్కిస్తారు."
   },
   {
-    "question": "💧 The peninsular plateau of India is primarily composed of which type of rocks?",
+    "question": "The peninsular plateau of India is primarily composed of which type of rocks?",
     "options": [
       "Igneous and metamorphic rocks",
       "Sedimentary rocks only",
@@ -176,10 +520,10 @@
       "Alluvial deposits"
     ],
     "correct": 0,
-    "explanation": "The Peninsular Plateau consists mainly of ancient igneous and metamorphic rocks, which are very old and stable."
+    "explanation": "The Peninsular Plateau consists mainly of ancient igneous and metamorphic rocks, which are a part of one of the world's most ancient and stable landmasses."
   },
   {
-    "question": "📊 Mean, Median, Mode మధ్య సంబంధం ఏది?",
+    "question": "Mean, Median, Mode మధ్య సంబంధం ఏది?",
     "options": [
       "Mean - Mode = 3(Mean - Median)",
       "Mean + Mode = Median",
@@ -187,46 +531,46 @@
       "Median - Mode = 2(Mean)"
     ],
     "correct": 0,
-    "explanation": "Empirical relation: Mean - Mode = 3(Mean - Median)."
+    "explanation": "Empirical relation: Mean - Mode = 3(Mean - Median), also known as Karl Pearson’s formula for a moderately skewed distribution."
   },
   {
-    "question": "🪨 ‘బ్లాక్ సాయిల్’ (నల్ల మట్టి)లో ప్రధానంగా ఏ పంట బాగా పండుతుంది?",
+    "question": "‘బ్లాక్ సాయిల్’ (నల్ల మట్టి)లో ప్రధానంగా ఏ పంట బాగా పండుతుంది?",
     "options": ["బియ్యం", "గోధుమ", "పత్తి", "మొక్కజొన్న"],
     "correct": 2,
     "explanation": "నల్ల మట్టి (రెగూర్ సాయిల్)లో తేమ ఎక్కువకాలం నిల్వ ఉంటుంది. ఇది పత్తి పంటకు అత్యంత అనుకూలం."
   },
   {
-    "question": "📜 రాజ్యాంగంలో ఏ ఆర్టికల్ ‘ప్రివెంటివ్ డిటెన్షన్’ (నివారణ నిర్బంధం) గురించి వివరిస్తుంది?",
+    "question": "రాజ్యాంగంలో ఏ ఆర్టికల్ ‘ప్రివెంటివ్ డిటెన్షన్’ (నివారణ నిర్బంధం) గురించి వివరిస్తుంది?",
     "options": ["ఆర్టికల్ 19", "ఆర్టికల్ 20", "ఆర్టికల్ 22", "ఆర్టికల్ 24"],
     "correct": 2,
     "explanation": "ఆర్టికల్ 22 కొన్ని సందర్భాలలో నివారణ నిర్బంధానికి సంబంధించిన రక్షణలను అందిస్తుంది."
   },
   {
-    "question": "🔢 Determinant of 2×2 matrix [[a,b],[c,d]] ఏది?",
+    "question": "Determinant of 2×2 matrix [[a,b],[c,d]] ఏది?",
     "options": ["ad - bc", "a+b+c+d", "ab + cd", "a/b + c/d"],
     "correct": 0,
     "explanation": "2×2 matrix determinant = (a×d) - (b×c)."
   },
   {
-    "question": "⚖️ భారత సుప్రీంకోర్టు మొదటి మహిళా న్యాయమూర్తి ఎవరు?",
+    "question": "భారత సుప్రీంకోర్టు మొదటి మహిళా న్యాయమూర్తి ఎవరు?",
     "options": ["లీలా సేథ్", "ఫాతిమా బీవీ", "రమాదేవి", "ఇందిరా జైసింగ్"],
     "correct": 1,
     "explanation": "ఫాతిమా బీవీ 1989లో సుప్రీంకోర్టులో మొదటి మహిళా న్యాయమూర్తిగా నియమితులయ్యారు."
   },
   {
-    "question": "💧 Water molecule లో హైడ్రోజన్ మరియు ఆక్సిజన్ మధ్య bond type ఏది?",
+    "question": "Water molecule లో హైడ్రోజన్ మరియు ఆక్సిజన్ మధ్య bond type ఏది?",
     "options": ["Polar covalent", "Nonpolar covalent", "Ionic", "Metallic"],
     "correct": 0,
-    "explanation": "Water molecule లో H-O bonds polar covalent bonds అవుతాయి, ఎందుకంటే O అధిక electronegativity కలిగింది."
+    "explanation": "Water molecule లో H-O bonds polar covalent bonds అవుతాయి, ఎందుకంటే ఆక్సిజన్ యొక్క అధిక ఎలక్ట్రోనెగటివిటీ కారణంగా బంధంలో ఎలక్ట్రాన్లు అసమానంగా పంచుకోబడతాయి."
   },
   {
-    "question": "⚛️ Periodic Table లో ‘Lanthanides’ ఏ గ్రూప్ కు చెందుతాయి?",
+    "question": "Periodic Table లో ‘Lanthanides’ ఏ గ్రూప్ కు చెందుతాయి?",
     "options": ["f-block", "s-block", "p-block", "d-block"],
     "correct": 0,
-    "explanation": "Lanthanides f-block లో వస్తాయి, ఇవి 4f ఆర్బిటల్ పూర్తి చేసేవి."
+    "explanation": "Lanthanides f-block లో వస్తాయి, ఇవి 4f ఆర్బిటల్ ను పూర్తి చేస్తాయి."
   },
   {
-    "question": "💡 Catalyst యొక్క ప్రధాన లక్ష్యం ఏమిటి?",
+    "question": "Catalyst యొక్క ప్రధాన లక్ష్యం ఏమిటి?",
     "options": [
       "Reaction rate పెంచడం",
       "Temperature పెంచడం",
@@ -234,10 +578,10 @@
       "Equilibrium మార్చడం"
     ],
     "correct": 0,
-    "explanation": "Catalyst reaction rate పెంచుతుంది, కానీ chemical equilibrium లేదా products ను మార్చదు."
+    "explanation": "Catalyst రసాయన చర్య యొక్క రేటును పెంచుతుంది, కానీ దాని తుది రసాయన సమతుల్యత (chemical equilibrium) లేదా ఉత్పత్తులను మార్చదు."
   },
   {
-    "question": "🧬 మానవ జాతిలో రక్త గ్రూపులు ఏ సిస్టమ్ ద్వారా నిర్ధారించబడతాయి?",
+    "question": "మానవ జాతిలో రక్త గ్రూపులు ఏ సిస్టమ్ ద్వారా నిర్ధారించబడతాయి?",
     "options": [
       "ABO మరియు Rhesus System",
       "Mendelian Inheritance",
@@ -245,10 +589,10 @@
       "X-Y Chromosome System"
     ],
     "correct": 0,
-    "explanation": "మానవ రక్త గ్రూపులు ABO మరియు Rhesus సిస్టమ్ ద్వారా నిర్ధారించబడతాయి, ఇవి జన్యు ఆధారంగా పాస్సింగ్ అవుతాయి."
+    "explanation": "మానవ రక్త గ్రూపులు ABO మరియు Rhesus సిస్టమ్ ద్వారా నిర్ధారించబడతాయి, ఇవి జన్యు ఆధారంగా ఒక తరం నుండి మరొక తరానికి సంక్రమిస్తాయి."
   },
   {
-    "question": "⚖️ భారత పార్లమెంటులో ‘ఉభయ సభల ఉమ్మడి సమావేశాన్ని’ (Joint Sitting) ఎవరు నిర్వహిస్తారు?",
+    "question": "భారత పార్లమెంటులో ‘ఉభయ సభల ఉమ్మడి సమావేశాన్ని’ (Joint Sitting) ఎవరు నిర్వహిస్తారు?",
     "options": [
       "రాష్ట్రపతి",
       "ఉపరాష్ట్రపతి",
@@ -259,13 +603,13 @@
     "explanation": "ఉభయ సభల ఉమ్మడి సమావేశాన్ని రాష్ట్రపతి పిలుస్తారు, కానీ దానిని లోక్‌సభ స్పీకర్ నిర్వహిస్తారు."
   },
   {
-    "question": "📐 Circle లో radius r ఉంటే, circumference ఏది?",
+    "question": "Circle లో radius r ఉంటే, circumference ఏది?",
     "options": ["2πr", "πr^2", "πr", "r^2"],
     "correct": 0,
     "explanation": "Circumference = 2 × π × r."
   },
   {
-    "question": "⚖️ India లో ‘Judicial Activism’ ప్రధానంగా ఏ కాలంలో అభివృద్ధి చెందింది?",
+    "question": "India లో ‘Judicial Activism’ ప్రధానంగా ఏ కాలంలో అభివృద్ధి చెందింది?",
     "options": [
       "1970s తరువాత",
       "1950s ప్రారంభంలో",
@@ -273,10 +617,10 @@
       "2000s ప్రారంభంలో"
     ],
     "correct": 0,
-    "explanation": "1970s తరువాత సుప్రీంకోర్ట్ వివిధ విషయాల్లో జ్యుడీషియల్ యాక్టివిజం ద్వారా న్యాయపరమైన పరిష్కారాలను ఇచ్చింది."
+    "explanation": "1970ల తరువాత భారతదేశంలో జ్యుడీషియల్ యాక్టివిజం అభివృద్ధి చెందింది. ప్రజా ప్రయోజన వ్యాజ్యాలు (PIL) దీనిలో కీలక పాత్ర పోషించాయి."
   },
   {
-    "question": "🌱 ‘స్టోమాటా’ మొక్కల్లో ఏ విధంగా పని చేస్తాయి?",
+    "question": "‘స్టోమాటా’ మొక్కల్లో ఏ విధంగా పని చేస్తాయి?",
     "options": [
       "గ్యాస్ ఎక్స్ఛేంజ్ మరియు నీటి ఆవిరీకరణ",
       "కార్బన్ స్టోరేజ్",
@@ -284,22 +628,22 @@
       "క్లోరోఫిల్ నిర్మాణం"
     ],
     "correct": 0,
-    "explanation": "స్టోమాటా చిన్న రంధ్రాలు, ఇవి గ్యాస్ ఎక్స్ఛేంజ్ (CO2 లోపలి వాయువులు) మరియు నీటి ఆవిరీకరణకు (transpiration) ఉపయోగపడతాయి."
+    "explanation": "స్టోమాటా చిన్న రంధ్రాలు, ఇవి గ్యాస్ ఎక్స్ఛేంజ్ (CO2 లోపలికి తీసుకోవడం) మరియు నీటి ఆవిరీకరణకు (transpiration) ఉపయోగపడతాయి."
   },
   {
-    "question": "🌐 ‘భాగీరథి’ మరియు ‘అలకనంద’ నదులు ఏ ప్రదేశంలో కలుస్తాయి?",
+    "question": "‘భాగీరథి’ మరియు ‘అలకనంద’ నదులు ఏ ప్రదేశంలో కలుస్తాయి?",
     "options": ["కర్ణప్రయాగ్", "దేవప్రయాగ్", "విష్ణుప్రయాగ్", "రుద్రప్రయాగ్"],
     "correct": 1,
-    "explanation": "భాగీరథి మరియు అలకనంద నదులు దేవప్రయాగ్ వద్ద కలసి గంగానదిగా మారుతాయి."
+    "explanation": "భాగీరథి మరియు అలకనంద నదులు ఉత్తరాఖండ్ లోని దేవప్రయాగ్ వద్ద కలసి గంగానదిగా మారుతాయి."
   },
   {
-    "question": "🔢 5 factorial (5!) యొక్క విలువ ఎంత?",
+    "question": "5 factorial (5!) యొక్క విలువ ఎంత?",
     "options": ["120", "24", "60", "720"],
     "correct": 0,
     "explanation": "5! = 5 × 4 × 3 × 2 × 1 = 120."
   },
   {
-    "question": "📖 Emergency provisions కు సంబంధించి 1975–77లో ప్రవర్తించిన ప్రధాన సవరణ ఏది?",
+    "question": "Emergency provisions కు సంబంధించి 1975–77లో ప్రవర్తించిన ప్రధాన సవరణ ఏది?",
     "options": [
       "42nd Amendment",
       "44th Amendment",
@@ -307,21 +651,10 @@
       "61st Amendment"
     ],
     "correct": 0,
-    "explanation": "42వ సవరణలో ఆర్టికల్స్ 352, 356, 360 లో మార్పులు చేసి అత్యవసర పరిస్థితులలో కేంద్రానికి విస్తృత అధికారాలు ఇచ్చారు."
+    "explanation": "1976లో జరిగిన 42వ సవరణలో, అత్యవసర పరిస్థితులకు సంబంధించిన ఆర్టికల్స్ 352, 356, 360 లో మార్పులు చేసి కేంద్రానికి విస్తృత అధికారాలు ఇచ్చారు."
   },
   {
-    "question": "🗻 The 'rain shadow effect' is prominently observed in which Indian region?",
-    "options": [
-      "Gangetic Plains",
-      "Leeward side of Western Ghats",
-      "Coastal Andhra",
-      "Ganga Delta"
-    ],
-    "correct": 1,
-    "explanation": "The leeward side of the Western Ghats receives much less rainfall because the Ghats block the monsoon winds, creating a rain shadow."
-  },
-  {
-    "question": "🧪RNA యొక్క ప్రధాన రకం ఏది?",
+    "question": "RNA యొక్క ప్రధాన రకం ఏది?",
     "options": [
       "mRNA, tRNA, rRNA",
       "DNA, tRNA, rRNA",
@@ -329,10 +662,10 @@
       "mRNA, tRNA, DNA"
     ],
     "correct": 0,
-    "explanation": "RNA ప్రధానంగా మూడు రకాలుగా ఉంటుంది: mRNA (messenger RNA), tRNA (transfer RNA), rRNA (ribosomal RNA)."
+    "explanation": "RNA ప్రధానంగా మూడు రకాలుగా ఉంటుంది: mRNA (messenger RNA), tRNA (transfer RNA), మరియు rRNA (ribosomal RNA)."
   },
   {
-    "question": "🇮🇳 భారత రాజ్యాంగంలో అత్యధిక భాగాన్ని ఏ చట్టం నుంచి తీసుకున్నారు?",
+    "question": "భారత రాజ్యాంగంలో అత్యధిక భాగాన్ని ఏ చట్టం నుంచి తీసుకున్నారు?",
     "options": [
       "బ్రిటిష్ రాజ్యాంగం",
       "అమెరికన్ రాజ్యాంగం",
@@ -343,13 +676,13 @@
     "explanation": "భారత రాజ్యాంగంలో దాదాపు 250 ఆర్టికల్స్ నేరుగా 1935 భారత ప్రభుత్వ చట్టం నుంచి తీసుకున్నారు లేదా కొన్ని మార్పులతో స్వీకరించారు."
   },
   {
-    "question": "🧫 ‘కోలా ఫ్లొరా’ లోని ‘నైట్రోజన్ ఫిక్సేషన్’ ప్రధానంగా ఏ జీవి ద్వారా జరుగుతుంది?",
+    "question": "‘కోలా ఫ్లొరా’ లోని ‘నైట్రోజన్ ఫిక్సేషన్’ ప్రధానంగా ఏ జీవి ద్వారా జరుగుతుంది?",
     "options": ["రైజోబియం బాక్టీరియా", "యీస్ట్స్", "ప్రోటోజోంలు", "ఆర్కియా"],
     "correct": 0,
-    "explanation": "రైజోబియం వంటి నైట్రోజన్ ఫిక్సింగ్ బ్యాక్టీరియా మట్టిలోని నైట్రోజన్ ను యూనర్డైనబుల్ అమెనియా గా మార్చుతాయి."
+    "explanation": "రైజోబియం వంటి నైట్రోజన్ ఫిక్సింగ్ బ్యాక్టీరియా వాతావరణంలోని నైట్రోజన్ ను మొక్కలకు ఉపయోగపడే రూపంలోకి (అమోనియా) మారుస్తాయి."
   },
   {
-    "question": "⚛️ Heisenberg Uncertainty Principle ప్రకారం ఏది స్థిరంగా ఉండదు?",
+    "question": "Heisenberg Uncertainty Principle ప్రకారం ఏది స్థిరంగా ఉండదు?",
     "options": [
       "Position and Momentum simultaneously",
       "Energy",
@@ -357,33 +690,22 @@
       "Charge"
     ],
     "correct": 0,
-    "explanation": "Heisenberg Uncertainty Principle ప్రకారం కణం యొక్క స్థానం మరియు సంచలనాన్ని ఒకేసారి ఖచ్చితంగా కొలవలేము."
+    "explanation": "Heisenberg Uncertainty Principle ప్రకారం ఒక కణం యొక్క స్థానం మరియు సంచలనాన్ని ఒకేసారి ఖచ్చితంగా కొలవలేము."
   },
   {
-    "question": "📐 Triangle లో angles a, b, c ఉంటే, a + b + c = ?",
+    "question": "Triangle లో angles a, b, c ఉంటే, a + b + c = ?",
     "options": ["180°", "90°", "360°", "270°"],
     "correct": 0,
-    "explanation": "Euclidean geometry లో, triangle లోని మూడు internal angles మొత్తం 180° అవుతుంది."
+    "explanation": "Euclidean geometry లో, ఒక త్రిభుజంలోని మూడు అంతర్గత కోణాల మొత్తం 180° అవుతుంది."
   },
   {
-    "question": "🏔️ The Himalayan range was formed due to the collision of which tectonic plates?",
-    "options": [
-      "Indian and Eurasian plates",
-      "African and Eurasian plates",
-      "Pacific and Australian plates",
-      "Indian and African plates"
-    ],
-    "correct": 0,
-    "explanation": "The Indian plate collided with the Eurasian plate about 50 million years ago, leading to the formation of the Himalayas."
-  },
-  {
-    "question": "🌡️ Greenhouse effect ప్రధానంగా ఏ వాయువుల వల్ల వస్తుంది?",
+    "question": "Greenhouse effect ప్రధానంగా ఏ వాయువుల వల్ల వస్తుంది?",
     "options": ["CO2, CH4, N2O", "O2, N2", "H2, He", "Ar, Ne"],
     "correct": 0,
-    "explanation": "CO2, CH4, N2O వంటివి infrared radiation جذب చేసి భూకళ ఉష్ణోగ్రత పెంచుతాయి."
+    "explanation": "కార్బన్ డయాక్సైడ్ (CO2), మీథేన్ (CH4), నైట్రస్ ఆక్సైడ్ (N2O) వంటి వాయువులు భూకళ ఉష్ణోగ్రతను పెంచి గ్రీన్‌హౌస్ ప్రభావాన్ని కలిగిస్తాయి."
   },
   {
-    "question": "💧 Water యొక్క anomalous behavior ఏమిటి?",
+    "question": "Water యొక్క anomalous behavior ఏమిటి?",
     "options": [
       "0°C వద్ద expanded volume",
       "High viscosity at 100°C",
@@ -391,10 +713,10 @@
       "Conductivity increases on freezing"
     ],
     "correct": 0,
-    "explanation": "Water 0°C వద్ద freezing సమయంలో expansion జరుగుతుంది, ఇది uncommon behavior."
+    "explanation": "నీరు 4°C వద్ద గరిష్ట సాంద్రతను కలిగి ఉంటుంది మరియు 0°C వద్ద ఘనీభవించినప్పుడు దాని ఘనపరిమాణం పెరుగుతుంది, ఇది ఇతర ద్రవాలకు భిన్నమైన లక్షణం."
   },
   {
-    "question": "🪨 Which of the following soil types is formed from basaltic lava and is rich in lime and iron?",
+    "question": "Which of the following soil types is formed from basaltic lava and is rich in lime and iron?",
     "options": [
       "Alluvial soil",
       "Red soil",
@@ -405,13 +727,13 @@
     "explanation": "Black soil, also known as Regur soil, is formed from the weathering of basaltic rocks and is known for being rich in lime, iron, and magnesia. This makes it highly fertile for crops like cotton."
   },
   {
-    "question": "📐 ఏకరేఖీయ సమీకరణ ax + b = 0 యొక్క పరిష్కారం ఏది?",
+    "question": "ఏకరేఖీయ సమీకరణ ax + b = 0 యొక్క పరిష్కారం ఏది?",
     "options": ["x = -b/a", "x = b/a", "x = a/b", "x = a - b"],
     "correct": 0,
-    "explanation": "ax + b = 0 ⇒ x = -b/a."
+    "explanation": "ax + b = 0 సమీకరణంలో, x విలువను కనుగొనడానికి, 'b' ను మరొక వైపునకు తరలించి, దాని తర్వాత 'a' తో భాగించాలి. ax = -b కాబట్టి, x = -b/a."
   },
   {
-    "question": "🧭 Tropical cyclones in India mostly originate in which region?",
+    "question": "Tropical cyclones in India mostly originate in which region?",
     "options": [
       "North Atlantic Ocean",
       "Bay of Bengal",
@@ -419,33 +741,22 @@
       "Indian Ocean near Madagascar"
     ],
     "correct": 1,
-    "explanation": "The Bay of Bengal, being a warm water region, is a hotspot for tropical cyclones affecting India."
+    "explanation": "The Bay of Bengal, being a warm water region, is a major source of tropical cyclones that frequently affect the eastern coast of India."
   },
   {
-    "question": "🧭 ‘ట్రాపికల్ సైక్లోన్లు’ ఎక్కువగా ఏ సముద్ర ప్రాంతంలో ఏర్పడతాయి?",
-    "options": [
-      "ఉత్తర అట్లాంటిక్",
-      "అరేబియా సముద్రం",
-      "బెంగాళాఖాతం",
-      "భూధర సముద్రం"
-    ],
-    "correct": 2,
-    "explanation": "బెంగాళాఖాతం వేడి నీటి ప్రాంతం కావడంతో ట్రాపికల్ సైక్లోన్లు ఎక్కువగా ఇక్కడే ఏర్పడతాయి."
-  },
-  {
-    "question": "🌡️ Ideal Gas Law ప్రకారం PV = nRT లో ‘R’ ఏది?",
+    "question": "Ideal Gas Law ప్రకారం PV = nRT లో ‘R’ ఏది?",
     "options": ["Gas Constant", "Resistance", "Radius", "Rate of Reaction"],
     "correct": 0,
     "explanation": "R అనేది Universal Gas Constant, ఇది Ideal Gas equation లో ఉపయోగించబడుతుంది."
   },
   {
-    "question": "📝 భారత రాజ్యాంగంలో ‘విదేశీ మౌలిక హక్కులు’ను నియంత్రించడానికి ప్రధానంగా ఏ ఆర్టికల్ ఉపయోగిస్తారు?",
-    "options": ["246", "248", "352", "365"],
+    "question": "భారత రాజ్యాంగంలో 'అత్యవసర పరిస్థితులలో హక్కుల సస్పెన్షన్'ను నియంత్రించడానికి ప్రధానంగా ఏ ఆర్టికల్ ఉపయోగిస్తారు?",
+    "options": ["ఆర్టికల్ 246", "ఆర్టికల్ 248", "ఆర్టికల్ 352", "ఆర్టికల్ 365"],
     "correct": 2,
-    "explanation": "ఆర్టికల్ 352 ఫెడరల్ ఎమర్జెన్సీ ప్రక్రియలో మౌలిక హక్కులపై కేంద్రానికి అధికారాన్ని ఇస్తుంది."
+    "explanation": "ఆర్టికల్ 352 దేశంలో జాతీయ అత్యవసర పరిస్థితిని ప్రకటించడానికి రాష్ట్రపతికి అధికారం ఇస్తుంది. ఈ సమయంలో కొన్ని ప్రాథమిక హక్కులు సస్పెండ్ చేయబడతాయి."
   },
   {
-    "question": "🌀 Doppler Effect లో, Observer కీ-వే మార్చబడుతుంది?",
+    "question": "Doppler Effect లో, Observer కి వేవ్ లో ఏది మార్చబడినట్లు అనిపిస్తుంది?",
     "options": [
       "Frequency of wave",
       "Wavelength of wave",
@@ -453,28 +764,28 @@
       "Speed of light"
     ],
     "correct": 0,
-    "explanation": "Doppler Effect Observer కి సంబంధించి Frequency మార్పును చూపిస్తుంది, వేవ్ స్రవంతి మారదు."
+    "explanation": "Doppler Effect లో, మూలం మరియు పరిశీలకుల మధ్య సాపేక్ష చలనం కారణంగా వేవ్ యొక్క ఫ్రీక్వెన్సీలో మార్పు వచ్చినట్లు అనిపిస్తుంది."
   },
   {
-    "question": "📜 Fundamental Duties ఏ ఆర్టికల్ ద్వారా ప్రవేశపెట్టబడ్డాయి?",
+    "question": "Fundamental Duties ఏ ఆర్టికల్ ద్వారా ప్రవేశపెట్టబడ్డాయి?",
     "options": ["51A", "45", "32", "21"],
     "correct": 0,
-    "explanation": "51A ఆర్టికల్ ద్వారా 42వ రాజ్యాంగ సవరణలో ఫండమెంటల్ డ్యూటీస్ ప్రవేశపెట్టబడ్డాయి."
+    "explanation": "42వ రాజ్యాంగ సవరణ (1976) ద్వారా ఆర్టికల్ 51A లో ఫండమెంటల్ డ్యూటీస్ ప్రవేశపెట్టబడ్డాయి."
   },
   {
-    "question": "🔢 Logarithm base 10 లో log 100 = ?",
+    "question": "Logarithm base 10 లో log 100 = ?",
     "options": ["2", "10", "100", "0"],
     "correct": 0,
     "explanation": "log10 100 = 2, ఎందుకంటే 10^2 = 100."
   },
   {
-    "question": "📜 భారతదేశంలో మొదటిసారి ‘కేంద్ర ఎన్నికల సంఘం’ (Election Commission) ఎప్పుడు ఏర్పాటయింది?",
+    "question": "భారతదేశంలో మొదటిసారి ‘కేంద్ర ఎన్నికల సంఘం’ (Election Commission) ఎప్పుడు ఏర్పాటయింది?",
     "options": ["1947", "1950", "1951", "1952"],
     "correct": 1,
     "explanation": "ఎన్నికల సంఘం 1950 జనవరి 25న ఏర్పడింది. అందుకే జనవరి 25ను జాతీయ ఓటర్ల దినోత్సవంగా జరుపుకుంటారు."
   },
   {
-    "question": "⚡ Electrolysis లో anode మరియు cathode లో ఏది జరుగుతుంది?",
+    "question": "Electrolysis లో anode మరియు cathode లో ఏది జరుగుతుంది?",
     "options": [
       "Oxidation at anode, Reduction at cathode",
       "Reduction at anode, Oxidation at cathode",
@@ -482,10 +793,10 @@
       "Reduction at both"
     ],
     "correct": 0,
-    "explanation": "Electrolysis లో anode వద్ద oxidation, cathode వద్ద reduction జరుగుతుంది."
+    "explanation": "Electrolysis లో anode వద్ద ఆక్సీకరణం (oxidation) మరియు cathode వద్ద క్షయకరణం (reduction) జరుగుతుంది."
   },
   {
-    "question": "🌌 ‘Time Dilation’ ప్రధానంగా ఏ సిద్ధాంతం లో వస్తుంది?",
+    "question": "‘Time Dilation’ ప్రధానంగా ఏ సిద్ధాంతం లో వస్తుంది?",
     "options": [
       "Special Relativity",
       "Quantum Mechanics",
@@ -493,16 +804,16 @@
       "Thermodynamics"
     ],
     "correct": 0,
-    "explanation": "Special Relativity లో, వేగం లైట్ స్పీడ్ దగ్గరగా చేరినప్పుడు సమయం మెల్లగా గడుస్తుంది, దీన్ని Time Dilation అంటారు."
+    "explanation": "Special Relativity లో, ఒక పరిశీలకునికి సంబంధించి వేగం లైట్ స్పీడ్ దగ్గరగా చేరినప్పుడు సమయం మెల్లగా గడుస్తుంది, దీన్ని Time Dilation అంటారు."
   },
   {
-    "question": "⚡ Ohm’s Law ప్రకారం, R = V/I, అయితే R అనేది ఏది?",
+    "question": "Ohm’s Law ప్రకారం, R = V/I, అయితే R అనేది ఏది?",
     "options": ["Resistance", "Voltage", "Current", "Power"],
     "correct": 0,
-    "explanation": "R అనేది Resistance, ఇది విఫలమైన ధారాకారకానికి వ్యతిరేకంగా విద్యుత్ ప్రవాహం నిరోధాన్ని సూచిస్తుంది."
+    "explanation": "R అనేది Resistance, ఇది ఒక సర్క్యూట్‌లో విద్యుత్ ప్రవాహానికి వ్యతిరేకంగా నిరోధాన్ని సూచిస్తుంది."
   },
   {
-    "question": "💰 1905 ‘బంగాళా విభజన’ ను చేపట్టిన బ్రిటిష్ గవర్నర్ ఎవరు?",
+    "question": "1905 ‘బంగాళా విభజన’ ను చేపట్టిన బ్రిటిష్ గవర్నర్ ఎవరు?",
     "options": [
       "లార్డ్ కర్జన్",
       "లార్డ్ కెనింగ్",
@@ -513,13 +824,7 @@
     "explanation": "1905లో బంగాళా విభజనను లార్డ్ కర్జన్ చేపట్టారు. ఇది జాతీయ ఉద్యమంలో భారీ ఆందోళనలకు దారి తీసింది."
   },
   {
-    "question": "🪨 Black soil in India is best suited for which crop?",
-    "options": ["Rice", "Wheat", "Cotton", "Maize"],
-    "correct": 2,
-    "explanation": "Black soil, also called Regur soil, retains moisture and is highly suitable for growing cotton."
-  },
-  {
-    "question": "⚡ Superconductivity ఏ పరిస్థితుల్లో వస్తుంది?",
+    "question": "Superconductivity ఏ పరిస్థితుల్లో వస్తుంది?",
     "options": [
       "Below critical temperature",
       "High temperature",
@@ -527,10 +832,10 @@
       "In vacuum only"
     ],
     "correct": 0,
-    "explanation": "Superconductivity substance లో resistance zero అవుతుంది, ఇది critical temperature కింద మాత్రమే సాధ్యం."
+    "explanation": "Superconductivity అనేది ఒక పదార్థం దాని యొక్క విద్యుత్ నిరోధకతను పూర్తిగా కోల్పోయే ఒక స్థితి. ఇది క్రిటికల్ ఉష్ణోగ్రత కంటే తక్కువగా ఉన్నప్పుడు మాత్రమే సాధ్యం."
   },
   {
-    "question": "🌍 Which phenomenon is responsible for weakening the Indian monsoon and causing droughts in India?",
+    "question": "Which phenomenon is responsible for weakening the Indian monsoon and causing droughts in India?",
     "options": [
       "La Niña",
       "El Niño",
@@ -538,10 +843,10 @@
       "Madden-Julian Oscillation"
     ],
     "correct": 1,
-    "explanation": "El Niño is a climate phenomenon where the eastern Pacific Ocean warms, reducing rainfall over India and weakening the monsoon."
+    "explanation": "El Niño is a climate phenomenon where the eastern Pacific Ocean warms, affecting global weather patterns and often reducing rainfall over India, weakening the monsoon and causing droughts."
   },
   {
-    "question": "📐 Pythagoras సిద్ధాంతం ఏ రకమైన త్రిభుజానికి వర్తిస్తుంది?",
+    "question": "Pythagoras సిద్ధాంతం ఏ రకమైన త్రిభుజానికి వర్తిస్తుంది?",
     "options": [
       "Right-angled triangle",
       "Equilateral triangle",
@@ -549,39 +854,33 @@
       "Scalene triangle"
     ],
     "correct": 0,
-    "explanation": "Right-angled triangle లో hypotenuse^2 = base^2 + height^2 అని Pythagoras సిద్ధాంతం వర్తిస్తుంది."
+    "explanation": "Pythagoras సిద్ధాంతం కేవలం లంబ కోణ త్రిభుజాలకు (Right-angled triangle) వర్తిస్తుంది, దీని ప్రకారం: కర్ణం² = భుజం² + ఎత్తు²."
   },
   {
-    "question": "💨 Which of the following is an example of a cold desert in India?",
-    "options": ["Thar Desert", "Rann of Kutch", "Ladakh", "Chambal Valley"],
-    "correct": 2,
-    "explanation": "Ladakh in Jammu & Kashmir is a cold desert due to its high altitude and extreme climatic conditions."
-  },
-  {
-    "question": "⚖️ రాజ్యాంగంలోని ‘ప్రాథమిక విధులు’ (Fundamental Duties) ఏ సవరణ ద్వారా చేర్చారు?",
+    "question": "రాజ్యాంగంలోని ‘ప్రాథమిక విధులు’ (Fundamental Duties) ఏ సవరణ ద్వారా చేర్చారు?",
     "options": ["42వ సవరణ", "44వ సవరణ", "73వ సవరణ", "86వ సవరణ"],
     "correct": 0,
-    "explanation": "స్వరన్ సింగ్ కమిటీ సిఫార్సుల మేరకు 1976లో జరిగిన 42వ సవరణ ద్వారా ప్రాథమిక విధులను చేర్చారు."
+    "explanation": "స్వరన్ సింగ్ కమిటీ సిఫార్సుల మేరకు 1976లో జరిగిన 42వ రాజ్యాంగ సవరణ ద్వారా ప్రాథమిక విధులను చేర్చారు."
   },
   {
-    "question": "🏛️ Parliament లో ‘Joint Sitting’ ఏ సందర్భంలో జరుగుతుంది?",
+    "question": "Parliament లో ‘Joint Sitting’ ఏ సందర్భంలో జరుగుతుంది?",
     "options": [
-      "ఒక బిల్లును రెండు సభలు తర్కం చేసినప్పుడు",
+      "ఒక బిల్లును రెండు సభలు ఆమోదించడంలో విభేదించినప్పుడు",
       "ప్రైమ్స్ సమావేశం కోసం",
       "క్యాబినెట్ సమావేశం కోసం",
       "రాష్ట్ర సభల సమావేశం కోసం"
     ],
     "correct": 0,
-    "explanation": "ఒక బిల్లును లోక సభ మరియు రాజ్య సభ విభిన్నంగా తిరస్కరించిన సందర్భంలో జాయింట్ సిట్టింగ్ ఏర్పాటు చేయబడుతుంది."
+    "explanation": "ఒక సాధారణ బిల్లును లోక్ సభ మరియు రాజ్య సభల మధ్య విభేదాలు వచ్చిన సందర్భంలో రాష్ట్రపతి ఉమ్మడి సమావేశాన్ని ఏర్పాటు చేయవచ్చు."
   },
   {
-    "question": "📊 Probability లో ఒక ఈవెంట్ E యొక్క P(E) విలువ ఎప్పుడూ?",
+    "question": "Probability లో ఒక ఈవెంట్ E యొక్క P(E) విలువ ఎప్పుడూ?",
     "options": ["0 ≤ P(E) ≤ 1", "P(E) > 1", "P(E) < 0", "P(E) = -1"],
     "correct": 0,
-    "explanation": "Probability సిధ్ధాంతం ప్రకారం, ఏ ఈవెంట్ probability 0 మరియు 1 మధ్య ఉంటుంది."
+    "explanation": "Probability సిధ్ధాంతం ప్రకారం, ఏ ఈవెంట్ యొక్క సంభావ్యత 0 మరియు 1 మధ్య ఉంటుంది."
   },
   {
-    "question": "💡 Photoelectric Effect ను వివరించిన శాస్త్రవేత్త ఎవరు?",
+    "question": "Photoelectric Effect ను వివరించిన శాస్త్రవేత్త ఎవరు?",
     "options": [
       "Albert Einstein",
       "Isaac Newton",
@@ -589,16 +888,16 @@
       "Galileo Galilei"
     ],
     "correct": 0,
-    "explanation": "Einstein 1905 లో Photoelectric Effect ను వివరించి Quantum Theory లో ముఖ్య కృషి చేశాడు."
+    "explanation": "ఆల్బర్ట్ ఐన్‌స్టీన్ 1905లో ఫోటోఎలెక్ట్రిక్ ప్రభావాన్ని వివరించారు, దీనికి ఆయనకు నోబెల్ బహుమతి లభించింది."
   },
   {
-    "question": "🧲 Magnetic field ‘B’ ను SI యూనిట్ లో ఏది కొలుస్తుంది?",
+    "question": "Magnetic field ‘B’ ను SI యూనిట్ లో ఏది కొలుస్తుంది?",
     "options": ["Tesla", "Gauss", "Weber", "Henry"],
     "correct": 0,
     "explanation": "SI యూనిట్ లో Magnetic field B ను Tesla లో కొలుస్తారు."
   },
   {
-    "question": "🧪 Arrhenius theory ప్రకారం acid ఏ విధంగా నిర్వచించబడుతుంది?",
+    "question": "Arrhenius theory ప్రకారం acid ఏ విధంగా నిర్వచించబడుతుంది?",
     "options": [
       "H+ donor in aqueous solution",
       "OH- donor",
@@ -606,10 +905,10 @@
       "Proton acceptor"
     ],
     "correct": 0,
-    "explanation": "Arrhenius theory ప్రకారం acid అంటే aqueous solution లో H+ ions ను ఇచ్చే substance."
+    "explanation": "Arrhenius theory ప్రకారం ఆమ్లం (acid) అంటే aqueous solution లో H+ ions ను ఇచ్చే పదార్థం."
   },
   {
-    "question": "🦠 Antibiotic resistance ప్రధానంగా ఏ విధంగా వస్తుంది?",
+    "question": "Antibiotic resistance ప్రధానంగా ఏ విధంగా వస్తుంది?",
     "options": [
       "Bacteria mutation and gene transfer",
       "Virus mutation",
@@ -617,35 +916,24 @@
       "Prion replication"
     ],
     "correct": 0,
-    "explanation": "Bacteria లో mutation మరియు plasmid ద్వారా genes మార్పు Antibiotic resistance కు కారణం."
+    "explanation": "బాక్టీరియాలో జన్యువుల మ్యుటేషన్ మరియు ప్లాస్మిడ్ ద్వారా జన్యు మార్పిడి వంటివి యాంటీబయాటిక్ నిరోధకతకు కారణం."
   },
   {
-    "question": "🌱 Nitrogen fixation ప్రధానంగా ఏ జీవి ద్వారా జరుగుతుంది?",
+    "question": "Nitrogen fixation ప్రధానంగా ఏ జీవి ద్వారా జరుగుతుంది?",
     "options": ["Rhizobium bacteria", "Yeast", "Fungi", "Algae"],
     "correct": 0,
-    "explanation": "Rhizobium bacteria legume roots లో nitrogen fixation చేస్తుంది, atmospheric N2 → ammonia."
+    "explanation": "Rhizobium bacteria legume roots లో సహజీవనం చేసి వాతావరణంలోని నైట్రోజన్‌ను యూనర్డైనబుల్ అమెనియా గా మార్చి మొక్కలకు అందిస్తుంది."
   },
   {
-    "question": "⚛️ Photon యొక్క శక్తి ఏ ఫార్ములా ద్వారా లభిస్తుంది?",
+    "question": "Photon యొక్క శక్తి ఏ ఫార్ములా ద్వారా లభిస్తుంది?",
     "options": ["E = hν", "E = mc²", "E = ½mv²", "E = kT"],
     "correct": 0,
-    "explanation": "Photon energy E = hν, ఇక్కడ h = Planck constant, ν = frequency."
+    "explanation": "ఒక ఫోటాన్ శక్తి E = hν. ఇక్కడ h = ప్లాంక్ స్థిరాంకం, మరియు ν = ఫ్రీక్వెన్సీ."
   },
   {
-    "question": "🌌 Black Hole లో ఏది వెలుపలికి రావడం అసాధ్యం?",
+    "question": "Black Hole లో ఏది వెలుపలికి రావడం అసాధ్యం?",
     "options": ["Light", "Neutrinos", "Gravitational waves", "Gamma rays"],
     "correct": 0,
-    "explanation": "Black Hole యొక్క Event Horizon లోకే పరిమితం; Light అది దాటి వెలుపలికి రావడం అసాధ్యం."
-  },
-  {
-    "question": "⚛️ Heisenberg uncertainty principle chemical reaction లో ఎలా ప్రభావం చూపిస్తుంది?",
-    "options": [
-      "Particle position and momentum cannot be precisely known simultaneously",
-      "Energy of reaction is fixed",
-      "Reaction speed constant",
-      "Bond lengths are definite"
-    ],
-    "correct": 0,
-    "explanation": "Heisenberg uncertainty principle ప్రకారం subatomic particles యొక్క position మరియు momentum ఖచ్చితంగా కొలవలేము, ఇది reaction dynamics ను ప్రభావితం చేస్తుంది."
+    "explanation": "బ్లాక్ హోల్ గురుత్వాకర్షణ శక్తి ఎంత ఎక్కువగా ఉంటుందంటే, దాని 'ఈవెంట్ హారిజన్'లోకి ప్రవేశించిన తర్వాత కాంతి కూడా బయటకు రాలేదు."
   }
 ]

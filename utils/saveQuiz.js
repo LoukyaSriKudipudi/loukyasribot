@@ -1,7 +1,12 @@
 const Chat = require("../models/chats");
 
-// Save chat with last quiz message
-async function saveQuiz(chatId, topicId, chatTitle, lastQuizMessageId = null) {
+async function saveQuiz(
+  chatId,
+  topicId,
+  chatTitle,
+  lastQuizMessageId = null,
+  chatType = "private"
+) {
   try {
     const existing = await Chat.findOne({ chatId });
 
@@ -15,13 +20,19 @@ async function saveQuiz(chatId, topicId, chatTitle, lastQuizMessageId = null) {
 
       await existing.save();
     } else {
+      const isGroupOrChannel =
+        chatType === "group" ||
+        chatType === "supergroup" ||
+        chatType === "channel";
+
       const chat = new Chat({
         chatId,
         topicId,
         chatTitle,
-        quizEnabled: false,
         lastQuizMessageId,
+        quizEnabled: isGroupOrChannel,
       });
+
       await chat.save();
     }
   } catch (err) {
@@ -29,10 +40,9 @@ async function saveQuiz(chatId, topicId, chatTitle, lastQuizMessageId = null) {
   }
 }
 
-// Get chats with quiz enabled
 async function getQuizChatsBatch(skip = 0, limit = 100) {
   try {
-    return await Chat.find({ quizEnabled: true }).skip(skip).limit(limit);
+    return await Chat.find({ factsEnabled: true }).skip(skip).limit(limit);
   } catch (err) {
     console.error("❌ Error fetching quiz chat batch:", err);
     return [];

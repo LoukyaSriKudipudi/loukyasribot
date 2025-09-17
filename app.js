@@ -42,13 +42,15 @@ if (bot) console.log("---bot is running---");
 eventRecordBot.launch();
 if (eventRecordBot) console.log("---event record bot is running---");
 
-// Facts
-cron.schedule("45 8-20 * * *", broadcastFact, {
+cron.schedule("0 9-21/2 * * *", broadcastQuizQuestion, {
   timezone: "Asia/Kolkata",
 });
 
-// Quizzes;
-cron.schedule("15 9-21 * * *", broadcastQuizQuestion, {
+cron.schedule("0 0-6/3 * * *", broadcastQuizQuestion, {
+  timezone: "Asia/Kolkata",
+});
+
+cron.schedule("30 10-20/2 * * *", broadcastFact, {
   timezone: "Asia/Kolkata",
 });
 

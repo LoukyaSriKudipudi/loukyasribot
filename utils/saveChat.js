@@ -1,6 +1,12 @@
 const Chat = require("../models/chats");
 
-async function saveChat(chatId, topicId, chatTitle, lastFactMessageId = null) {
+async function saveChat(
+  chatId,
+  topicId,
+  chatTitle,
+  lastFactMessageId = null,
+  chatType = "private"
+) {
   try {
     const existing = await Chat.findOne({ chatId });
 
@@ -14,13 +20,20 @@ async function saveChat(chatId, topicId, chatTitle, lastFactMessageId = null) {
 
       await existing.save();
     } else {
+      // Auto-enable facts only if group or channel
+      const isGroupOrChannel =
+        chatType === "group" ||
+        chatType === "supergroup" ||
+        chatType === "channel";
+
       const chat = new Chat({
         chatId,
         topicId,
         chatTitle,
         lastFactMessageId,
-        factsEnabled: false,
+        factsEnabled: isGroupOrChannel, // true only for groups/channels
       });
+
       await chat.save();
     }
   } catch (err) {

@@ -383,3 +383,77 @@ Query: /loukya భారత రాజ్యాంగంలో ‘సార్వ
 Response: భారత రాజ్యాంగంలో సార్వత్రిక ఓటు హక్కు (Universal Adult Franchise) అనేది 26 జనవరి 1950 నుండి అమల్లోకి వచ్చింది.
 
 అంటే, భారత రాజ్యాంగం అమలులోకి వచ్చినప్పటి నుండి 18 ఏళ్లు నిండిన ప్రతి పౌరుడికి ఓటు వేసే హక్కు లభించింది.
+
+=== 2025-09-17T05:04:52.372Z ===
+User: Group (1087968824)
+Query: వైరస్ ని జీవిగా పరిగణించకపోవడానికి ప్రధాన కారణం ఏది?
+Response: వైరస్‌లను జీవులుగా పరిగణించకపోవడానికి ప్రధాన కారణం అవి కణ నిర్మాణం లేకపోవడం మరియు స్వయం ప్రతిపత్తితో జీవక్రియ చేయలేకపోవడం.
+
+దీనిని మరింత వివరంగా చెప్పాలంటే:
+• కణ నిర్మాణం లేదు (Lack of Cellular Structure): అన్ని జీవులకు కనీసం ఒక కణం ఉంటుంది. కణంలో కణత్వచం, సైటోప్లాజం, DNA/RNA వంటి భాగాలు ఉంటాయి. కానీ వైరస్‌లకు ఈ కణ నిర్మాణం ఉండదు. అవి కేవలం జన్యు పదార్థం (DNA లేదా RNA) మరియు దానిని చుట్టుముట్టిన ప్రోటీన్ కోట్ (క్యాప్సిడ్) కలిగి ఉంటాయి. కొన్ని వైరస్‌లకు లిపిడ్ ఎన్వలప్ కూడా ఉంటుంది.
+• స్వయం ప్రతిపత్తితో జీవక్రియ చేయలేవు (Cannot Metabolize Independently): జీవులకు జీవక్రియ (Metabolism) అనేది తప్పనిసరి. అంటే, అవి శక్తిని ఉత్పత్తి చేసుకోగలవు, ఆహారాన్ని జీర్ణం చేసుకోగలవు, వ్యర్థాలను బయటకు పంపగలవు. కానీ వైరస్‌లకు సొంతంగా జీవక్రియ చేసుకునే సామర్థ్యం ఉండదు. అవి జీవించి ఉండటానికి, ప్రత్యుత్పత్తి చేసుకోవడానికి తప్పనిసరిగా ఒక అతిథేయ కణం (Host Cell) అవసరం.
+• ప్రతిరూపణ (Replication) కోసం అతిథేయ కణాలపై ఆధారపడతాయి: వైరస్‌లు వాటి జన్యు పదార్థాన్ని నకలు చేసుకోవడానికి మరియు కొత్త వైరస్‌లను తయారు చేసుకోవడానికి అతిథేయ కణం యొక్క యంత్రాంగాన్ని (Mechanism) ఉపయోగిస్తాయి. అతిథేయ కణం లోపలికి ప్రవేశించిన తర్వాతే అవి క్రియాశీలకంగా మారి, తమ సంఖ్యను పెంచుకుంటాయి.
+
+ఈ కారణాల వల్ల, వైరస్‌లు జీవులకు అవసరమైన ప్రాథమిక లక్షణాలను కలిగి ఉండవు. అవి జీవుల వలె కాకుండా, ఒక రకమైన "జీవం లేని" (non-living) మరియు "జీవం ఉన్న" (living) మధ్యస్థ స్థితిలో ఉన్నట్లుగా పరిగణించబడతాయి. అవి అతిథేయ కణాలలో ఉన్నప్పుడు జీవుల వలె ప్రవర్తిస్తాయి, కానీ కణాల బయట ఉన్నప్పుడు నిర్జీవ పదార్థాల వలె ఉంటాయి.
+
+=== 2025-09-17T05:06:53.069Z ===
+User: Group (1087968824)
+Query: Virus ni jeeviga pariganinchakapovadaaniki kaaranam emiti?
+Response: Virus ni jeevigani pariganinchakapovadaaniki main reasons:
+
+1. Koshika rachana lekapovadam (Lack of Cellular Structure): Jeevulu oka koshika (cell) dwara nirminchabadi untai. Koshikalo nucleus, cytoplasm mariyu organells untai. Virus lo ee koshika rachana ledu. Avi oka protein coat (capsid) mariyu genetic material (DNA or RNA) tho nirminchabadi untai.
+
+2. Swayamga prathipaththi chesukolenappudu (Inability to Reproduce Independently): Jeevulu thamaku avasaramaina energy ni avakashamaina prakriyalatho nirminchukogalaru mariyu thamani mathrame prathipaththi chesukogalaru. Virus lu mathram jeevitham unna koshikalanu "dandamga" upayoginchukuni mathrame prathipaththi chesukogalaru. Avi vere jeeva koshikalo pravesinchi, aa koshika machinery ni upayoginchukuni mathrame athyadhika sankhyalo thama mathru pratulu chesukuntayi. Vere koshika lenidi, avi prathipaththi chesukoleniv.
+
+3. Maha parishramalatho jeevincha lekapovadam (No Metabolism): Jeevitham unna prani avakashamaina prakriyalatho (metabolism) parishramalatho energy ni nirminchukuntu untadi, rasayanika prakriyalanu chesukunadi mariyu apakaramaina padarthalanu velaki pettesthundi. Virus lu ee parishramalanu chesukoleniv. Avi jeeva koshikalanu pravesinche varaku, avini chachina padarthalaga pariganistaru.
+
+4. Samasyala ki pratividhanam cheyyaledu (Do not respond to stimuli): Jeevitham unna prani avakashamaina parishramalatho parisaralanu gamaninchi, daniki pratividhanam chesukunadi. Virus lu ala cheyyaledu.
+
+5. Samasyala tho parinamakalanu pondaledu (Do not evolve through natural selection): Virus lu bhayankaramaina parinamalanu ponduthayi kani, idi jeevanam unna pranimula parinamam lanti samasyalatho parinamakalanu pondaledu.
+
+Ee karanalavalla, virus lu jeevanam unna koshikalanu pravesinche varaku, avini " Jeeva padartham" (non-living) ga pariganistaru. Vere koshikalo pravesinchina tarvata mathram, avini "Jeevanam unna padartham" (living) laga prayoginchukuntayi. Ippudu "Virus lu jeevam- jeevam rendu chakkalu madhyalo unnai" ani cheppukovadam sahajame.
+
+=== 2025-09-17T05:07:41.655Z ===
+User: Group (1087968824)
+Query: Virus ni jeeviga pariganinchakapovadaaniki kaaranam emiti? 5 lines summary lo cheppu
+Response: Virus lu jeevigaga pariganinchakapovadaaniki kaaranaalu:
+
+1. Koshika-rahitam: Virus laku swanthanga koshika nirmanam undadu.
+2. Swabalaaniki roopam Leda: Avu tamani thama perugani cheyalemu, host cell dwara cheyyalsi vastundi.
+3. Chikkadaniki leda: Tamani tama perugani cheyalemu, host cell dwara cheyyalsi vastundi.
+4. Upachayam Leda: Avu tamani tama perugani cheyalemu, host cell dwara cheyyalsi vastundi.
+5. Metabolism Leda: Avu tamani tama perugani cheyalemu, host cell dwara cheyyalsi vastundi.
+
+=== 2025-09-17T05:10:18.911Z ===
+User: Group (1087968824)
+Query: Why are the Himalayas important for India? Explain in 10 lines.
+Response: Here are 10 lines explaining the importance of the Himalayas for India:
+
+1.  Water Source: The Himalayas are the source of major Indian rivers like the Ganges and Brahmaputra, crucial for irrigation and drinking water.
+2.  Climate Barrier: They act as a shield, preventing cold winds from Central Asia from reaching the Indian subcontinent.
+3.  Monsoon Influence: The mountain range significantly influences the Indian monsoon system, bringing essential rainfall for agriculture.
+4.  Biodiversity Hotspot: They host an incredibly rich variety of flora and fauna, forming a vital ecological treasure trove.
+5.  Natural Defense: Historically and presently, they provide a formidable natural border, offering protection against invasions.
+6.  Tourism and Recreation: The majestic mountains attract significant tourism, boosting local economies and providing employment.
+7.  Cultural Significance: The Himalayas are deeply embedded in Indian spirituality and mythology, holding profound cultural importance.
+8.  Resource Potential: They hold mineral deposits and offer potential for hydropower generation.
+9.  Climate Regulation: Their vast forests contribute to global and regional climate regulation through carbon sequestration.
+10. Water Security: The perennial glaciers ensure a consistent water supply, even during dry seasons, vital for long-term water security.
+
+=== 2025-09-17T06:09:23.811Z ===
+User: Group (1087968824)
+Query: clear and simple overview about Narendra Modi
+Response: Narendra Modi is the current Prime Minister of India, a position he has held since 2014.
+
+Here's a simple overview:
+• Political Party: He is a prominent leader of the Bharatiya Janata Party (BJP), a Hindu nationalist political party.
+• Background: Before becoming Prime Minister, he served as the Chief Minister of Gujarat for over 12 years.
+• Key Focuses/Policies: His government has emphasized:
+• Economic Development: Promoting business, manufacturing, and infrastructure projects.
+• Digital India: Encouraging the use of technology and digital services.
+• Nationalism and Hindu Identity: Promoting a strong sense of national pride and supporting Hindu culture.
+• Social Welfare Schemes: Implementing programs related to housing, sanitation, and financial inclusion.
+• Leadership Style: He is known for his strong, decisive leadership and his ability to connect with a large base of supporters through public rallies and social media.
+• Impact: His tenure has seen significant changes in India, with both praise for economic reforms and criticism regarding social and secular issues.
+
+In essence, Narendra Modi is a highly influential political figure who has significantly shaped India's trajectory since taking office, with a focus on economic growth, national identity, and technological advancement.
