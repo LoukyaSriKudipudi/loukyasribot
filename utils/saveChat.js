@@ -28,7 +28,7 @@ async function saveChat(
       // Ensure default values exist
       existing.factIndex = existing.factIndex ?? 0;
       existing.nextFactTime = existing.nextFactTime ?? new Date();
-      existing.factFrequencyMinutes = existing.factFrequencyMinutes ?? 30;
+      existing.factFrequencyMinutes = existing.factFrequencyMinutes ?? 60;
 
       await existing.save();
     } else {
@@ -47,7 +47,7 @@ async function saveChat(
         factsEnabled: isGroupOrChannel,
         factIndex: extra.factIndex ?? 0,
         nextFactTime: extra.nextFactTime ?? new Date(),
-        factFrequencyMinutes: extra.frequency ?? 30,
+        factFrequencyMinutes: extra.frequency ?? 60,
       });
 
       await chat.save();
