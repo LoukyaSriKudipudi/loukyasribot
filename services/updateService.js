@@ -1,7 +1,18 @@
 const bot = require("../utils/telegramBot");
-const { getChatsBatch, saveChat } = require("../utils/saveChat");
-const { getFact } = require("./factsService");
+const { getFactChatsBatch, saveChat } = require("../utils/saveChat");
 const eventRecordBot = require("../utils/eventRecordBot");
+const path = require("path");
+const fs = require("fs");
+
+const factsFile = path.join(__dirname, "..", "localDB", "facts.json");
+const facts = JSON.parse(fs.readFileSync(factsFile));
+
+function getFactForGroup(chat) {
+  const index = chat.factIndex || 0;
+  return facts[index % facts.length];
+}
+
+let isBroadcasting = false;
 
 async function recordEvent(message) {
   try {
@@ -20,108 +31,138 @@ async function recordEvent(message) {
       await new Promise((res) => setTimeout(res, retryAfter));
       return recordEvent(message);
     }
-    console.error("⚠ Failed to record event:", err.message);
+    console.error("⚠ Failed to record fact event:", err.message);
   }
 }
 
 async function broadcastFact() {
-  const delayPerMessage = 3000;
-  const batchSize = 100;
-  let skip = 0;
+  if (isBroadcasting) {
+    console.log("⏳ Previous broadcast still running. Skipping this run.");
+    return;
+  }
+  isBroadcasting = true;
 
-  const fact = getFact();
-  const message = `📝 ${fact}`;
+  try {
+    const delayPerMessage = 3000;
+    const batchSize = 100;
 
-  const allSuccessChats = [];
-  const allFailedChats = [];
+    const allSuccessChats = [];
+    const allFailedChats = [];
 
-  while (true) {
-    const chats = await getChatsBatch(skip, batchSize);
-    if (chats.length === 0) break;
+    while (true) {
+      const chats = await getFactChatsBatch(0, batchSize, {
+        factsEnabled: true,
+        nextFactTime: { $lte: new Date() },
+      });
+      if (!chats.length) break;
 
-    const successChatsBatch = [];
-    const failedChatsBatch = [];
-    const logs = [];
+      const successBatch = [];
+      const failedBatch = [];
+      const logs = [];
 
-    for (const { chatId, topicId, chatTitle, lastFactMessageId } of chats) {
-      try {
-        // if (lastFactMessageId) {
-        //   try {
-        //     await bot.telegram.deleteMessage(chatId, lastFactMessageId);
-        //     logs.push(`🗑 Deleted previous fact in ${chatTitle} (${chatId})`);
-        //   } catch (err) {
-        //     logs.push(
-        //       `⚠ Could not delete previous message in ${chatTitle} (${chatId}): ${err.message}`
-        //     );
-        //   }
-        // }
+      for (const chat of chats) {
+        const {
+          chatId,
+          topicId,
+          chatTitle,
+          lastFactMessageId,
+          factIndex,
+          factFrequencyMinutes,
+        } = chat;
 
-        // Send fact
-        const sentMessage = await bot.telegram.sendMessage(chatId, message, {
-          ...(topicId
-            ? { message_thread_id: topicId, protect_content: true }
-            : { protect_content: true }),
-          parse_mode: "Markdown",
-        });
+        try {
+          // Delete previous fact if exists
+          if (lastFactMessageId) {
+            try {
+              await bot.telegram.deleteMessage(chatId, lastFactMessageId);
+              logs.push(`🗑 Deleted previous fact in ${chatTitle}`);
+            } catch (err) {
+              logs.push(`⚠ Could not delete in ${chatTitle}: ${err.message}`);
+            }
+          }
 
-        logs.push(`✅ Sent new fact to ${chatTitle} (${chatId})`);
-        successChatsBatch.push(chatTitle);
-        allSuccessChats.push(chatTitle);
+          const fact = getFactForGroup(chat);
 
-        await saveChat(chatId, topicId, chatTitle, sentMessage.message_id);
-      } catch (err) {
-        logs.push(`❌ Failed for ${chatTitle} (${chatId}): ${err.message}`);
-        failedChatsBatch.push(chatTitle);
-        allFailedChats.push(chatTitle);
+          const sentMessage = await bot.telegram.sendMessage(
+            chatId,
+            `📝 ${fact}`,
+            {
+              ...(topicId
+                ? { message_thread_id: topicId, protect_content: true }
+                : { protect_content: true }),
+              parse_mode: "Markdown",
+            }
+          );
+
+          logs.push(`✅ Sent new fact to ${chatTitle}`);
+          successBatch.push(chatTitle);
+          allSuccessChats.push(chatTitle);
+
+          // Update chat progress
+          chat.lastFactMessageId = sentMessage.message_id;
+          chat.factIndex = (factIndex + 1) % facts.length;
+          chat.nextFactTime = new Date(
+            Date.now() + (factFrequencyMinutes || 60) * 60 * 1000
+          );
+
+          await saveChat(
+            chatId,
+            topicId,
+            chatTitle,
+            sentMessage.message_id,
+            chat.factIndex,
+            chat.nextFactTime
+          );
+        } catch (err) {
+          logs.push(`❌ Failed for ${chatTitle}: ${err.message}`);
+          failedBatch.push(chatTitle);
+          allFailedChats.push(chatTitle);
+        }
+
+        await new Promise((res) => setTimeout(res, delayPerMessage));
       }
 
-      // delay between sending messages
-      await new Promise((res) => setTimeout(res, delayPerMessage));
+      // Batch summary
+      if (successBatch.length > 0 || failedBatch.length > 0) {
+        const now = new Date().toLocaleString("en-IN", {
+          timeZone: "Asia/Kolkata",
+          hour12: false,
+        });
+        await recordEvent(
+          `📦 Finished fact batch at ${now}\n\n` +
+            `• ✅ Success: ${successBatch.length} → ${
+              successBatch.join(", ") || "None"
+            }\n` +
+            `• ❌ Failed: ${failedBatch.length} → ${
+              failedBatch.join(", ") || "None"
+            }\n\n` +
+            `📝 Logs:\n${logs.join("\n")}`
+        );
+      }
     }
 
-    // send logs for this batch
-    const now = new Date();
-    const timestampIST = now.toLocaleString("en-IN", {
-      timeZone: "Asia/Kolkata",
-      hour12: false,
-    });
-
-    const batchTotal = successChatsBatch.length + failedChatsBatch.length;
-    await recordEvent(
-      `📦 Finished batch at ${timestampIST}\n\n` +
-        `📊 Batch Summary:\n` +
-        `• Total chats: ${batchTotal}\n` +
-        `• ✅ Success: ${successChatsBatch.length} → ${
-          successChatsBatch.join(", ") || "None"
-        }\n` +
-        `• ❌ Failed: ${failedChatsBatch.length} → ${
-          failedChatsBatch.join(", ") || "None"
-        }\n\n` +
-        `📝 Logs:\n${logs.join("\n")}`
-    );
-
-    skip += batchSize;
+    // Final summary
+    if (allSuccessChats.length > 0 || allFailedChats.length > 0) {
+      const now = new Date().toLocaleString("en-IN", {
+        timeZone: "Asia/Kolkata",
+        hour12: false,
+      });
+      await recordEvent(
+        `✅ Finished broadcasting all facts at ${now}\n\n` +
+          `• Total chats: ${allSuccessChats.length + allFailedChats.length}\n` +
+          `• ✅ Success: ${allSuccessChats.length} → ${
+            allSuccessChats.join(", ") || "None"
+          }\n` +
+          `• ❌ Failed: ${allFailedChats.length} → ${
+            allFailedChats.join(", ") || "None"
+          }`
+      );
+    }
+  } catch (err) {
+    console.error("❌ Error during fact broadcast:", err);
+  } finally {
+    isBroadcasting = false;
   }
-
-  // final summary
-  const now = new Date();
-  const timestampIST = now.toLocaleString("en-IN", {
-    timeZone: "Asia/Kolkata",
-    hour12: false,
-  });
-
-  const total = allSuccessChats.length + allFailedChats.length;
-  await recordEvent(
-    `✅ Finished broadcasting all facts at ${timestampIST}\n\n` +
-      `📊 Final Summary:\n` +
-      `• Total chats: ${total}\n` +
-      `• ✅ Success: ${allSuccessChats.length} → ${
-        allSuccessChats.join(", ") || "None"
-      }\n` +
-      `• ❌ Failed: ${allFailedChats.length} → ${
-        allFailedChats.join(", ") || "None"
-      }`
-  );
 }
 
 module.exports = { broadcastFact };

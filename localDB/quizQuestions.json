@@ -1,81 +1,2116 @@
 [
   {
-    "question": "హరప్పా నాగరికతలో 'గ్రేట్ బాత్' ఏ నగరంలో కనుగొనబడింది?",
-    "options": ["హరప్పా", "మొహంజో-దారో", "లోథాల్", "కాళిబంగన్"],
+    "question": "Which of the following is the highest peak in the Western Ghats?",
+    "options": ["Doddabetta", "Anamudi", "Guru Shikhar", "Kalsubai"],
     "correct": 1,
-    "explanation": "'గ్రేట్ బాత్' అనేది మొహంజో-దారోలోని ప్రధాన నిర్మాణాలలో ఒకటి."
+    "explanation": "Anamudi, located in Kerala, is the highest peak in the Western Ghats and in all of South India."
   },
   {
-    "question": "Which of the following is an example of a cold desert in India?",
-    "options": ["Thar Desert", "Rann of Kutch", "Ladakh", "Chambal Valley"],
-    "correct": 2,
-    "explanation": "Ladakh is a cold desert located in the Union Territory of Ladakh, known for its high altitude and extreme climatic conditions."
+    "question": "The 'Kailasa Temple' at Ellora is a monolithic rock-cut temple dedicated to which deity?",
+    "options": ["Lord Vishnu", "Lord Shiva", "Lord Brahma", "Goddess Durga"],
+    "correct": 1,
+    "explanation": "The Kailasa Temple at Ellora, a magnificent example of Indian rock-cut architecture, is a monolithic structure carved out of a single rock and dedicated to Lord Shiva."
   },
   {
-    "question": "The Indian Ocean Tsunami in 2004 was triggered by:",
+    "question": "The 'Non-Cooperation Movement' was called off by Mahatma Gandhi due to which event?",
     "options": [
-      "A cyclone in the Bay of Bengal",
-      "An undersea earthquake off Sumatra",
-      "Volcanic eruption in the Indian Ocean",
-      "Tectonic movement in the Pacific Ocean"
+      "The Jallianwala Bagh Massacre",
+      "The Chauri Chaura Incident",
+      "The Dandi March",
+      "The Simon Commission"
     ],
     "correct": 1,
-    "explanation": "The 2004 Indian Ocean Tsunami was caused by a massive undersea earthquake (magnitude 9.1-9.3) off the coast of Sumatra, Indonesia."
+    "explanation": "Mahatma Gandhi withdrew the Non-Cooperation Movement in 1922 after the Chauri Chaura incident, where a violent mob set fire to a police station, killing several policemen."
   },
   {
-    "question": "Which of the following is/are examples of Fundamental Duties under the Indian Constitution?",
+    "question": "The 'Battle of Plassey' was fought in which year?",
+    "options": ["1757", "1764", "1773", "1784"],
+    "correct": 0,
+    "explanation": "The Battle of Plassey was a decisive victory for the British East India Company over the Nawab of Bengal and his French allies. It took place in 1757."
+  },
+  {
+    "question": "The 'First Five-Year Plan' in India was focused on which sector?",
     "options": [
-      "To respect the Constitution and national symbols",
-      "To safeguard public property",
-      "To promote harmony and spirit of common brotherhood",
+      "Industry",
+      "Agriculture",
+      "Services",
+      "Information Technology"
+    ],
+    "correct": 1,
+    "explanation": "The First Five-Year Plan (1951-1956) prioritized the development of the primary sector, with a strong focus on agriculture and irrigation."
+  },
+  {
+    "question": "The 'Right to Constitutional Remedies' is provided under which article of the Indian Constitution?",
+    "options": ["Article 21", "Article 32", "Article 44", "Article 51"],
+    "correct": 1,
+    "explanation": "Article 32 gives a citizen the right to approach the Supreme Court to seek enforcement of their fundamental rights. Dr. B.R. Ambedkar called it the 'heart and soul' of the Constitution."
+  },
+  {
+    "question": "The 'Rani of Jhansi' was a key figure in which of the following events?",
+    "options": [
+      "Non-Cooperation Movement",
+      "Quit India Movement",
+      "Revolt of 1857",
+      "Swadeshi Movement"
+    ],
+    "correct": 2,
+    "explanation": "Rani Lakshmibai of Jhansi was one of the leading figures of the Revolt of 1857, where she fought against the British East India Company."
+  },
+  {
+    "question": "Which Indian ruler is associated with the introduction of the Ryotwari system?",
+    "options": [
+      "Lord Cornwallis",
+      "Thomas Munro",
+      "Lord William Bentinck",
+      "Lord Dalhousie"
+    ],
+    "correct": 1,
+    "explanation": "Thomas Munro introduced the Ryotwari system in Madras Presidency. It directly fixed land revenue with individual cultivators (ryots)."
+  },
+  {
+    "question": "The 'Permanent Settlement' of land revenue was introduced by which Governor-General?",
+    "options": [
+      "Lord Dalhousie",
+      "Lord William Bentinck",
+      "Lord Cornwallis",
+      "Lord Ripon"
+    ],
+    "correct": 2,
+    "explanation": "The Permanent Settlement was introduced by Lord Cornwallis in 1793. It fixed the land revenue for Zamindars in perpetuity."
+  },
+  {
+    "question": "The 'Swaraj Party' was formed in 1923 by which two leaders?",
+    "options": [
+      "Jawaharlal Nehru and Subhas Chandra Bose",
+      "C. R. Das and Motilal Nehru",
+      "Sardar Vallabhbhai Patel and Rajendra Prasad",
+      "Lala Lajpat Rai and Bipin Chandra Pal"
+    ],
+    "correct": 1,
+    "explanation": "The Swaraj Party was formed by C. R. Das and Motilal Nehru in 1923, after they resigned from the Indian National Congress."
+  },
+  {
+    "question": "The 'Sunderbans' are famous for being the home of which animal?",
+    "options": [
+      "Indian Elephant",
+      "Royal Bengal Tiger",
+      "Asiatic Lion",
+      "One-horned Rhinoceros"
+    ],
+    "correct": 1,
+    "explanation": "The Sunderbans, a UNESCO World Heritage Site, is a large mangrove forest and is the largest reserve for the Royal Bengal Tiger."
+  },
+  {
+    "question": "The 'Pitt's India Act of 1784' established which of the following?",
+    "options": [
+      "Board of Control",
+      "Supreme Court in Calcutta",
+      "Permanent Settlement",
+      "First Governor-General of India"
+    ],
+    "correct": 0,
+    "explanation": "The Pitt's India Act of 1784 created a Board of Control in Britain to manage the political affairs of the East India Company."
+  },
+  {
+    "question": "The 'Khadin' system of water harvesting is practiced in which state of India?",
+    "options": ["Rajasthan", "Gujarat", "Madhya Pradesh", "Kerala"],
+    "correct": 0,
+    "explanation": "The Khadin system is an ingenious method of rainwater harvesting used in the Thar Desert region of Rajasthan."
+  },
+  {
+    "question": "The 'Doctrine of Lapse' was a policy introduced by which Governor-General?",
+    "options": [
+      "Lord Dalhousie",
+      "Lord Wellesley",
+      "Lord William Bentinck",
+      "Lord Hastings"
+    ],
+    "correct": 0,
+    "explanation": "The Doctrine of Lapse was an annexation policy followed by Lord Dalhousie, under which any princely state without a natural male heir would be annexed by the British."
+  },
+  {
+    "question": "The 'Indus Water Treaty' was signed between which two countries?",
+    "options": [
+      "India and Pakistan",
+      "India and China",
+      "India and Bangladesh",
+      "India and Nepal"
+    ],
+    "correct": 0,
+    "explanation": "The Indus Waters Treaty is a water-distribution treaty signed between India and Pakistan in 1960, brokered by the World Bank."
+  },
+  {
+    "question": "The 'Linguistic Reorganisation of States' in India was a major event. Which was the first state to be formed on this basis?",
+    "options": ["Maharashtra", "Andhra Pradesh", "Kerala", "Tamil Nadu"],
+    "correct": 1,
+    "explanation": "Andhra Pradesh was the first state to be formed on a linguistic basis in 1953, following the death of Potti Sreeramulu who was on a hunger strike."
+  },
+  {
+    "question": "Who was the first woman President of the Indian National Congress?",
+    "options": [
+      "Sarojini Naidu",
+      "Annie Besant",
+      "Nellie Sengupta",
+      "Indira Gandhi"
+    ],
+    "correct": 1,
+    "explanation": "Annie Besant was the first woman President of the Indian National Congress, presiding over the Calcutta session in 1917."
+  },
+  {
+    "question": "The 'Khilafat Movement' was a pan-Islamic movement in India that supported which of the following?",
+    "options": [
+      "The Mughal Emperor",
+      "The Ottoman Caliph",
+      "The Sultan of Turkey",
+      "The King of Afghanistan"
+    ],
+    "correct": 1,
+    "explanation": "The Khilafat Movement was a protest campaign launched by Indian Muslims to pressure the British government to protect the Ottoman Caliph."
+  },
+  {
+    "question": "The 'Gandhara School of Art' was a blend of which two styles?",
+    "options": [
+      "Indian and Greek",
+      "Indian and Roman",
+      "Indian and Persian",
+      "Indian and Chinese"
+    ],
+    "correct": 0,
+    "explanation": "The Gandhara School of Art, which flourished in ancient India, was a blend of Indian and Hellenistic (Greek) art styles, particularly in the depiction of Buddha."
+  },
+  {
+    "question": "The 'National Human Rights Commission' (NHRC) is a statutory body in India. Who is its chairperson?",
+    "options": [
+      "A serving judge of the Supreme Court",
+      "A retired Chief Justice of India",
+      "The President of India",
+      "The Prime Minister"
+    ],
+    "correct": 1,
+    "explanation": "The chairperson of the National Human Rights Commission must be a retired Chief Justice of India."
+  },
+  {
+    "question": "The 'Loktak Lake' in Manipur is known for which unique feature?",
+    "options": [
+      "Saline water",
+      "Floating phumdis",
+      "High altitude",
+      "Volcanic origin"
+    ],
+    "correct": 1,
+    "explanation": "Loktak Lake is famous for its 'phumdis', which are heterogeneous masses of vegetation, soil, and organic matter at various stages of decomposition."
+  },
+  {
+    "question": "The 'Saraswati Samman' is an award given for excellence in which field?",
+    "options": ["Science and Technology", "Literature", "Music", "Sports"],
+    "correct": 1,
+    "explanation": "The Saraswati Samman is an annual award for outstanding prose or poetry literary works in any of the 22 languages of India listed in Schedule VIII of the Constitution."
+  },
+  {
+    "question": "The 'Bodo language' is primarily spoken in which Indian state?",
+    "options": ["Assam", "Nagaland", "Meghalaya", "Mizoram"],
+    "correct": 0,
+    "explanation": "Bodo is a Sino-Tibetan language spoken primarily by the Bodo people of Northeast India, particularly in the state of Assam."
+  },
+  {
+    "question": "The 'Tehri Dam' is built on which river?",
+    "options": ["Ganga", "Yamuna", "Bhagirathi", "Narmada"],
+    "correct": 2,
+    "explanation": "The Tehri Dam, the highest dam in India, is built on the Bhagirathi River in Uttarakhand."
+  },
+  {
+    "question": "The 'Simon Commission' was boycotted by Indians because?",
+    "options": [
+      "It proposed the partition of India",
+      "It had no Indian members",
+      "It recommended independence for India",
+      "It had too many members"
+    ],
+    "correct": 1,
+    "explanation": "The Simon Commission was a group of seven British MPs sent to India to study constitutional reform, but it had no Indian members, which led to widespread protests and boycotts."
+  },
+  {
+    "question": "The 'Saptaparni Cave' is associated with which Buddhist Council?",
+    "options": [
+      "First Buddhist Council",
+      "Second Buddhist Council",
+      "Third Buddhist Council",
+      "Fourth Buddhist Council"
+    ],
+    "correct": 0,
+    "explanation": "The First Buddhist Council, held shortly after the Mahaparinirvana of the Buddha, took place in the Saptaparni Cave in Rajgir, Bihar."
+  },
+  {
+    "question": "The 'Vande Mataram' song was first published in which novel?",
+    "options": ["Gitanjali", "Anandamath", "Durgeshnandini", "Kapalkundala"],
+    "correct": 1,
+    "explanation": "'Vande Mataram' was composed by Bankim Chandra Chattopadhyay and was published in his novel 'Anandamath' in 1882."
+  },
+  {
+    "question": "The 'First Anglo-Sikh War' was fought in which period?",
+    "options": ["1845-1846", "1857-1858", "1865-1866", "1870-1871"],
+    "correct": 0,
+    "explanation": "The First Anglo-Sikh War was a conflict fought between the Sikh Empire and the British East India Company between 1845 and 1846."
+  },
+  {
+    "question": "The 'Brahmo Samaj' was founded by which of the following reformers?",
+    "options": [
+      "Swami Vivekananda",
+      "Raja Ram Mohan Roy",
+      "Dayananda Saraswati",
+      "Ishwar Chandra Vidyasagar"
+    ],
+    "correct": 1,
+    "explanation": "Brahmo Samaj was a social and religious reform movement founded by Raja Ram Mohan Roy in Calcutta in 1828."
+  },
+  {
+    "question": "The 'Ryotwari System' of land revenue was introduced in which part of India?",
+    "options": ["Bengal", "Bombay and Madras Presidencies", "Punjab", "Awadh"],
+    "correct": 1,
+    "explanation": "The Ryotwari System, where the British government collected taxes directly from the farmers (ryots), was introduced in the Madras and Bombay Presidencies."
+  },
+  {
+    "question": "The 'First Battle of Panipat' was fought between which two rulers?",
+    "options": [
+      "Babur and Ibrahim Lodi",
+      "Akbar and Hemu",
+      "Ahmed Shah Abdali and Marathas",
+      "Prithviraj Chauhan and Muhammad Ghori"
+    ],
+    "correct": 0,
+    "explanation": "The First Battle of Panipat was fought between the invading forces of Babur and the Delhi Sultanate under Ibrahim Lodi in 1526, which marked the beginning of the Mughal Empire in India."
+  },
+  {
+    "question": "The 'Lok Sabha' is also known as?",
+    "options": [
+      "The House of States",
+      "The House of the People",
+      "The Council of States",
+      "The Senate"
+    ],
+    "correct": 1,
+    "explanation": "The Lok Sabha is the lower house of India's Parliament, also known as the House of the People. The Rajya Sabha is the upper house, or the Council of States."
+  },
+  {
+    "question": "The 'Chipko Movement' was a famous environmental movement that originated in which state?",
+    "options": [
+      "Uttarakhand",
+      "Himachal Pradesh",
+      "Arunachal Pradesh",
+      "Sikkim"
+    ],
+    "correct": 0,
+    "explanation": "The Chipko Movement was a forest conservation movement in Uttarakhand. Local women hugged trees to prevent them from being felled."
+  },
+  {
+    "question": "The 'Golden Temple' of Amritsar was built by which Sikh Guru?",
+    "options": [
+      "Guru Ram Das",
+      "Guru Arjan Dev",
+      "Guru Gobind Singh",
+      "Guru Nanak"
+    ],
+    "correct": 1,
+    "explanation": "The Golden Temple, also known as Harmandir Sahib, was built by Guru Arjan Dev, the fifth Guru of the Sikhs."
+  },
+  {
+    "question": "The 'Suez Canal' connects which two bodies of water?",
+    "options": [
+      "Mediterranean Sea and Red Sea",
+      "Atlantic Ocean and Pacific Ocean",
+      "Red Sea and Arabian Sea",
+      "Black Sea and Caspian Sea"
+    ],
+    "correct": 0,
+    "explanation": "The Suez Canal is an artificial sea-level waterway in Egypt, connecting the Mediterranean Sea and the Red Sea. It is a vital shipping route."
+  },
+  {
+    "question": "The 'Right to Privacy' was declared as a fundamental right in India in which year?",
+    "options": ["2010", "2015", "2017", "2019"],
+    "correct": 2,
+    "explanation": "The Supreme Court of India declared the 'Right to Privacy' as a fundamental right under Article 21 in its landmark judgment in the case of 'Justice K. S. Puttaswamy (Retd.) v. Union of India' in 2017."
+  },
+  {
+    "question": "The 'First Buddhist Council' was held during the reign of which king?",
+    "options": ["Ashoka", "Ajatashatru", "Kanishka", "Bimbisara"],
+    "correct": 1,
+    "explanation": "The First Buddhist Council was held shortly after the Mahaparinirvana of the Buddha, during the reign of King Ajatashatru of the Haryanka dynasty."
+  },
+  {
+    "question": "The 'Gobar-Dhan' scheme is related to which of the following?",
+    "options": [
+      "Promotion of organic farming",
+      "Solid waste management",
+      "Cattle waste management",
+      "Rural electrification"
+    ],
+    "correct": 2,
+    "explanation": "The Gobar-Dhan (Galvanizing Organic Bio-Agro Resources Dhan) scheme is related to the management of cattle waste and other organic waste to generate compost, biogas, and bio-CNG."
+  },
+  {
+    "question": "The 'Indian National Army' (INA) was founded by which of the following?",
+    "options": [
+      "Subhas Chandra Bose",
+      "Captain Mohan Singh",
+      "Rash Behari Bose",
+      "Jawaharlal Nehru"
+    ],
+    "correct": 1,
+    "explanation": "The Indian National Army was initially founded by Captain Mohan Singh in 1942. Later, Subhas Chandra Bose revived and led it."
+  },
+  {
+    "question": "The 'Khajuraho Group of Monuments' is located in which state of India?",
+    "options": ["Rajasthan", "Madhya Pradesh", "Gujarat", "Maharashtra"],
+    "correct": 1,
+    "explanation": "The Khajuraho Group of Monuments, a UNESCO World Heritage Site famous for its temples and intricate carvings, is located in the state of Madhya Pradesh."
+  },
+  {
+    "question": "The 'National Song of India' is?",
+    "options": [
+      "Jana Gana Mana",
+      "Sare Jahan Se Achha",
+      "Vande Mataram",
+      "Ai Mere Watan Ke Logon"
+    ],
+    "correct": 2,
+    "explanation": "'Vande Mataram', composed by Bankim Chandra Chattopadhyay, is the National Song of India. 'Jana Gana Mana' is the National Anthem."
+  },
+  {
+    "question": "The 'Government of India Act, 1919' is also known as?",
+    "options": [
+      "Minto-Morley Reforms",
+      "Montagu-Chelmsford Reforms",
+      "Indian Independence Act",
+      "Regulating Act"
+    ],
+    "correct": 1,
+    "explanation": "The Government of India Act, 1919, is commonly known as the Montagu-Chelmsford Reforms. It introduced a system of 'dyarchy' in the provinces."
+  },
+  {
+    "question": "The 'Government of India Act of 1935' introduced which of the following?",
+    "options": [
+      "Provincial autonomy",
+      "Dyarchy at the center",
+      "Abolition of Dyarchy in provinces",
       "All of the above"
     ],
     "correct": 3,
-    "explanation": "All listed options are Fundamental Duties of Indian citizens under Article 51A of the Constitution, added by the 42nd Amendment Act."
+    "explanation": "The Government of India Act, 1935, introduced provincial autonomy and abolished dyarchy in the provinces. It also introduced dyarchy at the central level."
   },
   {
-    "question": "The Battle of Buxar (1764) was fought between:",
+    "question": "The 'Indo-Gangetic Plain' is famous for its fertile soil, known as?",
+    "options": ["Laterite soil", "Black soil", "Alluvial soil", "Red soil"],
+    "correct": 2,
+    "explanation": "The Indo-Gangetic Plain is formed by the deposits of alluvial soil brought by the rivers Ganga, Indus, and Brahmaputra, making it one of the most fertile regions in the world."
+  },
+  {
+    "question": "The 'Indus River' originates from which of the following places?",
     "options": [
-      "British East India Company and the Mughal Emperor with allies",
-      "British and Marathas only",
-      "Mughals and French East India Company",
+      "Himalayas in India",
+      "Tibet near Lake Mansarovar",
+      "Hindu Kush mountains",
+      "Siachen Glacier"
+    ],
+    "correct": 1,
+    "explanation": "The Indus River originates in the Tibetan Plateau near Lake Mansarovar. It then flows through Pakistan to the Arabian Sea."
+  },
+  {
+    "question": "The 'Malwa Plateau' is located in which part of India?",
+    "options": [
+      "Northern India",
+      "Central India",
+      "Southern India",
+      "Northeastern India"
+    ],
+    "correct": 1,
+    "explanation": "The Malwa Plateau is a plateau region in western and central India. It covers parts of Madhya Pradesh and Rajasthan."
+  },
+  {
+    "question": "The 'Narmada River' flows into which of the following bodies of water?",
+    "options": [
+      "Bay of Bengal",
+      "Arabian Sea",
+      "Indian Ocean",
+      "Gulf of Mannar"
+    ],
+    "correct": 1,
+    "explanation": "The Narmada is the largest west-flowing river of peninsular India. It flows into the Gulf of Khambhat (Arabian Sea) in Gujarat."
+  },
+  {
+    "question": "The 'Wagah Border' is a border crossing between which two countries?",
+    "options": [
+      "India and Bangladesh",
+      "India and Pakistan",
+      "India and China",
+      "India and Nepal"
+    ],
+    "correct": 1,
+    "explanation": "The Wagah-Attari border is a road border crossing between India and Pakistan. It is famous for its daily 'Beating Retreat' ceremony."
+  },
+  {
+    "question": "The 'Right to Freedom of Religion' is provided under which article of the Indian Constitution?",
+    "options": ["Article 14", "Article 19", "Article 25", "Article 32"],
+    "correct": 2,
+    "explanation": "Article 25 of the Indian Constitution guarantees the freedom of conscience and the right to freely profess, practice, and propagate religion."
+  },
+  {
+    "question": "The 'Panchsheel' agreement was signed between which two countries?",
+    "options": [
+      "India and Pakistan",
+      "India and China",
+      "India and Nepal",
+      "India and Bangladesh"
+    ],
+    "correct": 1,
+    "explanation": "The Panchsheel, or the Five Principles of Peaceful Coexistence, was an agreement signed between India and China in 1954."
+  },
+  {
+    "question": "Who was the first Deputy Prime Minister of India?",
+    "options": [
+      "Jawaharlal Nehru",
+      "Lal Bahadur Shastri",
+      "Sardar Vallabhbhai Patel",
+      "Morarji Desai"
+    ],
+    "correct": 2,
+    "explanation": "Sardar Vallabhbhai Patel served as the first Deputy Prime Minister of India from 1947 to 1950, along with being the first Home Minister."
+  },
+  {
+    "question": "The 'Red Fort' in Delhi was constructed by which Mughal Emperor?",
+    "options": ["Akbar", "Jahangir", "Shah Jahan", "Aurangzeb"],
+    "correct": 2,
+    "explanation": "The Red Fort was built by the Mughal emperor Shah Jahan in the 17th century. It served as the main residence of the emperors of the Mughal dynasty."
+  },
+  {
+    "question": "The 'Tughlaqabad Fort' was built by which of the following rulers?",
+    "options": [
+      "Firoz Shah Tughlaq",
+      "Ghiyas-ud-din Tughlaq",
+      "Muhammad bin Tughluq",
+      "Alauddin Khilji"
+    ],
+    "correct": 1,
+    "explanation": "Tughlaqabad Fort was built by Ghiyas-ud-din Tughlaq, the founder of the Tughlaq dynasty of the Delhi Sultanate, in 1321."
+  },
+  {
+    "question": "The 'World Environment Day' is celebrated on which date?",
+    "options": ["June 5", "April 22", "July 11", "March 21"],
+    "correct": 0,
+    "explanation": "World Environment Day is celebrated annually on June 5. It was established by the United Nations to encourage worldwide awareness and action for the protection of our environment."
+  },
+  {
+    "question": "The 'G-20' is an international forum of governments and central bank governors. How many countries are members of G-20?",
+    "options": ["19", "20", "21", "22"],
+    "correct": 0,
+    "explanation": "The G-20 includes 19 countries and the European Union (EU). Recently, the African Union (AU) was added as a permanent member."
+  },
+  {
+    "question": "The 'Pindari War' of 1817-18 was fought against which of the following?",
+    "options": ["Marathas", "Sikhs", "Pindaris", "Rohillas"],
+    "correct": 2,
+    "explanation": "The Pindari War was a conflict fought by the British East India Company against the Pindaris, a group of mercenaries who raided various regions in central India."
+  },
+  {
+    "question": "The 'Indian Council Act of 1909' is also known by which name?",
+    "options": [
+      "Montagu-Chelmsford Reforms",
+      "Minto-Morley Reforms",
+      "Rowlatt Act",
+      "Government of India Act"
+    ],
+    "correct": 1,
+    "explanation": "The Indian Council Act of 1909 is also known as the Minto-Morley Reforms, named after Lord Minto and John Morley. It introduced separate electorates for Muslims."
+  },
+  {
+    "question": "The 'Monsoon' in India is an example of which type of wind?",
+    "options": ["Trade winds", "Westerlies", "Seasonal winds", "Local winds"],
+    "correct": 2,
+    "explanation": "Monsoons are large-scale seasonal wind systems that bring heavy rainfall. The Indian monsoon is a classic example of seasonal winds."
+  },
+  {
+    "question": "Who was the last Mughal Emperor of India?",
+    "options": [
+      "Akbar II",
+      "Bahadur Shah I",
+      "Shah Alam II",
+      "Bahadur Shah Zafar"
+    ],
+    "correct": 3,
+    "explanation": "Bahadur Shah Zafar, also known as Bahadur Shah II, was the last Mughal Emperor of India. He was exiled to Burma by the British after the Revolt of 1857."
+  },
+  {
+    "question": "The 'Green Revolution' in India was primarily aimed at increasing the production of which crop?",
+    "options": ["Cotton", "Jute", "Wheat", "Tea"],
+    "correct": 2,
+    "explanation": "The Green Revolution was a period of high agricultural productivity. It was primarily focused on introducing high-yielding varieties of wheat and rice to achieve self-sufficiency in food grains."
+  },
+  {
+    "question": "The 'Sikandar-e-Sani' title was adopted by which Delhi Sultan?",
+    "options": [
+      "Alauddin Khilji",
+      "Iltutmish",
+      "Balban",
+      "Muhammad bin Tughluq"
+    ],
+    "correct": 0,
+    "explanation": "Alauddin Khilji, a ruler of the Khilji dynasty, adopted the title of 'Sikandar-e-Sani', meaning 'Second Alexander'."
+  },
+  {
+    "question": "The 'Rajya Sabha' is a permanent body and is not subject to dissolution. True or False?",
+    "options": ["True", "False"],
+    "correct": 0,
+    "explanation": "The Rajya Sabha is a permanent house, and it is not subject to dissolution. One-third of its members retire every two years."
+  },
+  {
+    "question": "The 'Palk Bay' and the 'Gulf of Mannar' are located in which ocean?",
+    "options": [
+      "Arabian Sea",
+      "Bay of Bengal",
+      "Indian Ocean",
+      "Pacific Ocean"
+    ],
+    "correct": 2,
+    "explanation": "Palk Bay and the Gulf of Mannar are located in the Indian Ocean, between the southeastern coast of India and Sri Lanka."
+  },
+  {
+    "question": "The 'Montagu-Chelmsford Reforms' were a series of constitutional reforms introduced in which year?",
+    "options": ["1909", "1919", "1935", "1947"],
+    "correct": 1,
+    "explanation": "The Montagu-Chelmsford Reforms were enacted by the Government of India Act, 1919. They introduced a system of 'dyarchy' in the provinces."
+  },
+  {
+    "question": "The 'Jainism' religion was founded by which of the following figures?",
+    "options": ["Mahavira", "Gautama Buddha", "Rishabhanatha", "Parshvanatha"],
+    "correct": 2,
+    "explanation": "Rishabhanatha is traditionally regarded as the first Tirthankara of Jainism and the founder of the religion. Mahavira was the 24th and last Tirthankara."
+  },
+  {
+    "question": "The 'Cabinet Mission' came to India to discuss which of the following?",
+    "options": [
+      "Economic reforms",
+      "Transfer of power",
+      "Military alliances",
+      "Educational reforms"
+    ],
+    "correct": 1,
+    "explanation": "The Cabinet Mission of 1946 was sent to India to discuss and finalize a plan for the transfer of power from the British government to the Indian leadership."
+  },
+  {
+    "question": "The 'Subhash Chandra Bose' museum is located in which of the following places?",
+    "options": ["Kolkata", "Delhi", "Mumbai", "Lucknow"],
+    "correct": 1,
+    "explanation": "The Netaji Subhash Chandra Bose museum is located at the Red Fort in Delhi. It was inaugurated in 2019."
+  },
+  {
+    "question": "The 'Bharat Ratna' is the highest civilian award in India. It was instituted in which year?",
+    "options": ["1947", "1950", "1954", "1960"],
+    "correct": 2,
+    "explanation": "The Bharat Ratna, the highest civilian award of the Republic of India, was instituted on January 2, 1954."
+  },
+  {
+    "question": "The 'Vedas' are considered the most ancient texts in Hinduism. Which of the following is the oldest Veda?",
+    "options": ["Rigveda", "Samaveda", "Yajurveda", "Atharvaveda"],
+    "correct": 0,
+    "explanation": "The Rigveda is the oldest and most important of the four Vedas. It is a collection of hymns and is considered one of the oldest extant texts in any Indo-European language."
+  },
+  {
+    "question": "The 'Himalayan Mountains' are an example of which type of mountains?",
+    "options": [
+      "Fold Mountains",
+      "Block Mountains",
+      "Volcanic Mountains",
+      "Residual Mountains"
+    ],
+    "correct": 0,
+    "explanation": "The Himalayas are young fold mountains formed by the collision of the Indian and Eurasian tectonic plates."
+  },
+  {
+    "question": "The 'Emergency Provisions' in the Indian Constitution are inspired by the Constitution of which country?",
+    "options": ["Canada", "Germany", "Russia", "UK"],
+    "correct": 1,
+    "explanation": "The provisions related to the suspension of Fundamental Rights during an emergency are borrowed from the Weimar Constitution of Germany."
+  },
+  {
+    "question": "Who was the last Governor-General of India?",
+    "options": [
+      "Lord Mountbatten",
+      "C. Rajagopalachari",
+      "Jawaharlal Nehru",
+      "B.R. Ambedkar"
+    ],
+    "correct": 1,
+    "explanation": "Chakravarti Rajagopalachari was the last Governor-General of India. He served from 1948 to 1950, after which the position was abolished with the adoption of the Republic of India."
+  },
+  {
+    "question": "The 'First War of Indian Independence' is the name given to which event by some historians?",
+    "options": [
+      "Swadeshi Movement",
+      "Quit India Movement",
+      "Revolt of 1857",
+      "Non-Cooperation Movement"
+    ],
+    "correct": 2,
+    "explanation": "The Revolt of 1857 is often referred to as the First War of Indian Independence, especially by nationalist historians like V. D. Savarkar."
+  },
+  {
+    "question": "The 'Satpura Range' is located in which part of India?",
+    "options": [
+      "Northern India",
+      "Southern India",
+      "Central India",
+      "Northeastern India"
+    ],
+    "correct": 2,
+    "explanation": "The Satpura Range is a range of hills in central India, running east to west across the states of Madhya Pradesh, Maharashtra, and Gujarat."
+  },
+  {
+    "question": "The 'Kesavananda Bharati vs State of Kerala' case is a landmark judgment related to which of the following?",
+    "options": [
+      "Right to Property",
+      "Basic Structure of the Constitution",
+      "Freedom of Speech",
+      "Right to Privacy"
+    ],
+    "correct": 1,
+    "explanation": "The Kesavananda Bharati case of 1973 established the 'Basic Structure' doctrine, which holds that the Parliament cannot amend the fundamental features of the Constitution."
+  },
+  {
+    "question": "The 'Tawa River' is a tributary of which of the following rivers?",
+    "options": ["Ganga", "Yamuna", "Narmada", "Mahanadi"],
+    "correct": 2,
+    "explanation": "The Tawa River is a major tributary of the Narmada River. It flows through the state of Madhya Pradesh."
+  },
+  {
+    "question": "The 'Red Data Book' is a source book for information on which of the following?",
+    "options": [
+      "Geological surveys",
+      "Endangered species",
+      "Economic growth",
+      "Forest cover"
+    ],
+    "correct": 1,
+    "explanation": "The Red Data Book is a document established by the International Union for Conservation of Nature (IUCN) for documenting rare and endangered species of animals, plants, and fungi."
+  },
+  {
+    "question": "The 'Sarus Crane' is the state bird of which Indian state?",
+    "options": ["Uttar Pradesh", "Madhya Pradesh", "Rajasthan", "Bihar"],
+    "correct": 0,
+    "explanation": "The Sarus Crane is the official state bird of Uttar Pradesh. It is the world's tallest flying bird."
+  },
+  {
+    "question": "The 'First Buddhist Council' was held at which place?",
+    "options": ["Vaishali", "Rajgir", "Pataliputra", "Kashmir"],
+    "correct": 1,
+    "explanation": "The First Buddhist Council was held at Rajgir, shortly after the Mahaparinirvana of the Buddha, to collect and preserve his teachings."
+  },
+  {
+    "question": "The 'Konark Sun Temple' is located in which state of India?",
+    "options": ["Odisha", "Tamil Nadu", "Karnataka", "Andhra Pradesh"],
+    "correct": 0,
+    "explanation": "The Konark Sun Temple, a UNESCO World Heritage Site, is located in Odisha. It is known for its intricate stone carvings and is shaped like a giant chariot."
+  },
+  {
+    "question": "The 'Cabinet Mission' of 1946 was composed of how many members?",
+    "options": ["2", "3", "4", "5"],
+    "correct": 1,
+    "explanation": "The Cabinet Mission of 1946 was a three-man mission consisting of Lord Pethick-Lawrence, Sir Stafford Cripps, and A.V. Alexander."
+  },
+  {
+    "question": "The 'Right to Education' was made a fundamental right in India through which constitutional amendment?",
+    "options": [
+      "42nd Amendment",
+      "73rd Amendment",
+      "86th Amendment",
+      "97th Amendment"
+    ],
+    "correct": 2,
+    "explanation": "The 86th Constitutional Amendment Act of 2002 made education a fundamental right by inserting Article 21A into the Constitution."
+  },
+  {
+    "question": "The 'Pindari War' of 1817-18 was fought against which of the following?",
+    "options": ["Marathas", "Sikhs", "Pindaris", "Rohillas"],
+    "correct": 2,
+    "explanation": "The Pindari War was a conflict fought by the British East India Company against the Pindaris, a group of mercenaries who raided various regions in central India."
+  },
+  {
+    "question": "The 'National Anthem of India' was adopted from which of the following works?",
+    "options": [
+      "Jana Gana Mana by Rabindranath Tagore",
+      "Vande Mataram by Bankim Chandra Chattopadhyay",
+      "Sare Jahan Se Achha by Muhammad Iqbal",
       "None of the above"
     ],
     "correct": 0,
-    "explanation": "The Battle of Buxar was fought between the British East India Company and the combined forces of Mughal Emperor Shah Alam II, Nawab of Bengal Mir Qasim, and Nawab of Awadh Shuja-ud-Daula."
+    "explanation": "'Jana Gana Mana', composed by Rabindranath Tagore, was adopted as the National Anthem of India by the Constituent Assembly on January 24, 1950."
   },
   {
-    "question": "Which of the following pairs is correctly matched regarding Indian rivers and origin?",
+    "question": "The 'Minto-Morley Reforms' introduced which of the following?",
     "options": [
-      "Ganga – Gangotri Glacier",
-      "Yamuna – Yamunotri Glacier",
-      "Godavari – Western Ghats",
+      "Separate electorates for Muslims",
+      "Dyarchy in provinces",
+      "Provincial autonomy",
+      "Constituent Assembly"
+    ],
+    "correct": 0,
+    "explanation": "The Indian Council Act of 1909, also known as the Minto-Morley Reforms, introduced the system of separate electorates for Muslims, a major step towards communal politics."
+  },
+  {
+    "question": "The 'Charminar' is located in which city?",
+    "options": ["Hyderabad", "Delhi", "Lucknow", "Bhopal"],
+    "correct": 0,
+    "explanation": "The Charminar, an iconic monument, is located in Hyderabad, Telangana. It was constructed by Muhammad Quli Qutb Shah in 1591."
+  },
+  {
+    "question": "The 'Sarnath Lion Capital' is the national emblem of India. It was originally built by which emperor?",
+    "options": ["Ashoka", "Chandragupta Maurya", "Samudragupta", "Kanishka"],
+    "correct": 0,
+    "explanation": "The Lion Capital of Ashoka, found at Sarnath, is the national emblem of India. It was originally erected by Emperor Ashoka around 250 BCE."
+  },
+  {
+    "question": "The 'Indian National Army' (INA) was founded by which of the following?",
+    "options": [
+      "Subhas Chandra Bose",
+      "Captain Mohan Singh",
+      "Rash Behari Bose",
+      "Jawaharlal Nehru"
+    ],
+    "correct": 1,
+    "explanation": "The Indian National Army was initially founded by Captain Mohan Singh in 1942. Later, Subhas Chandra Bose revived and led it."
+  },
+  {
+    "question": "The 'Panchayati Raj System' was constitutionalized in India by which of the following amendment acts?",
+    "options": [
+      "42nd Amendment",
+      "73rd Amendment",
+      "74th Amendment",
+      "86th Amendment"
+    ],
+    "correct": 1,
+    "explanation": "The 73rd Amendment Act, 1992, gave constitutional status to the Panchayati Raj institutions, making them a third tier of governance in India."
+  },
+  {
+    "question": "The 'Golden Temple' of Amritsar was built by which Sikh Guru?",
+    "options": [
+      "Guru Ram Das",
+      "Guru Arjan Dev",
+      "Guru Gobind Singh",
+      "Guru Nanak"
+    ],
+    "correct": 1,
+    "explanation": "The Golden Temple, also known as Harmandir Sahib, was built by Guru Arjan Dev, the fifth Guru of the Sikhs."
+  },
+  {
+    "question": "The 'Suez Canal' connects which two bodies of water?",
+    "options": [
+      "Mediterranean Sea and Red Sea",
+      "Atlantic Ocean and Pacific Ocean",
+      "Red Sea and Arabian Sea",
+      "Black Sea and Caspian Sea"
+    ],
+    "correct": 0,
+    "explanation": "The Suez Canal is an artificial sea-level waterway in Egypt, connecting the Mediterranean Sea and the Red Sea. It is a vital shipping route."
+  },
+  {
+    "question": "The 'Right to Privacy' was declared as a fundamental right in India in which year?",
+    "options": ["2010", "2015", "2017", "2019"],
+    "correct": 2,
+    "explanation": "The Supreme Court of India declared the 'Right to Privacy' as a fundamental right under Article 21 in its landmark judgment in the case of 'Justice K. S. Puttaswamy (Retd.) v. Union of India' in 2017."
+  },
+  {
+    "question": "The 'Sunderbans' are famous for being the home of which animal?",
+    "options": [
+      "Indian Elephant",
+      "Royal Bengal Tiger",
+      "Asiatic Lion",
+      "One-horned Rhinoceros"
+    ],
+    "correct": 1,
+    "explanation": "The Sunderbans, a UNESCO World Heritage Site, is a large mangrove forest and is the largest reserve for the Royal Bengal Tiger."
+  },
+  {
+    "question": "The 'Khajuraho Group of Monuments' is located in which state of India?",
+    "options": ["Rajasthan", "Madhya Pradesh", "Gujarat", "Maharashtra"],
+    "correct": 1,
+    "explanation": "The Khajuraho Group of Monuments, a UNESCO World Heritage Site famous for its temples and intricate carvings, is located in the state of Madhya Pradesh."
+  },
+  {
+    "question": "The 'Government of India Act of 1935' introduced which of the following?",
+    "options": [
+      "Provincial autonomy",
+      "Dyarchy at the center",
+      "Abolition of Dyarchy in provinces",
       "All of the above"
     ],
     "correct": 3,
-    "explanation": "Ganga originates from Gangotri Glacier, Yamuna from Yamunotri Glacier, and Godavari from the Western Ghats (at Trimbakeshwar, Nashik)."
+    "explanation": "The Government of India Act, 1935, introduced provincial autonomy and abolished dyarchy in the provinces. It also introduced dyarchy at the central level."
   },
   {
-    "question": "Consider the following statements about the National Human Rights Commission (NHRC) of India:",
+    "question": "The 'Indo-Gangetic Plain' is famous for its fertile soil, known as?",
+    "options": ["Laterite soil", "Black soil", "Alluvial soil", "Red soil"],
+    "correct": 2,
+    "explanation": "The Indo-Gangetic Plain is formed by the deposits of alluvial soil brought by the rivers Ganga, Indus, and Brahmaputra, making it one of the most fertile regions in the world."
+  },
+  {
+    "question": "The 'Jainism' religion was founded by which of the following figures?",
+    "options": ["Mahavira", "Gautama Buddha", "Rishabhanatha", "Parshvanatha"],
+    "correct": 2,
+    "explanation": "Rishabhanatha is traditionally regarded as the first Tirthankara of Jainism and the founder of the religion. Mahavira was the 24th and last Tirthankara."
+  },
+  {
+    "question": "The 'Sikandar-e-Sani' title was adopted by which Delhi Sultan?",
     "options": [
-      "It was established under the Protection of Human Rights Act, 1993",
-      "It is headed by the Chief Justice of India",
-      "It inquires into violation of human rights and recommends action",
-      "Only A and C"
+      "Alauddin Khilji",
+      "Iltutmish",
+      "Balban",
+      "Muhammad bin Tughluq"
     ],
-    "correct": 3,
-    "explanation": "NHRC was established under the Protection of Human Rights Act, 1993. It is headed by a retired Chief Justice of India or a retired Supreme Court Judge and has powers to inquire and recommend actions on human rights violations."
+    "correct": 0,
+    "explanation": "Alauddin Khilji, a ruler of the Khilji dynasty, adopted the title of 'Sikandar-e-Sani', meaning 'Second Alexander'."
   },
   {
-    "question": "Which of the following correctly defines the term 'Greenfield Airport Project'?",
+    "question": "The 'Loktak Lake' in Manipur is known for which unique feature?",
     "options": [
-      "Modernization of an existing airport",
-      "Construction of a new airport from scratch",
-      "Expansion of airport terminals",
-      "Privatization of airport management"
+      "Saline water",
+      "Floating phumdis",
+      "High altitude",
+      "Volcanic origin"
     ],
     "correct": 1,
-    "explanation": "A Greenfield Airport Project refers to the construction of a completely new airport on a new site, unlike a brownfield project which involves upgrading an existing one."
+    "explanation": "Loktak Lake is famous for its 'phumdis', which are heterogeneous masses of vegetation, soil, and organic matter at various stages of decomposition."
+  },
+  {
+    "question": "The 'Saraswati Samman' is an award given for excellence in which field?",
+    "options": ["Science and Technology", "Literature", "Music", "Sports"],
+    "correct": 1,
+    "explanation": "The Saraswati Samman is an annual award for outstanding prose or poetry literary works in any of the 22 languages of India listed in Schedule VIII of the Constitution."
+  },
+  {
+    "question": "The 'Bodo language' is primarily spoken in which Indian state?",
+    "options": ["Assam", "Nagaland", "Meghalaya", "Mizoram"],
+    "correct": 0,
+    "explanation": "Bodo is a Sino-Tibetan language spoken primarily by the Bodo people of Northeast India, particularly in the state of Assam."
+  },
+  {
+    "question": "The 'Tehri Dam' is built on which river?",
+    "options": ["Ganga", "Yamuna", "Bhagirathi", "Narmada"],
+    "correct": 2,
+    "explanation": "The Tehri Dam, the highest dam in India, is built on the Bhagirathi River in Uttarakhand."
+  },
+  {
+    "question": "The 'Simon Commission' was boycotted by Indians because?",
+    "options": [
+      "It proposed the partition of India",
+      "It had no Indian members",
+      "It recommended independence for India",
+      "It had too many members"
+    ],
+    "correct": 1,
+    "explanation": "The Simon Commission was a group of seven British MPs sent to India to study constitutional reform, but it had no Indian members, which led to widespread protests and boycotts."
+  },
+  {
+    "question": "The 'Saptaparni Cave' is associated with which Buddhist Council?",
+    "options": [
+      "First Buddhist Council",
+      "Second Buddhist Council",
+      "Third Buddhist Council",
+      "Fourth Buddhist Council"
+    ],
+    "correct": 0,
+    "explanation": "The First Buddhist Council, held shortly after the Mahaparinirvana of the Buddha, took place in the Saptaparni Cave in Rajgir, Bihar."
+  },
+  {
+    "question": "The 'Vande Mataram' song was first published in which novel?",
+    "options": ["Gitanjali", "Anandamath", "Durgeshnandini", "Kapalkundala"],
+    "correct": 1,
+    "explanation": "'Vande Mataram' was composed by Bankim Chandra Chattopadhyay and was published in his novel 'Anandamath' in 1882."
+  },
+  {
+    "question": "The 'First Anglo-Sikh War' was fought in which period?",
+    "options": ["1845-1846", "1857-1858", "1865-1866", "1870-1871"],
+    "correct": 0,
+    "explanation": "The First Anglo-Sikh War was a conflict fought between the Sikh Empire and the British East India Company between 1845 and 1846."
+  },
+  {
+    "question": "The 'Brahmo Samaj' was founded by which of the following reformers?",
+    "options": [
+      "Swami Vivekananda",
+      "Raja Ram Mohan Roy",
+      "Dayananda Saraswati",
+      "Ishwar Chandra Vidyasagar"
+    ],
+    "correct": 1,
+    "explanation": "Brahmo Samaj was a social and religious reform movement founded by Raja Ram Mohan Roy in Calcutta in 1828."
+  },
+  {
+    "question": "The 'Ryotwari System' of land revenue was introduced in which part of India?",
+    "options": ["Bengal", "Bombay and Madras Presidencies", "Punjab", "Awadh"],
+    "correct": 1,
+    "explanation": "The Ryotwari System, where the British government collected taxes directly from the farmers (ryots), was introduced in the Madras and Bombay Presidencies."
+  },
+  {
+    "question": "The 'First Battle of Panipat' was fought between which two rulers?",
+    "options": [
+      "Babur and Ibrahim Lodi",
+      "Akbar and Hemu",
+      "Ahmed Shah Abdali and Marathas",
+      "Prithviraj Chauhan and Muhammad Ghori"
+    ],
+    "correct": 0,
+    "explanation": "The First Battle of Panipat was fought between the invading forces of Babur and the Delhi Sultanate under Ibrahim Lodi in 1526, which marked the beginning of the Mughal Empire in India."
+  },
+  {
+    "question": "Who among the following was the first Indian to receive a Nobel Prize?",
+    "options": [
+      "Rabindranath Tagore",
+      "C.V. Raman",
+      "Mother Teresa",
+      "Amartya Sen"
+    ],
+    "correct": 0,
+    "explanation": "Rabindranath Tagore was the first Indian to receive a Nobel Prize in 1913 for Literature. He was awarded for his work 'Gitanjali'."
+  },
+  {
+    "question": "The famous 'Dandi March' was undertaken by Mahatma Gandhi in which year?",
+    "options": ["1928", "1930", "1932", "1935"],
+    "correct": 1,
+    "explanation": "The Dandi March, also known as the Salt Satyagraha, was an act of nonviolent civil disobedience led by Mahatma Gandhi in 1930."
+  },
+  {
+    "question": "Which of the following mountain ranges is located in the southern part of India?",
+    "options": [
+      "Himalayas",
+      "Aravalli Range",
+      "Western Ghats",
+      "Vindhya Range"
+    ],
+    "correct": 2,
+    "explanation": "The Western Ghats is a mountain range that runs parallel to the western coast of the Indian peninsula."
+  },
+  {
+    "question": "The term 'Satyagraha' was coined by which of the following leaders?",
+    "options": [
+      "Jawaharlal Nehru",
+      "Subhas Chandra Bose",
+      "Mahatma Gandhi",
+      "Sardar Vallabhbhai Patel"
+    ],
+    "correct": 2,
+    "explanation": "Satyagraha, meaning 'insistence on truth', was a philosophy and practice of nonviolent resistance developed by Mahatma Gandhi."
+  },
+  {
+    "question": "Which of the following is the largest producer of rice in the world?",
+    "options": ["India", "China", "Brazil", "USA"],
+    "correct": 1,
+    "explanation": "China is the largest producer of rice globally, followed by India. This is a crucial fact for understanding global agriculture."
+  },
+  {
+    "question": "The 'Right to Constitutional Remedies' is provided in which Article of the Indian Constitution?",
+    "options": ["Article 21", "Article 32", "Article 44", "Article 51"],
+    "correct": 1,
+    "explanation": "Article 32 gives a citizen the right to approach the Supreme Court to seek enforcement of their fundamental rights. Dr. B.R. Ambedkar called it the 'heart and soul' of the Constitution."
+  },
+  {
+    "question": "Who was the first woman President of the Indian National Congress?",
+    "options": [
+      "Sarojini Naidu",
+      "Annie Besant",
+      "Nellie Sengupta",
+      "Indira Gandhi"
+    ],
+    "correct": 1,
+    "explanation": "Annie Besant was the first woman President of the Indian National Congress, presiding over the Calcutta session in 1917. Sarojini Naidu was the first Indian woman President."
+  },
+  {
+    "question": "The 'Indus Valley Civilization' is known for its well-planned urban centers. Which of the following sites is NOT a part of it?",
+    "options": ["Mohenjo-daro", "Harappa", "Lothal", "Pataliputra"],
+    "correct": 3,
+    "explanation": "Pataliputra was an ancient city in India, often associated with the Maurya and Gupta empires, not the Indus Valley Civilization."
+  },
+  {
+    "question": "Which of the following rivers is also known as the 'Sorrow of Bengal'?",
+    "options": ["Ganga", "Yamuna", "Damodar", "Brahmaputra"],
+    "correct": 2,
+    "explanation": "The Damodar River was historically known as the 'Sorrow of Bengal' due to its devastating floods. However, the construction of the Damodar Valley Corporation has helped in flood control."
+  },
+  {
+    "question": "The concept of 'Concurrent List' in the Indian Constitution is borrowed from the Constitution of which country?",
+    "options": ["United States", "Canada", "Australia", "Ireland"],
+    "correct": 2,
+    "explanation": "The idea of a Concurrent List, where both the Union and State governments can legislate, is a feature borrowed from the Australian Constitution."
+  },
+  {
+    "question": "The 'Quit India Movement' was launched in which year?",
+    "options": ["1940", "1942", "1945", "1947"],
+    "correct": 1,
+    "explanation": "The Quit India Movement, also known as the August Movement, was launched at the Bombay session of the All-India Congress Committee by Mahatma Gandhi in August 1942, during World War II."
+  },
+  {
+    "question": "Which of the following is the highest peak in the Western Ghats?",
+    "options": ["Doddabetta", "Anamudi", "Kalsubai", "Guru Shikhar"],
+    "correct": 1,
+    "explanation": "Anamudi, located in Kerala, is the highest peak in the Western Ghats and in South India. Doddabetta is the highest peak in the Nilgiri Hills."
+  },
+  {
+    "question": "The 'Preamble' to the Indian Constitution was adopted from which country's constitution?",
+    "options": ["USA", "UK", "France", "South Africa"],
+    "correct": 0,
+    "explanation": "The Preamble to the Constitution of India is based on the 'Objectives Resolution' drafted and moved by Jawaharlal Nehru on December 13, 1946. Its inspiration is largely from the Preamble of the US Constitution."
+  },
+  {
+    "question": "Who was the last Mughal Emperor of India?",
+    "options": [
+      "Akbar II",
+      "Bahadur Shah I",
+      "Shah Alam II",
+      "Bahadur Shah Zafar"
+    ],
+    "correct": 3,
+    "explanation": "Bahadur Shah Zafar, also known as Bahadur Shah II, was the last Mughal Emperor of India. He was exiled to Burma by the British after the Revolt of 1857."
+  },
+  {
+    "question": "The 'Tropic of Cancer' passes through how many states in India?",
+    "options": ["6", "7", "8", "9"],
+    "correct": 2,
+    "explanation": "The Tropic of Cancer passes through eight Indian states: Gujarat, Rajasthan, Madhya Pradesh, Chhattisgarh, Jharkhand, West Bengal, Tripura, and Mizoram."
+  },
+  {
+    "question": "The term 'Federation' is used in which part of the Indian Constitution?",
+    "options": [
+      "Preamble",
+      "Article 1",
+      "Part III",
+      "The term is not explicitly used"
+    ],
+    "correct": 3,
+    "explanation": "The Indian Constitution does not explicitly use the term 'Federation'. Article 1 describes India as a 'Union of States'."
+  },
+  {
+    "question": "The 'Poona Pact' of 1932 was signed between which of the following leaders?",
+    "options": [
+      "Mahatma Gandhi and Lord Irwin",
+      "Mahatma Gandhi and B.R. Ambedkar",
+      "Jawaharlal Nehru and Muhammad Ali Jinnah",
+      "Subhas Chandra Bose and Mahatma Gandhi"
+    ],
+    "correct": 1,
+    "explanation": "The Poona Pact was an agreement between Mahatma Gandhi and Dr. B.R. Ambedkar. It was signed to reverse the Communal Award of 1932 which granted separate electorates for the depressed classes."
+  },
+  {
+    "question": "Which of the following is the largest freshwater lake in India?",
+    "options": ["Wular Lake", "Dal Lake", "Chilika Lake", "Vembanad Lake"],
+    "correct": 0,
+    "explanation": "Wular Lake in Jammu and Kashmir is the largest freshwater lake in India. Chilika Lake is the largest brackish water lagoon in India."
+  },
+  {
+    "question": "The 'Doctrine of Lapse' was a policy introduced by which Governor-General of India?",
+    "options": [
+      "Lord Dalhousie",
+      "Lord Wellesley",
+      "Lord William Bentinck",
+      "Lord Cornwallis"
+    ],
+    "correct": 0,
+    "explanation": "The Doctrine of Lapse was a policy introduced by Lord Dalhousie. Under this policy, any princely state without a natural heir would be annexed by the British."
+  },
+  {
+    "question": "Who is known as the 'Father of the Indian Constitution'?",
+    "options": [
+      "Jawaharlal Nehru",
+      "Mahatma Gandhi",
+      "Sardar Vallabhbhai Patel",
+      "B.R. Ambedkar"
+    ],
+    "correct": 3,
+    "explanation": "Dr. B.R. Ambedkar was the Chairman of the Drafting Committee of the Constituent Assembly and is widely regarded as the 'Father of the Indian Constitution'."
+  },
+  {
+    "question": "The 'Green Revolution' in India was primarily aimed at increasing the production of which crop?",
+    "options": ["Cotton", "Jute", "Wheat", "Tea"],
+    "correct": 2,
+    "explanation": "The Green Revolution was a period of high agricultural productivity. It was primarily focused on introducing high-yielding varieties of wheat and rice to achieve self-sufficiency in food grains."
+  },
+  {
+    "question": "The 'Fundamental Duties' were added to the Indian Constitution on the recommendations of which committee?",
+    "options": [
+      "Sarkaria Commission",
+      "Swaran Singh Committee",
+      "Balwant Rai Mehta Committee",
+      "Kothari Commission"
+    ],
+    "correct": 1,
+    "explanation": "The Fundamental Duties were added to the Indian Constitution by the 42nd Amendment Act, 1976, on the recommendations of the Swaran Singh Committee."
+  },
+  {
+    "question": "Which of the following is the longest river in the world?",
+    "options": ["Nile", "Amazon", "Yangtze", "Mississippi"],
+    "correct": 0,
+    "explanation": "The Nile River is widely considered the longest river in the world, flowing through several African countries before emptying into the Mediterranean Sea."
+  },
+  {
+    "question": "The 'Non-Cooperation Movement' was withdrawn by Mahatma Gandhi after which incident?",
+    "options": [
+      "Jallianwala Bagh Massacre",
+      "Chauri Chaura Incident",
+      "Partition of Bengal",
+      "Formation of the Simon Commission"
+    ],
+    "correct": 1,
+    "explanation": "Mahatma Gandhi called off the Non-Cooperation Movement in February 1922 following the Chauri Chaura incident, where a police station was set on fire by a mob of protestors."
+  },
+  {
+    "question": "The 'Great Bath' is a major feature of which Indus Valley Civilization site?",
+    "options": ["Harappa", "Mohenjo-daro", "Lothal", "Kalibangan"],
+    "correct": 1,
+    "explanation": "The Great Bath, a large public bathing area, is one of the most well-known structures discovered at the archaeological site of Mohenjo-daro."
+  },
+  {
+    "question": "Which of the following countries is NOT a member of the SAARC (South Asian Association for Regional Cooperation)?",
+    "options": ["India", "Pakistan", "China", "Nepal"],
+    "correct": 2,
+    "explanation": "SAARC includes Afghanistan, Bangladesh, Bhutan, India, Maldives, Nepal, Pakistan, and Sri Lanka. China is an observer, not a member."
+  },
+  {
+    "question": "The 'Panchayati Raj System' was first introduced in which state of India?",
+    "options": ["Rajasthan", "Andhra Pradesh", "Gujarat", "Uttar Pradesh"],
+    "correct": 0,
+    "explanation": "The Panchayati Raj System was first introduced in Nagaur district of Rajasthan on October 2, 1959. It was then extended to Andhra Pradesh."
+  },
+  {
+    "question": "The 'Battle of Plassey' was fought in which year?",
+    "options": ["1757", "1764", "1772", "1784"],
+    "correct": 0,
+    "explanation": "The Battle of Plassey was a decisive victory for the British East India Company over the Nawab of Bengal and his French allies. It took place in 1757."
+  },
+  {
+    "question": "The 'Fundamental Rights' in the Indian Constitution are inspired by the Constitution of which country?",
+    "options": ["USA", "UK", "Russia", "Germany"],
+    "correct": 0,
+    "explanation": "The Fundamental Rights are guaranteed in Part III of the Constitution and are inspired by the Bill of Rights in the US Constitution."
+  },
+  {
+    "question": "The 'Golden Quadrilateral' is a network of highways connecting which of the following cities?",
+    "options": [
+      "Delhi, Mumbai, Chennai, Kolkata",
+      "Delhi, Mumbai, Bengaluru, Hyderabad",
+      "Delhi, Lucknow, Patna, Guwahati",
+      "Mumbai, Ahmedabad, Jaipur, Kolkata"
+    ],
+    "correct": 0,
+    "explanation": "The Golden Quadrilateral is a highway network that connects India's four major metropolitan cities: Delhi, Mumbai, Chennai, and Kolkata."
+  },
+  {
+    "question": "The 'Indian National Congress' was founded by which of the following individuals?",
+    "options": [
+      "Mahatma Gandhi",
+      "A.O. Hume",
+      "Bal Gangadhar Tilak",
+      "Gopal Krishna Gokhale"
+    ],
+    "correct": 1,
+    "explanation": "The Indian National Congress was founded by Allan Octavian Hume, a retired British civil servant, in 1885."
+  },
+  {
+    "question": "The 'Rani of Jhansi' was a key figure in which of the following events?",
+    "options": [
+      "Non-Cooperation Movement",
+      "Quit India Movement",
+      "Revolt of 1857",
+      "Swadeshi Movement"
+    ],
+    "correct": 2,
+    "explanation": "Rani Lakshmibai of Jhansi was a leading figure in the Indian Rebellion of 1857 and a symbol of resistance against British rule."
+  },
+  {
+    "question": "Which of the following is the highest waterfall in India?",
+    "options": [
+      "Jog Falls",
+      "Nohkalikai Falls",
+      "Kunchikal Falls",
+      "Dudhsagar Falls"
+    ],
+    "correct": 2,
+    "explanation": "Kunchikal Falls in Karnataka is the highest waterfall in India. Jog Falls is a segmented waterfall on the Sharavathi River."
+  },
+  {
+    "question": "The 'Directive Principles of State Policy' are mentioned in which part of the Indian Constitution?",
+    "options": ["Part II", "Part III", "Part IV", "Part V"],
+    "correct": 2,
+    "explanation": "The Directive Principles of State Policy (DPSP) are enshrined in Part IV of the Indian Constitution and are not enforceable by any court."
+  },
+  {
+    "question": "Who was the founder of the 'Ghadar Party'?",
+    "options": [
+      "Lala Lajpat Rai",
+      "Lala Hardayal",
+      "Bhagat Singh",
+      "Subhas Chandra Bose"
+    ],
+    "correct": 1,
+    "explanation": "The Ghadar Party was an organization founded by Indian immigrants in the United States and Canada in 1913, with Lala Hardayal as a key figure."
+  },
+  {
+    "question": "The 'Red Fort' in Delhi was constructed by which Mughal Emperor?",
+    "options": ["Akbar", "Jahangir", "Shah Jahan", "Aurangzeb"],
+    "correct": 2,
+    "explanation": "The Red Fort was built by the Mughal emperor Shah Jahan in the 17th century. It served as the main residence of the emperors of the Mughal dynasty."
+  },
+  {
+    "question": "Which of the following is a landlocked country in South America?",
+    "options": ["Brazil", "Argentina", "Bolivia", "Chile"],
+    "correct": 2,
+    "explanation": "Bolivia and Paraguay are the two landlocked countries in South America. Brazil, Argentina, and Chile all have coastlines."
+  },
+  {
+    "question": "The 'Linguistic Reorganisation of States' in India was a major event after independence. Which was the first state to be formed on linguistic basis?",
+    "options": ["Maharashtra", "Andhra Pradesh", "Tamil Nadu", "Kerala"],
+    "correct": 1,
+    "explanation": "Andhra Pradesh was the first state to be formed on a linguistic basis in 1953, following the death of Potti Sreeramulu who was on a hunger strike."
+  },
+  {
+    "question": "The 'Jallianwala Bagh Massacre' took place in which city?",
+    "options": ["Delhi", "Lucknow", "Amritsar", "Lahore"],
+    "correct": 2,
+    "explanation": "The Jallianwala Bagh Massacre occurred in Amritsar, Punjab, on April 13, 1919. It was ordered by General Dyer."
+  },
+  {
+    "question": "Which of the following is the largest desert in the world?",
+    "options": [
+      "Sahara Desert",
+      "Arabian Desert",
+      "Gobi Desert",
+      "Antarctic Polar Desert"
+    ],
+    "correct": 3,
+    "explanation": "The Antarctic Polar Desert is the largest desert in the world, followed by the Arctic Polar Desert. The Sahara is the largest hot desert."
+  },
+  {
+    "question": "The 'Himalayan Mountains' are an example of which type of mountains?",
+    "options": [
+      "Fold Mountains",
+      "Block Mountains",
+      "Volcanic Mountains",
+      "Residual Mountains"
+    ],
+    "correct": 0,
+    "explanation": "The Himalayas are young fold mountains formed by the collision of the Indian and Eurasian tectonic plates."
+  },
+  {
+    "question": "The 'Emergency Provisions' in the Indian Constitution are inspired by the Constitution of which country?",
+    "options": ["Canada", "Germany", "Russia", "UK"],
+    "correct": 1,
+    "explanation": "The provisions related to the suspension of Fundamental Rights during an emergency are borrowed from the Weimar Constitution of Germany."
+  },
+  {
+    "question": "Who was the first Deputy Prime Minister of India?",
+    "options": [
+      "Jawaharlal Nehru",
+      "Lal Bahadur Shastri",
+      "Sardar Vallabhbhai Patel",
+      "Morarji Desai"
+    ],
+    "correct": 2,
+    "explanation": "Sardar Vallabhbhai Patel served as the first Deputy Prime Minister of India from 1947 to 1950, along with being the first Home Minister."
+  },
+  {
+    "question": "The 'Indus Water Treaty' was signed between which two countries?",
+    "options": [
+      "India and China",
+      "India and Pakistan",
+      "India and Bangladesh",
+      "India and Nepal"
+    ],
+    "correct": 1,
+    "explanation": "The Indus Waters Treaty is a water-distribution treaty signed between India and Pakistan in 1960, brokered by the World Bank."
+  },
+  {
+    "question": "The 'Swadeshi and Boycott' movement was a reaction to which British policy?",
+    "options": [
+      "Indian Councils Act, 1909",
+      "Partition of Bengal, 1905",
+      "Rowlatt Act, 1919",
+      "Simon Commission, 1928"
+    ],
+    "correct": 1,
+    "explanation": "The Swadeshi and Boycott movement was a response to Lord Curzon's decision to partition Bengal in 1905."
+  },
+  {
+    "question": "The 'Right to Education' was made a fundamental right in India through which constitutional amendment?",
+    "options": [
+      "42nd Amendment",
+      "73rd Amendment",
+      "86th Amendment",
+      "97th Amendment"
+    ],
+    "correct": 2,
+    "explanation": "The 86th Constitutional Amendment Act of 2002 made education a fundamental right by inserting Article 21A into the Constitution."
+  },
+  {
+    "question": "Which of the following is the largest peninsula in the world?",
+    "options": [
+      "Indian Peninsula",
+      "Arabian Peninsula",
+      "Iberian Peninsula",
+      "Balkan Peninsula"
+    ],
+    "correct": 1,
+    "explanation": "The Arabian Peninsula is the largest peninsula in the world. It is located in Southwest Asia and is primarily surrounded by the Red Sea, Arabian Sea, and Persian Gulf."
+  },
+  {
+    "question": "The 'Regulating Act of 1773' was the first step taken by the British Government to control and regulate the affairs of which of the following?",
+    "options": [
+      "Indian National Congress",
+      "East India Company",
+      "Mughal Empire",
+      "Princely States"
+    ],
+    "correct": 1,
+    "explanation": "The Regulating Act of 1773 was the first parliamentary ratification and authorization of a British government's involvement in the East India Company's affairs."
+  },
+  {
+    "question": "Who was the first Governor-General of India?",
+    "options": [
+      "Lord William Bentinck",
+      "Lord Warren Hastings",
+      "Lord Cornwallis",
+      "Lord Ripon"
+    ],
+    "correct": 0,
+    "explanation": "Lord William Bentinck was the first Governor-General of India, following the Charter Act of 1833. Warren Hastings was the first Governor-General of Bengal."
+  },
+  {
+    "question": "The 'Sanchi Stupa' is located in which state of India?",
+    "options": ["Uttar Pradesh", "Madhya Pradesh", "Bihar", "Rajasthan"],
+    "correct": 1,
+    "explanation": "The Sanchi Stupa is a Buddhist complex located on a hilltop at Sanchi Town in Raisen District of Madhya Pradesh."
+  },
+  {
+    "question": "The 'Khilafat Movement' was started in response to the treatment of which of the following?",
+    "options": [
+      "Ottoman Caliph",
+      "Mughal Emperor",
+      "Nawab of Awadh",
+      "Ruler of Egypt"
+    ],
+    "correct": 0,
+    "explanation": "The Khilafat Movement was a protest campaign launched by Indian Muslims to pressure the British government to protect the Ottoman Caliph."
+  },
+  {
+    "question": "Which of the following is the oldest Veda?",
+    "options": ["Rigveda", "Samaveda", "Yajurveda", "Atharvaveda"],
+    "correct": 0,
+    "explanation": "The Rigveda is the oldest and most important of the four Vedas. It is a collection of hymns and is considered one of the oldest extant texts in any Indo-European language."
+  },
+  {
+    "question": "The 'Simon Commission' was a group of British MPs sent to India to reform which of the following?",
+    "options": [
+      "Education",
+      "Agriculture",
+      "Constitutional reform",
+      "Military"
+    ],
+    "correct": 2,
+    "explanation": "The Simon Commission was a group of seven British Members of Parliament, headed by Sir John Simon, tasked with studying constitutional reform in British India."
+  },
+  {
+    "question": "The 'Lok Sabha' has a maximum strength of how many members?",
+    "options": ["545", "550", "552", "560"],
+    "correct": 2,
+    "explanation": "The Lok Sabha, or the House of the People, can have a maximum of 552 members, with 530 from states, 20 from Union Territories, and 2 nominated members from the Anglo-Indian community (now abolished by the 104th Amendment Act)."
+  },
+  {
+    "question": "The 'Palk Strait' separates which two countries?",
+    "options": [
+      "India and Bangladesh",
+      "India and Sri Lanka",
+      "India and Pakistan",
+      "India and Maldives"
+    ],
+    "correct": 1,
+    "explanation": "The Palk Strait is a strait between the Tamil Nadu state of India and the Jaffna district of Sri Lanka."
+  },
+  {
+    "question": "The 'Montagu-Chelmsford Reforms' were a series of constitutional reforms introduced in which year?",
+    "options": ["1909", "1919", "1935", "1947"],
+    "correct": 1,
+    "explanation": "The Montagu-Chelmsford Reforms were enacted by the Government of India Act, 1919. They introduced a system of 'dyarchy' in the provinces."
+  },
+  {
+    "question": "Which of the following is the highest dam in India?",
+    "options": [
+      "Bhakra Dam",
+      "Tehri Dam",
+      "Hirakud Dam",
+      "Nagarjuna Sagar Dam"
+    ],
+    "correct": 1,
+    "explanation": "Tehri Dam, located on the Bhagirathi River in Uttarakhand, is the highest dam in India. Bhakra Dam is a gravity dam on the Sutlej River."
+  },
+  {
+    "question": "The 'Ryotwari system' of land revenue was introduced by which of the following?",
+    "options": [
+      "Lord Cornwallis",
+      "Thomas Munro",
+      "Lord William Bentinck",
+      "Lord Dalhousie"
+    ],
+    "correct": 1,
+    "explanation": "The Ryotwari System, where the British government collected taxes directly from the farmers (ryots), was introduced by Thomas Munro."
+  },
+  {
+    "question": "The 'Indian Council Act of 1909' is also known by which name?",
+    "options": [
+      "Montagu-Chelmsford Reforms",
+      "Minto-Morley Reforms",
+      "Rowlatt Act",
+      "Government of India Act"
+    ],
+    "correct": 1,
+    "explanation": "The Indian Council Act of 1909 is also known as the Minto-Morley Reforms, named after Lord Minto and John Morley. It introduced separate electorates for Muslims."
+  },
+  {
+    "question": "Which of the following is the longest river in India that flows entirely within the country?",
+    "options": ["Brahmaputra", "Ganga", "Godavari", "Yamuna"],
+    "correct": 2,
+    "explanation": "The Godavari is the longest river in India that flows entirely within the country. The Ganga and Brahmaputra originate in other countries."
+  },
+  {
+    "question": "The 'Vande Mataram' song was composed by which of the following writers?",
+    "options": [
+      "Rabindranath Tagore",
+      "Bankim Chandra Chattopadhyay",
+      "Sarat Chandra Chattopadhyay",
+      "Kazi Nazrul Islam"
+    ],
+    "correct": 1,
+    "explanation": "'Vande Mataram' was composed by Bankim Chandra Chattopadhyay in 1870. It was later included in his novel 'Anandamath'."
+  },
+  {
+    "question": "The 'First Five Year Plan' in India was based on which model?",
+    "options": [
+      "Mahalanobis Model",
+      "Harrod-Domar Model",
+      "Nehru-Gandhian Model",
+      "Gadgil Plan"
+    ],
+    "correct": 1,
+    "explanation": "The First Five-Year Plan (1951-1956) was based on the Harrod-Domar Model. It focused on agriculture and irrigation."
+  },
+  {
+    "question": "The 'Chola Empire' was famous for its administration at which level?",
+    "options": [
+      "Central administration",
+      "Provincial administration",
+      "Village administration",
+      "Military administration"
+    ],
+    "correct": 2,
+    "explanation": "The Chola dynasty was renowned for its highly organized and efficient village administration, which featured a system of local self-government."
+  },
+  {
+    "question": "The 'World Trade Organization' (WTO) was formed in which year?",
+    "options": ["1990", "1995", "2000", "2005"],
+    "correct": 1,
+    "explanation": "The WTO was established on January 1, 1995. It succeeded the General Agreement on Tariffs and Trade (GATT)."
+  },
+  {
+    "question": "The 'Palk Bay' and the 'Gulf of Mannar' are located in which ocean?",
+    "options": [
+      "Arabian Sea",
+      "Bay of Bengal",
+      "Indian Ocean",
+      "Pacific Ocean"
+    ],
+    "correct": 2,
+    "explanation": "Palk Bay and the Gulf of Mannar are located in the Indian Ocean, between the southeastern coast of India and Sri Lanka."
+  },
+  {
+    "question": "The 'Swaraj Party' was formed by which of the following leaders after the Non-Cooperation Movement?",
+    "options": [
+      "Jawaharlal Nehru and Mahatma Gandhi",
+      "C. R. Das and Motilal Nehru",
+      "Subhas Chandra Bose and Bhagat Singh",
+      "Sardar Vallabhbhai Patel and Rajendra Prasad"
+    ],
+    "correct": 1,
+    "explanation": "The Swaraj Party was formed by C. R. Das and Motilal Nehru in 1923, following the withdrawal of the Non-Cooperation Movement."
+  },
+  {
+    "question": "The 'DPSP' are legally enforceable in a court of law. True or False?",
+    "options": ["True", "False"],
+    "correct": 1,
+    "explanation": "The Directive Principles of State Policy (DPSP) are non-justiciable. They are fundamental in the governance of the country but are not enforceable by any court."
+  },
+  {
+    "question": "The 'Golden Temple' of Amritsar was built by which Sikh Guru?",
+    "options": [
+      "Guru Ram Das",
+      "Guru Arjan Dev",
+      "Guru Gobind Singh",
+      "Guru Nanak"
+    ],
+    "correct": 1,
+    "explanation": "The Golden Temple, also known as Harmandir Sahib, was built by Guru Arjan Dev, the fifth Guru of the Sikhs."
+  },
+  {
+    "question": "The 'Cripps Mission' visited India during which period?",
+    "options": ["1920", "1930", "1942", "1945"],
+    "correct": 2,
+    "explanation": "The Cripps Mission, led by Sir Stafford Cripps, was sent to India in 1942 to secure Indian cooperation and support for the British war effort during World War II."
+  },
+  {
+    "question": "The 'Red Data Book' is a source book for information on which of the following?",
+    "options": [
+      "Geological surveys",
+      "Endangered species",
+      "Economic growth",
+      "Forest cover"
+    ],
+    "correct": 1,
+    "explanation": "The Red Data Book is a document established by the International Union for Conservation of Nature (IUCN) for documenting rare and endangered species of animals, plants, and fungi."
+  },
+  {
+    "question": "The 'Morley-Minto Reforms' introduced which of the following?",
+    "options": [
+      "Separate electorates for Muslims",
+      "Dyarchy in provinces",
+      "Provincial autonomy",
+      "Constituent Assembly"
+    ],
+    "correct": 0,
+    "explanation": "The Indian Council Act of 1909, also known as the Morley-Minto Reforms, introduced the system of separate electorates for Muslims, which was a major step towards communal politics."
+  },
+  {
+    "question": "Which of the following is the highest civilian award in India?",
+    "options": [
+      "Padma Vibhushan",
+      "Bharat Ratna",
+      "Padma Bhushan",
+      "Padma Shri"
+    ],
+    "correct": 1,
+    "explanation": "The Bharat Ratna is the highest civilian award of the Republic of India. It was instituted in 1954."
+  },
+  {
+    "question": "The 'Battle of Buxar' was fought in which year?",
+    "options": ["1757", "1764", "1772", "1784"],
+    "correct": 1,
+    "explanation": "The Battle of Buxar was fought in 1764 between the forces of the British East India Company and the combined armies of the Nawab of Bengal, the Nawab of Awadh, and the Mughal Emperor."
+  },
+  {
+    "question": "The 'Rajya Sabha' has a maximum strength of how many members?",
+    "options": ["245", "250", "252", "260"],
+    "correct": 1,
+    "explanation": "The Rajya Sabha, or the Council of States, can have a maximum of 250 members. 238 members are elected from states and Union Territories, and 12 are nominated by the President."
+  },
+  {
+    "question": "The 'Permanent Settlement' of land revenue was introduced in Bengal by which of the following?",
+    "options": [
+      "Lord Cornwallis",
+      "Lord Wellesley",
+      "Lord Hastings",
+      "Lord Ripon"
+    ],
+    "correct": 0,
+    "explanation": "The Permanent Settlement was introduced by Lord Cornwallis in 1793. It fixed the land revenue for Zamindars in perpetuity."
+  },
+  {
+    "question": "The 'Mahatma Gandhi Marine National Park' is located in which Union Territory?",
+    "options": [
+      "Lakshadweep",
+      "Puducherry",
+      "Andaman and Nicobar Islands",
+      "Daman and Diu"
+    ],
+    "correct": 2,
+    "explanation": "Mahatma Gandhi Marine National Park is a national park located in the Andaman and Nicobar Islands. It was established in 1983."
+  },
+  {
+    "question": "Who was the last Governor-General of India?",
+    "options": [
+      "Lord Mountbatten",
+      "C. Rajagopalachari",
+      "Jawaharlal Nehru",
+      "B.R. Ambedkar"
+    ],
+    "correct": 1,
+    "explanation": "Chakravarti Rajagopalachari was the last Governor-General of India. He served from 1948 to 1950, after which the position was abolished with the adoption of the Republic of India."
+  },
+  {
+    "question": "The 'Panchsheel' agreement was signed between which two countries?",
+    "options": [
+      "India and Pakistan",
+      "India and China",
+      "India and Nepal",
+      "India and Bangladesh"
+    ],
+    "correct": 1,
+    "explanation": "The Panchsheel, or the Five Principles of Peaceful Coexistence, was an agreement signed between India and China in 1954."
+  },
+  {
+    "question": "The 'First War of Indian Independence' is the name given to which event by some historians?",
+    "options": [
+      "Swadeshi Movement",
+      "Quit India Movement",
+      "Revolt of 1857",
+      "Non-Cooperation Movement"
+    ],
+    "correct": 2,
+    "explanation": "The Revolt of 1857 is often referred to as the First War of Indian Independence, especially by nationalist historians like V. D. Savarkar."
+  },
+  {
+    "question": "The 'Satpura Range' is located in which part of India?",
+    "options": [
+      "Northern India",
+      "Southern India",
+      "Central India",
+      "Northeastern India"
+    ],
+    "correct": 2,
+    "explanation": "The Satpura Range is a range of hills in central India, running east to west across the states of Madhya Pradesh, Maharashtra, and Gujarat."
+  },
+  {
+    "question": "The 'Kesavananda Bharati vs State of Kerala' case is a landmark judgment related to which of the following?",
+    "options": [
+      "Right to Property",
+      "Basic Structure of the Constitution",
+      "Freedom of Speech",
+      "Right to Privacy"
+    ],
+    "correct": 1,
+    "explanation": "The Kesavananda Bharati case of 1973 established the 'Basic Structure' doctrine, which holds that the Parliament cannot amend the fundamental features of the Constitution."
+  },
+  {
+    "question": "The 'Cabinet Mission' came to India to discuss which of the following?",
+    "options": [
+      "Economic reforms",
+      "Transfer of power",
+      "Military alliances",
+      "Educational reforms"
+    ],
+    "correct": 1,
+    "explanation": "The Cabinet Mission of 1946 was sent to India to discuss and finalize a plan for the transfer of power from the British government to the Indian leadership."
+  },
+  {
+    "question": "The 'Battle of Panipat' was fought between which of the following?",
+    "options": [
+      "Babur and Ibrahim Lodi",
+      "Akbar and Hemu",
+      "Ahmed Shah Abdali and Marathas",
+      "All of the above"
+    ],
+    "correct": 3,
+    "explanation": "The three Battles of Panipat were: 1. Babur vs. Ibrahim Lodi (1526), 2. Akbar vs. Hemu (1556), and 3. Ahmed Shah Abdali vs. Marathas (1761). Thus, all of the above are correct."
+  },
+  {
+    "question": "The 'Brahmo Samaj' was founded by which of the following reformers?",
+    "options": [
+      "Swami Vivekananda",
+      "Raja Ram Mohan Roy",
+      "Dayananda Saraswati",
+      "Ishwar Chandra Vidyasagar"
+    ],
+    "correct": 1,
+    "explanation": "Brahmo Samaj was a social and religious reform movement founded by Raja Ram Mohan Roy in Calcutta in 1828."
+  },
+  {
+    "question": "The 'Chipko Movement' was a famous environmental movement that originated in which state?",
+    "options": [
+      "Uttarakhand",
+      "Himachal Pradesh",
+      "Arunachal Pradesh",
+      "Sikkim"
+    ],
+    "correct": 0,
+    "explanation": "The Chipko Movement was a forest conservation movement in Uttarakhand. Local women hugged trees to prevent them from being felled."
+  },
+  {
+    "question": "The 'Salt Satyagraha' was started from which place?",
+    "options": ["Sabarmati Ashram", "Dandi", "Wardha Ashram", "Champaran"],
+    "correct": 0,
+    "explanation": "The Salt Satyagraha began with the Dandi March on March 12, 1930, from Sabarmati Ashram in Ahmedabad. The march ended at Dandi."
+  },
+  {
+    "question": "The 'Pitt's India Act of 1784' was passed to rectify the drawbacks of which of the following?",
+    "options": [
+      "Regulating Act of 1773",
+      "Charter Act of 1793",
+      "Government of India Act, 1858",
+      "Indian Councils Act, 1861"
+    ],
+    "correct": 0,
+    "explanation": "The Pitt's India Act of 1784 was passed to bring the East India Company's affairs under greater parliamentary control and to rectify the defects of the Regulating Act of 1773."
+  },
+  {
+    "question": "The 'Narmada River' flows into which of the following bodies of water?",
+    "options": [
+      "Bay of Bengal",
+      "Arabian Sea",
+      "Indian Ocean",
+      "Gulf of Mannar"
+    ],
+    "correct": 1,
+    "explanation": "The Narmada is the largest west-flowing river of peninsular India. It flows into the Gulf of Khambhat (Arabian Sea) in Gujarat."
+  },
+  {
+    "question": "The 'Jainism' religion was founded by which of the following figures?",
+    "options": ["Mahavira", "Gautama Buddha", "Rishabhanatha", "Parshvanatha"],
+    "correct": 2,
+    "explanation": "Rishabhanatha is traditionally regarded as the first Tirthankara of Jainism and the founder of the religion. Mahavira was the 24th and last Tirthankara."
+  },
+  {
+    "question": "The 'Sikandar-e-Sani' title was adopted by which Delhi Sultan?",
+    "options": [
+      "Alauddin Khilji",
+      "Iltutmish",
+      "Balban",
+      "Muhammad bin Tughluq"
+    ],
+    "correct": 0,
+    "explanation": "Alauddin Khilji, a ruler of the Khilji dynasty, adopted the title of 'Sikandar-e-Sani', meaning 'Second Alexander'."
+  },
+  {
+    "question": "The 'World Environment Day' is celebrated on which date?",
+    "options": ["June 5", "April 22", "July 11", "March 21"],
+    "correct": 0,
+    "explanation": "World Environment Day is celebrated annually on June 5. It was established by the United Nations to encourage worldwide awareness and action for the protection of our environment."
+  },
+  {
+    "question": "The 'Morley-Minto Reforms' introduced which of the following?",
+    "options": [
+      "Separate electorates for Muslims",
+      "Dyarchy in provinces",
+      "Provincial autonomy",
+      "Constituent Assembly"
+    ],
+    "correct": 0,
+    "explanation": "The Indian Council Act of 1909, also known as the Morley-Minto Reforms, introduced the system of separate electorates for Muslims, a move that led to increased communalism."
+  },
+  {
+    "question": "The 'Right to Privacy' was declared as a fundamental right in India in which year?",
+    "options": ["2010", "2015", "2017", "2019"],
+    "correct": 2,
+    "explanation": "The Supreme Court of India declared the 'Right to Privacy' as a fundamental right under Article 21 in its landmark judgment in the case of 'Justice K. S. Puttaswamy (Retd.) v. Union of India' in 2017."
+  },
+  {
+    "question": "The 'Sunderbans' are a famous example of which type of forest?",
+    "options": [
+      "Tropical Evergreen Forests",
+      "Mangrove Forests",
+      "Deciduous Forests",
+      "Coniferous Forests"
+    ],
+    "correct": 1,
+    "explanation": "The Sunderbans, located in the delta region of the Ganga, Brahmaputra, and Meghna rivers, are the largest single block of tidal halophytic mangrove forest in the world."
+  },
+  {
+    "question": "The 'Government of India Act of 1935' introduced which of the following?",
+    "options": [
+      "Provincial autonomy",
+      "Dyarchy at the center",
+      "Abolition of Dyarchy in provinces",
+      "All of the above"
+    ],
+    "correct": 3,
+    "explanation": "The Government of India Act, 1935, introduced provincial autonomy and abolished dyarchy in the provinces. It also introduced dyarchy at the central level."
+  },
+  {
+    "question": "The 'Indo-Gangetic Plain' is famous for its fertile soil, known as?",
+    "options": ["Laterite soil", "Black soil", "Alluvial soil", "Red soil"],
+    "correct": 2,
+    "explanation": "The Indo-Gangetic Plain is formed by the deposits of alluvial soil brought by the rivers Ganga, Indus, and Brahmaputra, making it one of the most fertile regions in the world."
+  },
+  {
+    "question": "The 'First Buddhist Council' was held during the reign of which king?",
+    "options": ["Ashoka", "Ajatashatru", "Kanishka", "Bimbisara"],
+    "correct": 1,
+    "explanation": "The First Buddhist Council was held shortly after the Mahaparinirvana of the Buddha, during the reign of King Ajatashatru of the Haryanka dynasty."
+  },
+  {
+    "question": "The 'Tawa River' is a tributary of which of the following rivers?",
+    "options": ["Ganga", "Yamuna", "Narmada", "Mahanadi"],
+    "correct": 2,
+    "explanation": "The Tawa River is a major tributary of the Narmada River. It flows through the state of Madhya Pradesh."
+  },
+  {
+    "question": "The 'National Human Rights Commission' (NHRC) is a statutory body in India. Who is the current chairperson of NHRC?",
+    "options": [
+      "Justice H.L. Dattu",
+      "Justice Arun Kumar Mishra",
+      "Justice S.A. Bobde",
+      "Justice Dipak Misra"
+    ],
+    "correct": 1,
+    "explanation": "As of recent appointments, Justice Arun Kumar Mishra is the current chairperson of the National Human Rights Commission."
+  },
+  {
+    "question": "The 'Saraswati Samman' is an award given for excellence in which field?",
+    "options": [
+      "Literature",
+      "Science and Technology",
+      "Sports",
+      "Social Work"
+    ],
+    "correct": 0,
+    "explanation": "The Saraswati Samman is an annual award for outstanding prose or poetry literary works in any of the 22 languages of India listed in Schedule VIII of the Constitution of India."
+  },
+  {
+    "question": "The 'Right to Property' was removed from the list of Fundamental Rights by which constitutional amendment?",
+    "options": [
+      "42nd Amendment",
+      "44th Amendment",
+      "86th Amendment",
+      "97th Amendment"
+    ],
+    "correct": 1,
+    "explanation": "The 44th Amendment Act of 1978 removed the Right to Property from the list of Fundamental Rights and made it a legal right under Article 300A."
+  },
+  {
+    "question": "The 'Suez Canal' connects which two bodies of water?",
+    "options": [
+      "Mediterranean Sea and Red Sea",
+      "Red Sea and Arabian Sea",
+      "Atlantic Ocean and Pacific Ocean",
+      "Black Sea and Caspian Sea"
+    ],
+    "correct": 0,
+    "explanation": "The Suez Canal is an artificial sea-level waterway in Egypt, connecting the Mediterranean Sea and the Red Sea. It is a vital shipping route."
+  },
+  {
+    "question": "The 'Gandhara School of Art' was a blend of which two art styles?",
+    "options": [
+      "Indian and Persian",
+      "Indian and Greek",
+      "Indian and Chinese",
+      "Indian and Roman"
+    ],
+    "correct": 1,
+    "explanation": "The Gandhara School of Art, which flourished in ancient India, was a blend of Indian and Hellenistic (Greek) art styles, particularly in the depiction of Buddha."
+  },
+  {
+    "question": "The 'Rajya Sabha' is a permanent body and is not subject to dissolution. True or False?",
+    "options": ["True", "False"],
+    "correct": 0,
+    "explanation": "The Rajya Sabha is a permanent house, and it is not subject to dissolution. One-third of its members retire every two years."
+  },
+  {
+    "question": "The 'National Anthem of India' was adopted from which of the following works?",
+    "options": [
+      "Jana Gana Mana by Rabindranath Tagore",
+      "Vande Mataram by Bankim Chandra Chattopadhyay",
+      "Sare Jahan Se Achha by Muhammad Iqbal",
+      "None of the above"
+    ],
+    "correct": 0,
+    "explanation": "'Jana Gana Mana', composed by Rabindranath Tagore, was adopted as the National Anthem of India by the Constituent Assembly on January 24, 1950."
+  },
+  {
+    "question": "The 'Loktak Lake' is famous for its floating phumdis and is located in which state?",
+    "options": ["Assam", "Meghalaya", "Manipur", "Tripura"],
+    "correct": 2,
+    "explanation": "Loktak Lake is the largest freshwater lake in Northeast India. It is famous for its floating phumdis (heterogeneous mass of vegetation, soil, and organic matter) and is located in Manipur."
+  },
+  {
+    "question": "The 'Charter Act of 1813' ended the monopoly of which of the following?",
+    "options": [
+      "East India Company's trade in India",
+      "East India Company's trade with China",
+      "East India Company's trade in tea",
+      "All of the above"
+    ],
+    "correct": 0,
+    "explanation": "The Charter Act of 1813 ended the East India Company's trade monopoly in India, but it retained its monopoly on trade with China and the trade in tea."
+  },
+  {
+    "question": "The 'G-20' is an international forum of governments and central bank governors. How many countries are members of G-20?",
+    "options": ["19", "20", "21", "22"],
+    "correct": 0,
+    "explanation": "The G-20 includes 19 countries and the European Union (EU). Recently, the African Union (AU) was added as a permanent member."
+  },
+  {
+    "question": "The 'Wagah Border' is a border crossing between which two countries?",
+    "options": [
+      "India and Bangladesh",
+      "India and Pakistan",
+      "India and China",
+      "India and Nepal"
+    ],
+    "correct": 1,
+    "explanation": "The Wagah-Attari border is a road border crossing between India and Pakistan. It is famous for its daily 'Beating Retreat' ceremony."
+  },
+  {
+    "question": "The 'Pindari War' of 1817-18 was fought against which of the following?",
+    "options": ["Marathas", "Sikhs", "Pindaris", "Rohillas"],
+    "correct": 2,
+    "explanation": "The Pindari War was a conflict fought by the British East India Company against the Pindaris, a group of mercenaries who raided various regions in central India."
+  },
+  {
+    "question": "The 'Right to Freedom of Religion' is provided under which article of the Indian Constitution?",
+    "options": ["Article 14", "Article 19", "Article 25", "Article 32"],
+    "correct": 2,
+    "explanation": "Article 25 of the Indian Constitution guarantees the freedom of conscience and the right to freely profess, practice, and propagate religion."
+  },
+  {
+    "question": "The 'Indus River' originates from which of the following places?",
+    "options": [
+      "Himalayas in India",
+      "Tibet near Lake Mansarovar",
+      "Hindu Kush mountains",
+      "Siachen Glacier"
+    ],
+    "correct": 1,
+    "explanation": "The Indus River originates in the Tibetan Plateau near Lake Mansarovar. It then flows through Pakistan to the Arabian Sea."
+  },
+  {
+    "question": "The 'Non-Aligned Movement' (NAM) was founded by which of the following leaders?",
+    "options": [
+      "Jawaharlal Nehru, Josip Broz Tito, and Gamal Abdel Nasser",
+      "Mahatma Gandhi, Nelson Mandela, and Fidel Castro",
+      "Jawaharlal Nehru, Sukarno, and Fidel Castro",
+      "Indira Gandhi, Josip Broz Tito, and Muammar Gaddafi"
+    ],
+    "correct": 0,
+    "explanation": "The Non-Aligned Movement was a group of states that were not formally aligned with or against any major power bloc during the Cold War. It was co-founded by Jawaharlal Nehru (India), Josip Broz Tito (Yugoslavia), and Gamal Abdel Nasser (Egypt)."
+  },
+  {
+    "question": "The 'Tughlaqabad Fort' was built by which of the following rulers?",
+    "options": [
+      "Firoz Shah Tughlaq",
+      "Ghiyas-ud-din Tughlaq",
+      "Muhammad bin Tughluq",
+      "Alauddin Khilji"
+    ],
+    "correct": 1,
+    "explanation": "Tughlaqabad Fort was built by Ghiyas-ud-din Tughlaq, the founder of the Tughlaq dynasty of the Delhi Sultanate, in 1321."
+  },
+  {
+    "question": "The 'Monsoon' in India is an example of which type of wind?",
+    "options": ["Trade winds", "Westerlies", "Seasonal winds", "Local winds"],
+    "correct": 2,
+    "explanation": "Monsoons are large-scale seasonal wind systems that bring heavy rainfall. The Indian monsoon is a classic example of seasonal winds."
+  },
+  {
+    "question": "The 'First Anglo-Sikh War' was fought between which two parties?",
+    "options": [
+      "British and Marathas",
+      "British and Sikhs",
+      "British and Mughals",
+      "British and Gurkhas"
+    ],
+    "correct": 1,
+    "explanation": "The First Anglo-Sikh War was fought between the Sikh Empire and the British East India Company in 1845-1846."
+  },
+  {
+    "question": "The 'Fundamental Duties' were added to the Indian Constitution by which constitutional amendment?",
+    "options": [
+      "42nd Amendment",
+      "44th Amendment",
+      "86th Amendment",
+      "97th Amendment"
+    ],
+    "correct": 0,
+    "explanation": "The Fundamental Duties were added by the 42nd Amendment Act of 1976. They were included in a new Part IVA under Article 51A."
+  },
+  {
+    "question": "The 'Khajuraho Group of Monuments' is located in which state of India?",
+    "options": ["Rajasthan", "Madhya Pradesh", "Gujarat", "Maharashtra"],
+    "correct": 1,
+    "explanation": "The Khajuraho Group of Monuments, a UNESCO World Heritage Site famous for its temples and intricate carvings, is located in the state of Madhya Pradesh."
+  },
+  {
+    "question": "The 'National Song of India' is?",
+    "options": [
+      "Jana Gana Mana",
+      "Sare Jahan Se Achha",
+      "Vande Mataram",
+      "Ai Mere Watan Ke Logon"
+    ],
+    "correct": 2,
+    "explanation": "'Vande Mataram', composed by Bankim Chandra Chattopadhyay, is the National Song of India. 'Jana Gana Mana' is the National Anthem."
+  },
+  {
+    "question": "The 'Malwa Plateau' is located in which part of India?",
+    "options": [
+      "Northern India",
+      "Central India",
+      "Southern India",
+      "Northeastern India"
+    ],
+    "correct": 1,
+    "explanation": "The Malwa Plateau is a plateau region in western and central India. It covers parts of Madhya Pradesh and Rajasthan."
+  },
+  {
+    "question": "The 'Jallianwala Bagh Massacre' took place during the tenure of which Viceroy of India?",
+    "options": ["Lord Chelmsford", "Lord Curzon", "Lord Minto", "Lord Ripon"],
+    "correct": 0,
+    "explanation": "The Jallianwala Bagh Massacre took place in 1919 during the viceroyalty of Lord Chelmsford."
+  },
+  {
+    "question": "The '2019 Nobel Peace Prize' was awarded to Abiy Ahmed for his efforts to achieve peace with which country?",
+    "options": ["Eritrea", "Sudan", "Somalia", "Kenya"],
+    "correct": 0,
+    "explanation": "Abiy Ahmed, the Prime Minister of Ethiopia, was awarded the Nobel Peace Prize in 2019 for his efforts to resolve the border conflict with neighboring Eritrea."
+  },
+  {
+    "question": "The 'Subhash Chandra Bose' museum is located in which of the following places?",
+    "options": ["Kolkata", "Delhi", "Mumbai", "Lucknow"],
+    "correct": 1,
+    "explanation": "The Netaji Subhash Chandra Bose museum is located at the Red Fort in Delhi. It was inaugurated in 2019."
+  },
+  {
+    "question": "The 'Bodo language' is primarily spoken in which Indian state?",
+    "options": ["Assam", "Nagaland", "Meghalaya", "Mizoram"],
+    "correct": 0,
+    "explanation": "Bodo is a Sino-Tibetan language spoken primarily by the Bodo people of Northeast India, particularly in the state of Assam."
+  },
+  {
+    "question": "The 'Government of India Act, 1919' is also known as?",
+    "options": [
+      "Minto-Morley Reforms",
+      "Montagu-Chelmsford Reforms",
+      "Indian Independence Act",
+      "Regulating Act"
+    ],
+    "correct": 1,
+    "explanation": "The Government of India Act, 1919, is commonly known as the Montagu-Chelmsford Reforms. It introduced a system of 'dyarchy' in the provinces."
+  },
+  {
+    "question": "The 'Gobar-Dhan' scheme is related to which of the following?",
+    "options": [
+      "Promotion of organic farming",
+      "Solid waste management",
+      "Cattle waste management",
+      "Rural electrification"
+    ],
+    "correct": 2,
+    "explanation": "The Gobar-Dhan (Galvanizing Organic Bio-Agro Resources Dhan) scheme is related to the management of cattle waste and other organic waste to generate compost, biogas, and bio-CNG."
+  },
+  {
+    "question": "The 'Indian National Army' (INA) was founded by which of the following?",
+    "options": [
+      "Subhas Chandra Bose",
+      "Captain Mohan Singh",
+      "Rash Behari Bose",
+      "Jawaharlal Nehru"
+    ],
+    "correct": 1,
+    "explanation": "The Indian National Army was initially founded by Captain Mohan Singh in 1942. Later, Subhas Chandra Bose revived and led it."
+  },
+  {
+    "question": "The 'Saptaparni Cave' is associated with which of the following events?",
+    "options": [
+      "First Buddhist Council",
+      "Second Buddhist Council",
+      "Third Buddhist Council",
+      "Fourth Buddhist Council"
+    ],
+    "correct": 0,
+    "explanation": "The First Buddhist Council, held shortly after the Mahaparinirvana of the Buddha, took place in the Saptaparni Cave in Rajgir, Bihar."
+  },
+  {
+    "question": "The 'Khasi hills' are located in which state of India?",
+    "options": ["Assam", "Meghalaya", "Nagaland", "Tripura"],
+    "correct": 1,
+    "explanation": "The Khasi Hills are located in the state of Meghalaya. They are part of the Patkai range."
   },
   {
     "question": "Which of the following is/are included in the Union List under the Indian Constitution?",
@@ -87,17 +2122,6 @@
     ],
     "correct": 3,
     "explanation": "The Union List includes subjects on which only the Parliament can legislate, including defense, currency, and foreign affairs, as mentioned in the Seventh Schedule."
-  },
-  {
-    "question": "The 'rain shadow effect' is prominently observed in which Indian region?",
-    "options": [
-      "Gangetic Plains",
-      "Leeward side of Western Ghats",
-      "Coastal Andhra",
-      "Ganga Delta"
-    ],
-    "correct": 1,
-    "explanation": "The leeward side of the Western Ghats receives much less rainfall because the Ghats block the moisture-laden monsoon winds, creating a rain shadow."
   },
   {
     "question": "The Himalayan range was formed due to the collision of which tectonic plates?",

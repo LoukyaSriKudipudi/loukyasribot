@@ -16,19 +16,28 @@ function getFact() {
 
 const Chat = require("../models/chats");
 const bot = require("../utils/telegramBot");
+
 bot.command("startfacts", async (ctx) => {
   await Chat.updateOne(
     { chatId: ctx.chat.id },
-    { $set: { factsEnabled: true, chatTitle: ctx.chat.title } },
+    {
+      $set: {
+        factsEnabled: true,
+        quizEnabled: true,
+        chatTitle: ctx.chat.title,
+      },
+    },
     { upsert: true }
   );
 
+  // Delete the command message after 3s
   setTimeout(() => {
     ctx.deleteMessage(ctx.message.message_id);
   }, 3000);
 
-  const message = await ctx.reply("✅ Facts enabled in this chat.");
+  const message = await ctx.reply("✅ Facts and quizzes enabled in this chat.");
 
+  // Delete bot reply after 30s
   setTimeout(() => {
     ctx.telegram.deleteMessage(ctx.chat.id, message.message_id);
   }, 30000);
@@ -37,13 +46,16 @@ bot.command("startfacts", async (ctx) => {
 bot.command("stopfacts", async (ctx) => {
   await Chat.updateOne(
     { chatId: ctx.chat.id },
-    { $set: { factsEnabled: false } }
+    { $set: { factsEnabled: false, quizEnabled: false } }
   );
+
   setTimeout(() => {
     ctx.deleteMessage(ctx.message.message_id);
   }, 3000);
 
-  const message = await ctx.reply("🛑 Facts disabled in this chat.");
+  const message = await ctx.reply(
+    "🛑 Facts and quizzes disabled in this chat."
+  );
   setTimeout(() => {
     ctx.telegram.deleteMessage(ctx.chat.id, message.message_id);
   }, 30000);

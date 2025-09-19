@@ -24,7 +24,7 @@ require("./controllers/helpCommand");
 const { broadcastFact } = require("./services/updateService");
 const { broadcastQuiz } = require("./services/broadcastQuiz");
 const { broadcastQuizQuestion } = require("./services/quizQuestionsService");
-
+require("./services/factsService");
 require("./services/ask");
 require("./services/translate");
 
@@ -42,15 +42,11 @@ if (bot) console.log("---bot is running---");
 eventRecordBot.launch();
 if (eventRecordBot) console.log("---event record bot is running---");
 
-cron.schedule("0 9-21/2 * * *", broadcastQuizQuestion, {
+cron.schedule("* 9-22 * * *", broadcastQuizQuestion, {
   timezone: "Asia/Kolkata",
 });
 
-cron.schedule("0 0-6/3 * * *", broadcastQuizQuestion, {
-  timezone: "Asia/Kolkata",
-});
-
-cron.schedule("30 10-20/2 * * *", broadcastFact, {
+cron.schedule("* 9-21 * * *", broadcastFact, {
   timezone: "Asia/Kolkata",
 });
 
