@@ -3,6 +3,8 @@ const path = require("path");
 const fs = require("fs");
 const eventRecordBot = require("../utils/eventRecordBot");
 const Chat = require("../models/chats");
+const validateQuiz = require("../utils/quizValidator");
+const isBotAdmin = require("../utils/isBotAdmin");
 
 const quizQuestionsFile = path.join(
   __dirname,
@@ -70,11 +72,11 @@ async function broadcastQuizQuestion() {
         const { chatId, topicId, chatTitle, lastQuizMessageId } = chat;
 
         try {
-          // Delete previous quiz message if exists
+          // Delete previous quiz
           if (lastQuizMessageId) {
             try {
               await bot.telegram.deleteMessage(chatId, lastQuizMessageId);
-              logs.push(`🗑 Deleted quiz in ${chatTitle}`);
+              logs.push(`🗑 Deleted previous quiz in ${chatTitle}`);
             } catch (err) {
               logs.push(`⚠ Could not delete in ${chatTitle}: ${err.message}`);
             }
@@ -82,6 +84,18 @@ async function broadcastQuizQuestion() {
 
           const { question, options, correct, explanation } =
             getQuizQuestionForGroup(chat);
+
+          const validationError = validateQuiz({
+            question,
+            options,
+            explanation,
+          });
+          if (validationError) {
+            logs.push(`❌ Failed in ${chatTitle}: ${validationError}`);
+            failedBatch.push(chatTitle);
+            allFailedChats.push(chatTitle);
+            continue;
+          }
 
           const sentQuiz = await bot.telegram.sendQuiz(
             chatId,
@@ -103,16 +117,38 @@ async function broadcastQuizQuestion() {
           chat.lastQuizMessageId = sentQuiz.message_id;
           chat.quizIndex = (chat.quizIndex + 1) % quizQuestions.length;
           chat.nextQuizTime = new Date(
-            Date.now() + (chat.quizFrequencyMinutes || 30) * 60 * 1000
+            Date.now() + (chat.quizFrequencyMinutes || 60) * 60 * 1000
           );
           await chat.save();
         } catch (err) {
-          logs.push(`❌ Failed in ${chatTitle}: ${err.message}`);
+          if (
+            err.response?.error_code === 403 ||
+            err.message.includes("bot was kicked")
+          ) {
+            // Bot removed from group
+            chat.quizEnabled = false;
+            chat.nextQuizTime = null;
+            await chat.save();
+            logs.push(`❌ Quiz disabled for ${chatTitle}: bot was kicked`);
+          } else if (
+            err.response?.error_code === 400 &&
+            (err.description?.includes("not enough rights to send") ||
+              err.description?.includes("polls"))
+          ) {
+            // Group is locked → disable quizzes
+            chat.quizEnabled = false;
+            chat.nextQuizTime = null;
+            await chat.save();
+            logs.push(
+              `❌ Quiz disabled for ${chatTitle}: group is locked (no send rights)`
+            );
+          } else {
+            logs.push(`❌ Failed in ${chatTitle}: ${err.message}`);
+          }
           failedBatch.push(chatTitle);
           allFailedChats.push(chatTitle);
         }
 
-        // Delay between sending messages to prevent spam
         await new Promise((res) => setTimeout(res, delayPerMessage));
       }
 

@@ -2,7 +2,6 @@ const fs = require("fs");
 const path = require("path");
 const Chat = require("../models/chats");
 const bot = require("../utils/telegramBot");
-
 // Load quiz questions
 const quizFile = fs.readFileSync(
   path.join(__dirname, "..", "localDB", "quiz.json")

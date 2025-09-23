@@ -1,6 +1,7 @@
 const { message } = require("telegraf/filters");
 const bot = require("../utils/telegramBot");
 const { GoogleGenAI } = require("@google/genai");
+const isBotAdmin = require("../utils/isBotAdmin");
 
 function getAPIKey() {
   const time = new Date().getHours();
@@ -38,7 +39,31 @@ function cleanText(text) {
     .trim();
 }
 
+async function ensureAdmin(ctx) {
+  if (ctx.chat.type === "private") {
+    return true;
+  }
+  try {
+    const isAdmin = await isBotAdmin(ctx.chat.id);
+    if (!isAdmin) {
+      await ctx.reply(
+        `⚠ Hello ${ctx.chat.title || "this group"}!\n\n` +
+          `To ensure all features of this bot work properly, ` +
+          `please grant the bot admin rights. Some functionalities may not work without it.`
+      );
+      return false;
+    }
+    return true;
+  } catch (err) {
+    console.warn(`⚠ Could not check admin in ${ctx.chat.id}: ${err.message}`);
+    return false;
+  }
+}
+
 bot.command("loukya", async (ctx) => {
+  const canRun = await ensureAdmin(ctx);
+  if (!canRun) return;
+
   let query = ctx.message.text.split(" ").slice(1).join(" ");
 
   if (ctx.message.reply_to_message) {
@@ -68,7 +93,7 @@ bot.command("loukya", async (ctx) => {
     const userName = ctx.from.first_name || "unknown";
     const fileName = `user_${userId}.txt`;
 
-    const logDir = path.join(__dirname, "..", "localDB");
+    const logDir = path.join(__dirname, "..", "localDB", "AI");
     if (!fs.existsSync(logDir)) {
       fs.mkdirSync(logDir, { recursive: true });
     }
@@ -94,6 +119,8 @@ bot.command("loukya", async (ctx) => {
 });
 
 bot.command("replyloukya", async (ctx) => {
+  const canRun = await ensureAdmin(ctx);
+  if (!canRun) return;
   if (!ctx.message.reply_to_message) {
     return ctx.reply("❌ Please reply to a message with /explainloukya.");
   }
@@ -122,7 +149,7 @@ bot.command("replyloukya", async (ctx) => {
     const userName = ctx.from.first_name || "unknown";
     const fileName = `user_${userId}.txt`;
 
-    const logDir = path.join(__dirname, "..", "localDB");
+    const logDir = path.join(__dirname, "..", "localDB", "AI");
     if (!fs.existsSync(logDir)) {
       fs.mkdirSync(logDir, { recursive: true });
     }
@@ -148,6 +175,8 @@ bot.command("replyloukya", async (ctx) => {
 });
 
 bot.command("explainloukya", async (ctx) => {
+  const canRun = await ensureAdmin(ctx);
+  if (!canRun) return;
   if (!ctx.message.reply_to_message) {
     return ctx.reply("❌ Please reply to a message with /explainloukya.");
   }
@@ -180,7 +209,7 @@ and avoid just repeating the same words. Here is the text:\n\n"${originalText}"`
     const userName = ctx.from.first_name || "unknown";
     const fileName = `user_${userId}.txt`;
 
-    const logDir = path.join(__dirname, "..", "localDB");
+    const logDir = path.join(__dirname, "..", "localDB", "AI");
     if (!fs.existsSync(logDir)) {
       fs.mkdirSync(logDir, { recursive: true });
     }
@@ -206,6 +235,8 @@ and avoid just repeating the same words. Here is the text:\n\n"${originalText}"`
 });
 
 bot.command("answerloukya", async (ctx) => {
+  const canRun = await ensureAdmin(ctx);
+  if (!canRun) return;
   if (!ctx.message.reply_to_message) {
     return ctx.reply("❌ Please reply to a message with /answerloukya.");
   }
@@ -236,7 +267,7 @@ bot.command("answerloukya", async (ctx) => {
     const userName = ctx.from.first_name || "unknown";
     const fileName = `user_${userId}.txt`;
 
-    const logDir = path.join(__dirname, "..", "localDB");
+    const logDir = path.join(__dirname, "..", "localDB", "AI");
     if (!fs.existsSync(logDir)) {
       fs.mkdirSync(logDir, { recursive: true });
     }

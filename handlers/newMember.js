@@ -18,7 +18,7 @@ module.exports = () => {
       await saveQuiz(chatID, null, chatTitle, null, chatType);
 
       ctx.reply(
-        `👋 Thank you for adding me in ${chatTitle}! Quiz is now enabled.`
+        `👋 Thank you for adding me in ${chatTitle}! \n\nFor the bot to work smoothly, please grant it admin rights in this group.`
       );
     }
   });

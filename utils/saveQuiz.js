@@ -12,23 +12,37 @@ async function saveQuiz(
     const existing = await Chat.findOne({ chatId });
 
     if (existing) {
-      // Update basic fields
+      // Update existing fields
       existing.topicId = topicId ?? existing.topicId;
       existing.chatTitle = chatTitle ?? existing.chatTitle;
+
       if (lastQuizMessageId !== null)
         existing.lastQuizMessageId = lastQuizMessageId;
 
-      // Update extra fields if provided
       if (extra.quizIndex !== undefined) existing.quizIndex = extra.quizIndex;
-      if (extra.nextQuizTime !== undefined)
-        existing.nextQuizTime = extra.nextQuizTime;
       if (extra.frequency !== undefined)
         existing.quizFrequencyMinutes = extra.frequency;
 
-      // Ensure default values exist
+      // Initialize nextQuizTime if missing or not provided
+      existing.nextQuizTime =
+        extra.nextQuizTime ??
+        existing.nextQuizTime ??
+        new Date(
+          Date.now() + (existing.quizFrequencyMinutes || 60) * 60 * 1000
+        );
+
+      // Ensure defaults
       existing.quizIndex = existing.quizIndex ?? 0;
-      existing.nextQuizTime = existing.nextQuizTime ?? new Date();
-      existing.quizFrequencyMinutes = existing.quizFrequencyMinutes ?? 30;
+      existing.quizFrequencyMinutes = existing.quizFrequencyMinutes ?? 60;
+
+      // Force enable quizzes for groups/channels
+      if (
+        chatType === "group" ||
+        chatType === "supergroup" ||
+        chatType === "channel"
+      ) {
+        existing.quizEnabled = true;
+      }
 
       await existing.save();
     } else {
@@ -38,6 +52,11 @@ async function saveQuiz(
         chatType === "supergroup" ||
         chatType === "channel";
 
+      // Initialize nextQuizTime to now + quiz frequency
+      const initialNextQuizTime =
+        extra.nextQuizTime ??
+        new Date(Date.now() + (extra.frequency ?? 60) * 60 * 1000);
+
       // Create new chat document
       const chat = new Chat({
         chatId,
@@ -46,8 +65,8 @@ async function saveQuiz(
         lastQuizMessageId,
         quizEnabled: isGroupOrChannel,
         quizIndex: extra.quizIndex ?? 0,
-        nextQuizTime: extra.nextQuizTime ?? new Date(),
-        quizFrequencyMinutes: extra.frequency ?? 30,
+        nextQuizTime: initialNextQuizTime,
+        quizFrequencyMinutes: extra.frequency ?? 60,
       });
 
       await chat.save();

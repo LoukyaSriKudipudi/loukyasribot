@@ -2,14 +2,16 @@ require("dotenv").config();
 const bot = require("./utils/telegramBot");
 const connectDB = require("./utils/db");
 const cron = require("node-cron");
-
+// const saveAdminGroups = require("./checkAdmin");
 // Connect to MongoDB
 connectDB();
+// saveAdminGroups();
 
 // Load handlers
 const start = require("./handlers/start");
 const newMember = require("./handlers/newMember");
 const setTopic = require("./handlers/setTopic");
+require("./handlers/developer");
 
 // Load controllers
 require("./controllers/history");
@@ -42,13 +44,17 @@ if (bot) console.log("---bot is running---");
 eventRecordBot.launch();
 if (eventRecordBot) console.log("---event record bot is running---");
 
-cron.schedule("* 9-22 * * *", broadcastQuizQuestion, {
+cron.schedule("* * * * *", broadcastQuizQuestion, {
   timezone: "Asia/Kolkata",
 });
 
-cron.schedule("* 9-21 * * *", broadcastFact, {
+cron.schedule("15 9-21/2 * * *", broadcastFact, {
   timezone: "Asia/Kolkata",
 });
+
+// const chatId = -1002192777641;
+// const messageId = 174295;
+// bot.telegram.deleteMessage(chatId, messageId);
 
 // cron.schedule("15,45 9-21 * * *", broadcastQuiz, {
 //   timezone: "Asia/Kolkata",

@@ -18,6 +18,18 @@ const Chat = require("../models/chats");
 const bot = require("../utils/telegramBot");
 
 bot.command("startfacts", async (ctx) => {
+  if (ctx.chat.type === "private" || ctx.chat.id > 0) {
+    const message = await ctx.reply(
+      "❌ Facts and quizzes are not available in private chats."
+    );
+    setTimeout(
+      () => ctx.telegram.deleteMessage(ctx.chat.id, message.message_id),
+      10000
+    );
+    return;
+  }
+  const nextTime = new Date(Date.now() + 60 * 60 * 1000); // first quiz 30 mins later
+
   await Chat.updateOne(
     { chatId: ctx.chat.id },
     {
@@ -25,28 +37,37 @@ bot.command("startfacts", async (ctx) => {
         factsEnabled: true,
         quizEnabled: true,
         chatTitle: ctx.chat.title,
+        nextQuizTime: nextTime,
+        quizFrequencyMinutes: 60, // optional, store frequency
       },
     },
     { upsert: true }
   );
 
-  // Delete the command message after 3s
-  setTimeout(() => {
-    ctx.deleteMessage(ctx.message.message_id);
-  }, 3000);
+  setTimeout(() => ctx.deleteMessage(ctx.message.message_id), 3000);
 
   const message = await ctx.reply("✅ Facts and quizzes enabled in this chat.");
 
-  // Delete bot reply after 30s
-  setTimeout(() => {
-    ctx.telegram.deleteMessage(ctx.chat.id, message.message_id);
-  }, 30000);
+  setTimeout(
+    () => ctx.telegram.deleteMessage(ctx.chat.id, message.message_id),
+    30000
+  );
 });
 
 bot.command("stopfacts", async (ctx) => {
+  if (ctx.chat.type === "private" || ctx.chat.id > 0) {
+    const message = await ctx.reply(
+      "❌ No facts/quizzes are running in private chats."
+    );
+    setTimeout(
+      () => ctx.telegram.deleteMessage(ctx.chat.id, message.message_id),
+      10000
+    );
+    return;
+  }
   await Chat.updateOne(
     { chatId: ctx.chat.id },
-    { $set: { factsEnabled: false, quizEnabled: false } }
+    { $set: { factsEnabled: false, quizEnabled: false, nextQuizTime: null } }
   );
 
   setTimeout(() => {

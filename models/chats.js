@@ -17,12 +17,12 @@ const chatSchema = new mongoose.Schema(
     // Quiz tracking
     quizIndex: { type: Number, default: 0 },
     nextQuizTime: { type: Date, default: null },
-    quizFrequencyMinutes: { type: Number, default: 30 },
+    quizFrequencyMinutes: { type: Number, default: 60 },
 
     // Fact tracking (new fields)
     factIndex: { type: Number, default: 0 },
     nextFactTime: { type: Date, default: null },
-    factFrequencyMinutes: { type: Number, default: 30 },
+    factFrequencyMinutes: { type: Number, default: 60 },
 
     // Optional createdAt for ordering by join time
     createdAt: { type: Date, default: Date.now },

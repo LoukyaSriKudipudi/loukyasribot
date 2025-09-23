@@ -29,7 +29,9 @@ module.exports = () => {
 
         return ctx.reply(
           `👋 Welcome back, ${first_name}!\n\n` +
-            `Glad to see you again. Use /help anytime to check available commands.`,
+            `Glad to see you again. Use /help anytime to check available commands.\n\n` +
+            `📌 I will start sending Facts and Quizzes once you use /startfacts in a group!\n\n` +
+            `🌐 Visit website: https://bot.loukyasri.pro/`,
           Markup.inlineKeyboard([
             [
               Markup.button.url(
@@ -50,30 +52,26 @@ module.exports = () => {
         lastActive: new Date(),
       });
 
-      // Greeting with Add to Group button
       await ctx.reply(
-        `👋 Hello ${first_name}!\n\n` +
-          `I am @${ctx.botInfo.username}, your exam preparation assistant.\n\n` +
-          `➡️ Add me to a group for daily updates.\n` +
-          `➡️ Use /settopic in a topic if you want updates there.\n\n` +
-          `🤖 AI Commands you can use:\n` +
-          `   • /loukya <question> → Quick answer\n` +
-          `   • /replyloukya <text> → Get a reply\n` +
-          `   • /answerloukya <question> → Detailed answer\n` +
-          `   • /explainloukya <text> → Clear explanation with context\n\n` +
-          `🛠️ Use /help to see all available commands.\n\n` +
-          `📌 I will start sending facts once you use /startfacts in a group or here!`,
-        Markup.inlineKeyboard([
-          [
-            Markup.button.url(
-              "➕ Add me to your Group",
-              `https://t.me/${ctx.botInfo.username}?startgroup=true`
-            ),
-          ],
-        ])
+        `👋 Hello *${first_name}*!\n\n` +
+          `I am *@${ctx.botInfo.username}*, your exam preparation assistant.\n\n` +
+          `📢 *What I Do:* 📝 Facts | ❓ Quizzes | 🔔 Updates — *9 AM to 10 PM*\n\n` +
+          `➡️ Use */settopic* in a topic if you want updates there.\n\n` +
+          `🛠️ Use */help* to see all available commands.\n\n` +
+          `📌 I will start sending *Facts* and *Quizzes* once you use */startfacts* in a group!\n\n` +
+          `🌐 Visit website: https://bot.loukyasri.pro/`,
+        {
+          parse_mode: "Markdown",
+          ...Markup.inlineKeyboard([
+            [
+              Markup.button.url(
+                "➕ Add me to your Group",
+                `https://t.me/${ctx.botInfo.username}?startgroup=true`
+              ),
+            ],
+          ]),
+        }
       );
-
-      console.log("New User Saved:", id);
     } catch (err) {
       console.error("Bot error:", err);
       ctx.reply("Something went wrong, try again later.");

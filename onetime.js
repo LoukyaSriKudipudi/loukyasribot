@@ -1,6 +1,6 @@
 require("dotenv").config();
 const mongoose = require("mongoose");
-const Chat = require("./models/chats");
+const Chat = require("./models/chats"); // Your chat model
 
 const mongoUri = process.env.DATABASE.replace(
   "<db_password>",
@@ -12,22 +12,21 @@ mongoose
   .then(() => console.log("✅ MongoDB connected"))
   .catch((err) => console.error("❌ MongoDB connection error:", err));
 
-async function updateFactFrequency() {
+async function resetLastQuizMessageId() {
   try {
-    const chats = await Chat.find({ factsEnabled: true });
+    const result = await Chat.updateMany(
+      {}, // All documents
+      { $set: { lastQuizMessageId: null } }
+    );
 
-    for (const chat of chats) {
-      chat.factFrequencyMinutes = 60;
-      await chat.save();
-      console.log(`🔹 ${chat.chatTitle} → factFrequencyMinutes set to 60`);
-    }
-
-    console.log("✅ All existing fact-enabled chats updated successfully");
-    process.exit(0);
-  } catch (err) {
-    console.error("❌ Error updating factFrequencyMinutes:", err);
-    process.exit(1);
+    console.log(
+      `🎯 lastQuizMessageId set to null for ${result.modifiedCount} chats.`
+    );
+    mongoose.connection.close();
+  } catch (error) {
+    console.error("❌ Error updating lastQuizMessageId:", error);
+    mongoose.connection.close();
   }
 }
 
-updateFactFrequency();
+resetLastQuizMessageId();
