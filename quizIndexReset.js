@@ -1,6 +1,6 @@
 require("dotenv").config();
 const mongoose = require("mongoose");
-const Chat = require("../models/chats"); // Your chat model
+const Chat = require("./models/chats"); // Your chat model
 
 const mongoUri = process.env.DATABASE.replace(
   "<db_password>",
@@ -14,7 +14,6 @@ mongoose
 
 async function resetQuizIndexes() {
   try {
-    // Fetch only quiz-enabled chats, sorted by createdAt (latest first)
     const chats = await Chat.find({ quizEnabled: true }).sort({
       createdAt: -1,
     });

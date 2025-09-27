@@ -18,6 +18,15 @@ async function saveChat(
         existing.lastFactMessageId = lastFactMessageId;
       }
 
+      // 🔑 Force enable facts again if bot is re-added to a group/channel
+      if (
+        chatType === "group" ||
+        chatType === "supergroup" ||
+        chatType === "channel"
+      ) {
+        existing.factsEnabled = true;
+      }
+
       await existing.save();
     } else {
       // Auto-enable facts only if group or channel

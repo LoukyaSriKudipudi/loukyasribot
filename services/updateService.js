@@ -8,11 +8,29 @@ async function recordEvent(message) {
     const groupId = Number(process.env.EVENT_RECORD_GROUP_ID);
     const topicId = Number(process.env.EVENT_RECORD_GROUP_TOPIC_ID);
 
-    await new Promise((res) => setTimeout(res, 1000));
+    // Telegram max message length = 4096
+    const MAX_LENGTH = 4000; // keep safe margin
 
-    return await eventRecordBot.telegram.sendMessage(groupId, message, {
-      ...(topicId ? { message_thread_id: topicId } : {}),
-    });
+    // Split into parts if too long
+    const parts = [];
+    for (let i = 0; i < message.length; i += MAX_LENGTH) {
+      parts.push(message.slice(i, i + MAX_LENGTH));
+    }
+
+    for (const [index, part] of parts.entries()) {
+      // Small delay between parts
+      await new Promise((res) => setTimeout(res, 500));
+
+      await eventRecordBot.telegram.sendMessage(
+        groupId,
+        parts.length > 1
+          ? `📄 Part ${index + 1}/${parts.length}\n\n${part}`
+          : part,
+        {
+          ...(topicId ? { message_thread_id: topicId } : {}),
+        }
+      );
+    }
   } catch (err) {
     if (err.response && err.response.error_code === 429) {
       const retryAfter = err.response.parameters.retry_after * 1000;

@@ -67,11 +67,21 @@ bot.command("loukya", async (ctx) => {
   let query = ctx.message.text.split(" ").slice(1).join(" ");
 
   if (ctx.message.reply_to_message) {
-    return ctx.reply("❌ Please use /replyloukya when replying to a message.");
+    const msg = await ctx.reply(
+      "❌ Please use /replyloukya when replying to a message."
+    );
+    setTimeout(() => {
+      ctx.telegram.deleteMessage(ctx.chat.id, msg.message_id).catch(() => {});
+    }, 10000);
+    return;
   }
 
   if (!query) {
-    return ctx.reply("❌ Usage: /loukya <your question>");
+    const msg = await ctx.reply("❌ Usage: /loukya <your question>");
+    setTimeout(() => {
+      ctx.telegram.deleteMessage(ctx.chat.id, msg.message_id).catch(() => {});
+    }, 10000);
+    return;
   }
 
   try {

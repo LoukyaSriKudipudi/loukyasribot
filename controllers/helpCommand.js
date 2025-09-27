@@ -3,7 +3,7 @@ const Chat = require("../models/chats");
 
 bot.command("help", async (ctx) => {
   const chatId = ctx.chat.id;
-  const topicId = ctx.message.message_thread_id; // works if in a forum topic
+  const topicId = ctx.message.message_thread_id;
 
   const helpMessage = `
 🤖 *Available Commands*:
@@ -26,10 +26,17 @@ _Enable fact broadcasts in this chat_
 /stopfacts  
 _Disable fact broadcasts in this chat_
 
+/joinhider  
+_Toggle hiding of join/leave messages in this group_
+
+/urlremover  
+_Toggle automatic removal of links from non-admin users_
+
+/developer  
+_Show developer information_
+
 /help  
 _Show this help message._
-
-🔒 *Note:* All messages are stored in encrypted form for your privacy.
 `;
 
   await bot.telegram.sendMessage(chatId, helpMessage, {

@@ -2,15 +2,16 @@ require("dotenv").config();
 const bot = require("./utils/telegramBot");
 const connectDB = require("./utils/db");
 const cron = require("node-cron");
-// const saveAdminGroups = require("./checkAdmin");
 // Connect to MongoDB
 connectDB();
-// saveAdminGroups();
 
 // Load handlers
 const start = require("./handlers/start");
+start();
 const newMember = require("./handlers/newMember");
+newMember();
 const setTopic = require("./handlers/setTopic");
+setTopic();
 require("./handlers/developer");
 
 // Load controllers
@@ -29,14 +30,11 @@ const { broadcastQuizQuestion } = require("./services/quizQuestionsService");
 require("./services/factsService");
 require("./services/ask");
 require("./services/translate");
-
+// forward news from loukya sri group
+require("./services/forwardService");
+require("./services/chatSettings");
 // Event record
 const eventRecordBot = require("./utils/eventRecordBot");
-
-// Start handlers
-start();
-newMember();
-setTopic();
 
 // Launch bots
 bot.launch();
@@ -48,12 +46,18 @@ cron.schedule("* * * * *", broadcastQuizQuestion, {
   timezone: "Asia/Kolkata",
 });
 
-cron.schedule("15 9-21/2 * * *", broadcastFact, {
+cron.schedule("45 9-21/2 * * *", broadcastFact, {
   timezone: "Asia/Kolkata",
 });
 
-// const chatId = -1002192777641;
-// const messageId = 174295;
+// const chatId = -1002298011339;
+// const messageId = 4457;
+// const message = "Thank You!";
+
+// bot.telegram.sendMessage(chatId, message, {
+//   reply_to_message_id: messageId,
+// });
+
 // bot.telegram.deleteMessage(chatId, messageId);
 
 // cron.schedule("15,45 9-21 * * *", broadcastQuiz, {
@@ -67,6 +71,3 @@ cron.schedule("15 9-21/2 * * *", broadcastFact, {
 // new with image
 // const { broadcastNewsWithImage } = require("./services/imageNewsService");
 // broadcastNewsWithImage();
-
-// forward news from loukya sri group
-require("./services/forwardService");
