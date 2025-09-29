@@ -5,9 +5,14 @@ const DB = process.env.DATABASE.replace(
   process.env.DATABASE_PASSWORD
 );
 
-function connectDB() {
-  mongoose.connect(DB).then(() => {
-    console.log(`---DB Connection Sucessfull---`);
-  });
+async function connectDB() {
+  try {
+    await mongoose.connect(DB);
+    console.log("---DB Connection Successful---");
+  } catch (err) {
+    console.error("MongoDB connection error:", err);
+    throw err;
+  }
 }
+
 module.exports = connectDB;

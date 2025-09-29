@@ -5,7 +5,6 @@ const isBotAdmin = require("../utils/isBotAdmin");
 
 function getAPIKey() {
   const time = new Date().getHours();
-  console.log("Current hour:", time);
 
   if (time >= 9 && time < 11) return process.env.GEMINI_API_KEY1;
   else if (time >= 11 && time < 13) return process.env.GEMINI_API_KEY2;
@@ -59,12 +58,14 @@ async function ensureAdmin(ctx) {
     return false;
   }
 }
+const groupSessions = {};
+const botMessageSessions = {};
 
 bot.command("loukya", async (ctx) => {
   const canRun = await ensureAdmin(ctx);
   if (!canRun) return;
 
-  let query = ctx.message.text.split(" ").slice(1).join(" ");
+  const query = ctx.message.text.split(" ").slice(1).join(" ");
 
   if (ctx.message.reply_to_message) {
     const msg = await ctx.reply(
@@ -85,47 +86,124 @@ bot.command("loukya", async (ctx) => {
   }
 
   try {
-    const loadingMsg = await ctx.reply("⏳ Processing...");
+    const loadingMsg = await ctx.reply("⏳ Thinking...");
+    const userId = ctx.from.id;
+
+    if (!groupSessions[userId]) groupSessions[userId] = [];
+    groupSessions[userId].push({ role: "user", text: query });
+
+    if (groupSessions[userId].length > 6) {
+      groupSessions[userId] = groupSessions[userId].slice(-6);
+    }
+
+    const conversation = groupSessions[userId].map((m) => m.text);
+
     const response = await ai.models.generateContent({
       model: "gemini-2.5-flash-lite",
-      contents: query,
+      contents: conversation,
     });
 
-    let data = response.text;
-    if (data) {
-      await ctx.telegram
-        .deleteMessage(ctx.chat.id, loadingMsg.message_id)
-        .catch(() => {});
+    let data = cleanText(response.text);
+    groupSessions[userId].push({ role: "model", text: data });
+
+    await ctx.telegram
+      .deleteMessage(ctx.chat.id, loadingMsg.message_id)
+      .catch(() => {});
+
+    const chunks = splitMessage(data);
+    for (const chunk of chunks) {
+      const sentMsg = await ctx.reply(chunk, {
+        reply_to_message_id: ctx.message.message_id,
+        protect_content: true,
+      });
+
+      botMessageSessions[sentMsg.message_id] = userId;
     }
 
-    data = cleanText(data);
-    const userId = ctx.from.id;
+    // Optional: log to file as before
     const userName = ctx.from.first_name || "unknown";
     const fileName = `user_${userId}.txt`;
-
     const logDir = path.join(__dirname, "..", "localDB", "AI");
-    if (!fs.existsSync(logDir)) {
-      fs.mkdirSync(logDir, { recursive: true });
-    }
-
+    if (!fs.existsSync(logDir)) fs.mkdirSync(logDir, { recursive: true });
     const filePath = path.join(logDir, fileName);
-
     fs.appendFileSync(
       filePath,
       `\n=== ${new Date().toISOString()} ===\nUser: ${userName} (${userId})\nQuery: ${query}\nResponse: ${data}\n`
     );
-
-    const chunks = splitMessage(data);
-    for (const chunk of chunks) {
-      await ctx.reply(chunk, {
-        reply_to_message_id: ctx.message.message_id,
-        protect_content: true,
-      });
-    }
   } catch (err) {
     console.error("❌ Error:", err);
     ctx.reply("❌ Something went wrong. Try again later.");
   }
+});
+
+bot.use(async (ctx, next) => {
+  if (!ctx.message || ctx.message.chat.type === "private") return next();
+  if (ctx.message.text && ctx.message.text.startsWith("/")) {
+    return next();
+  }
+
+  const msg = ctx.message;
+
+  if (
+    !msg.reply_to_message ||
+    msg.reply_to_message.from.id !== ctx.botInfo.id
+  ) {
+    return next();
+  }
+
+  const query = msg.text?.trim();
+  if (!query) return next();
+
+  try {
+    const repliedMsgId = msg.reply_to_message.message_id;
+    const originalUserId = botMessageSessions[repliedMsgId] || ctx.from.id;
+
+    // Initialize session if needed
+    if (!groupSessions[originalUserId]) groupSessions[originalUserId] = [];
+    groupSessions[originalUserId].push({ role: "user", text: query });
+
+    // Keep last 6 messages only
+    if (groupSessions[originalUserId].length > 6) {
+      groupSessions[originalUserId] = groupSessions[originalUserId].slice(-6);
+    }
+
+    const conversation = groupSessions[originalUserId].map((m) => m.text);
+
+    // Send temporary "thinking" message
+    const loadingMsg = await ctx.reply("⏳ Thinking...");
+
+    // Generate AI response
+    const response = await ai.models.generateContent({
+      model: "gemini-2.5-flash-lite",
+      contents: conversation,
+    });
+
+    const data = cleanText(response.text || "❌ No response.");
+    groupSessions[originalUserId].push({ role: "model", text: data });
+
+    // Delete loading message
+    await ctx.telegram
+      .deleteMessage(ctx.chat.id, loadingMsg.message_id)
+      .catch(() => {});
+
+    // Split and send response
+    const chunks = splitMessage(data);
+    for (const chunk of chunks) {
+      const sentMsg = await ctx.reply(chunk, {
+        reply_to_message_id: msg.message_id,
+        protect_content: true,
+      });
+
+      // Save mapping for future replies
+      botMessageSessions[sentMsg.message_id] = originalUserId;
+    }
+  } catch (err) {
+    console.error("❌ Reply handler error:", err);
+    await ctx.reply("❌ Something went wrong. Try again later.");
+  }
+
+  // Call next middleware/handler
+  await next();
 });
 
 bot.command("replyloukya", async (ctx) => {
@@ -141,7 +219,7 @@ bot.command("replyloukya", async (ctx) => {
   }
 
   try {
-    const loadingMsg = await ctx.reply("⏳ Processing...");
+    const loadingMsg = await ctx.reply("⏳ Thinking...");
     const response = await ai.models.generateContent({
       model: "gemini-2.5-flash-lite",
       contents: query,
@@ -201,7 +279,7 @@ Use a conversational style, with step-by-step explanation, examples if needed,
 and avoid just repeating the same words. Here is the text:\n\n"${originalText}"`;
 
   try {
-    const loadingMsg = await ctx.reply("⏳ Processing...");
+    const loadingMsg = await ctx.reply("⏳ Thinking...");
     const response = await ai.models.generateContent({
       model: "gemini-2.5-flash-lite",
       contents: query,
@@ -259,7 +337,7 @@ bot.command("answerloukya", async (ctx) => {
   let query = `Give a direct, clear, and concise answer to the following question. \n\n"${originalText}"`;
 
   try {
-    const loadingMsg = await ctx.reply("⏳ Processing...");
+    const loadingMsg = await ctx.reply("⏳ Thinking...");
     const response = await ai.models.generateContent({
       model: "gemini-2.5-flash-lite",
       contents: query,
@@ -301,3 +379,81 @@ bot.command("answerloukya", async (ctx) => {
     ctx.reply("❌ Something went wrong. Try again later.");
   }
 });
+
+// const sessions = {};
+
+// function splitMessage(text, limit = 3000) {
+//   const chunks = [];
+//   let start = 0;
+//   while (start < text.length) {
+//     chunks.push(text.slice(start, start + limit));
+//     start += limit;
+//   }
+//   return chunks;
+// }
+
+// function cleanText(text) {
+//   return text
+//     .replace(/^\s*\*\s+/gm, "• ")
+//     .replace(/\*\*(.*?)\*\*/g, "$1")
+//     .replace(/\*/g, "")
+//     .trim();
+// }
+
+// bot.on(message("text"), async (ctx) => {
+//   if (ctx.chat.type !== "private") return;
+
+//   const userId = ctx.from.id;
+//   const userName = ctx.from.first_name || "unknown";
+//   const query = ctx.message.text?.trim();
+//   if (!query || query.startsWith("/")) return;
+
+//   if (!sessions[userId]) sessions[userId] = [];
+
+//   sessions[userId].push({ role: "user", text: query });
+
+//   if (sessions[userId].length > 6) {
+//     sessions[userId] = sessions[userId].slice(-6);
+//   }
+
+//   try {
+//     const loadingMsg = await ctx.reply("⏳ Thinking...");
+
+//     const conversation = sessions[userId].map((m) => m.text);
+
+//     const response = await ai.models.generateContent({
+//       model: "gemini-2.5-flash-lite",
+//       contents: conversation,
+//     });
+
+//     let data = response.text || "❌ No response.";
+//     data = cleanText(data);
+
+//     await ctx.telegram
+//       .deleteMessage(ctx.chat.id, loadingMsg.message_id)
+//       .catch(() => {});
+
+//     const chunks = splitMessage(data);
+//     for (const chunk of chunks) {
+//       await ctx.reply(chunk, {
+//         reply_to_message_id: ctx.message.message_id,
+//         protect_content: true,
+//       });
+//     }
+
+//     sessions[userId].push({ role: "model", text: data });
+
+//     const logDir = path.join(__dirname, "..", "localDB", "AI");
+//     if (!fs.existsSync(logDir)) {
+//       fs.mkdirSync(logDir, { recursive: true });
+//     }
+//     const filePath = path.join(logDir, `user_${userId}.txt`);
+//     fs.appendFileSync(
+//       filePath,
+//       `\n=== ${new Date().toISOString()} ===\nUser: ${userName} (${userId})\nQuery: ${query}\nResponse: ${data}\n`
+//     );
+//   } catch (err) {
+//     console.error("❌ Error:", err);
+//     ctx.reply("❌ Something went wrong. Try again later.");
+//   }
+// });

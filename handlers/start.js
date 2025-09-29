@@ -46,7 +46,7 @@ module.exports = () => {
               [
                 Markup.button.url(
                   "➕ Add me to your Group",
-                  `https://t.me/${ctx.botInfo.username}?startgroup=true`
+                  `https://t.me/${ctx.botInfo.username}?startgroup&admin=promote_members+change_info+post_messages+edit_messages+delete_messages+invite_users+restrict_members+pin_messages+manage_video_chats+manage_topics`
                 ),
               ],
             ]),
@@ -78,7 +78,7 @@ module.exports = () => {
             [
               Markup.button.url(
                 "➕ Add me to your Group",
-                `https://t.me/${ctx.botInfo.username}?startgroup=true`
+                `https://t.me/${ctx.botInfo.username}?startgroup&admin=promote_members+change_info+post_messages+edit_messages+delete_messages+invite_users+restrict_members+pin_messages+manage_video_chats+manage_topics`
               ),
             ],
           ]),

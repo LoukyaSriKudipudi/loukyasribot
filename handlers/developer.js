@@ -64,8 +64,10 @@ bot.command("stats", async (ctx) => {
   const { groupsCount, usersCount, quizEnabledCount } = await getStats();
 
   await ctx.replyWithHTML(
-    `👥 Total Users: <b>${groupsCount}</b>\n` +
-      `📝 Facts and Quizzes Enabled in <b>${quizEnabledCount}</b> Groups\n` +
+    `✅ <b>Bot Stats</b>\n\n` +
+      `👥 Total Users and Groups: <b>${groupsCount}</b>\n` +
+      `👥 Total Users: <b>${usersCount}</b>\n` +
+      `📝 Facts and Quizzes Enabled in <b>${quizEnabledCount}</b> Groups\n\n` +
       `🌐 Visit website: https://bot.loukyasri.pro/`
   );
 });

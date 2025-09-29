@@ -2,56 +2,66 @@ require("dotenv").config();
 const bot = require("./utils/telegramBot");
 const connectDB = require("./utils/db");
 const cron = require("node-cron");
-// Connect to MongoDB
-connectDB();
 
-// Load handlers
-const start = require("./handlers/start");
-start();
-const newMember = require("./handlers/newMember");
-newMember();
-const setTopic = require("./handlers/setTopic");
-setTopic();
-require("./handlers/developer");
+// 1️⃣ Connect to MongoDB
+connectDB()
+  .then(() => {
+    // 2️⃣ Load essential services first (dependencies)
+    const newMember = require("./handlers/newMember");
+    newMember();
+    require("./services/factsService");
+    require("./services/ask");
+    require("./services/translate");
+    require("./services/forwardService");
+    require("./services/chatSettings");
 
-// Load controllers
-require("./controllers/history");
-require("./controllers/deleteAllMessages");
-require("./controllers/deleteMessage");
-require("./controllers/stats");
-require("./controllers/searchMessages");
-require("./controllers/saveMessage");
-require("./controllers/helpCommand");
+    // 3️⃣ Load update/broadcast services AFTER dependencies
+    const { broadcastFact } = require("./services/updateService");
+    const { broadcastQuiz } = require("./services/broadcastQuiz");
+    const {
+      broadcastQuizQuestion,
+    } = require("./services/quizQuestionsService");
 
-// Services
-const { broadcastFact } = require("./services/updateService");
-const { broadcastQuiz } = require("./services/broadcastQuiz");
-const { broadcastQuizQuestion } = require("./services/quizQuestionsService");
-require("./services/factsService");
-require("./services/ask");
-require("./services/translate");
-// forward news from loukya sri group
-require("./services/forwardService");
-require("./services/chatSettings");
-// Event record
-const eventRecordBot = require("./utils/eventRecordBot");
+    // 4️⃣ Load handlers after DB and essential services are ready
+    const start = require("./handlers/start");
+    start();
 
-// Launch bots
-bot.launch();
-if (bot) console.log("---bot is running---");
-eventRecordBot.launch();
-if (eventRecordBot) console.log("---event record bot is running---");
+    const setTopic = require("./handlers/setTopic");
+    setTopic();
+    require("./handlers/developer");
 
-cron.schedule("* * * * *", broadcastQuizQuestion, {
-  timezone: "Asia/Kolkata",
-});
+    // // 5️⃣ Load controllers
+    // require("./controllers/history");
+    // require("./controllers/deleteAllMessages");
+    // require("./controllers/deleteMessage");
+    // require("./controllers/stats");
+    // require("./controllers/searchMessages");
+    // require("./controllers/saveMessage");
+    require("./controllers/helpCommand");
 
-cron.schedule("45 9-21/2 * * *", broadcastFact, {
-  timezone: "Asia/Kolkata",
-});
+    // 6️⃣ Event record bot
+    const eventRecordBot = require("./utils/eventRecordBot");
 
-// const chatId = -1002298011339;
-// const messageId = 4457;
+    // 7️⃣ Launch bots
+    bot.launch();
+    console.log("---bot is running---");
+
+    eventRecordBot.launch();
+    console.log("---event record bot is running---");
+
+    // 8️⃣ Start cron jobs AFTER DB, services, and bots are ready
+    cron.schedule("* * * * *", broadcastQuizQuestion, {
+      timezone: "Asia/Kolkata",
+    });
+    cron.schedule("45 9-21/2 * * *", broadcastFact, {
+      timezone: "Asia/Kolkata",
+    });
+    console.log("---All cron jobs scheduled---");
+  })
+  .catch((err) => console.error("MongoDB connection error:", err));
+
+// const chatId = -1001880696019;
+// const messageId = 392198;
 // const message = "Thank You!";
 
 // bot.telegram.sendMessage(chatId, message, {
@@ -59,15 +69,4 @@ cron.schedule("45 9-21/2 * * *", broadcastFact, {
 // });
 
 // bot.telegram.deleteMessage(chatId, messageId);
-
-// cron.schedule("15,45 9-21 * * *", broadcastQuiz, {
-//   timezone: "Asia/Kolkata",
-// });
-
-// new broadcast
-// const { broadcastNews } = require("./services/messageNewsService");
-// broadcastNews();
-
-// new with image
-// const { broadcastNewsWithImage } = require("./services/imageNewsService");
-// broadcastNewsWithImage();
+// https://t.me/venky123studyhub/392198
