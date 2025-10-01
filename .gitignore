@@ -3,3 +3,6 @@ node_modules/
 *.log
 store
 localDB
+onetime.js
+quizIndexReset.js
+checkAdmin.js

@@ -13,6 +13,7 @@ connectDB()
     require("./services/ask");
     require("./services/translate");
     require("./services/forwardService");
+    require("./services/pvtFwdService");
     require("./services/chatSettings");
 
     // 3️⃣ Load update/broadcast services AFTER dependencies

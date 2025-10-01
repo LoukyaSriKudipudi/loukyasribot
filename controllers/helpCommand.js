@@ -1,5 +1,5 @@
-const bot = require("../utils/telegramBot");
-const Chat = require("../models/chats");
+const bot = require("../../loukyasribot/utils/telegramBot");
+const Chat = require("../../loukyasribot/models/chats");
 
 bot.command("help", async (ctx) => {
   const chatId = ctx.chat.id;

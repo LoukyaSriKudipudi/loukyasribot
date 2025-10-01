@@ -1,5 +1,5 @@
-const bot = require("../utils/telegramBot");
-const User = require("../models/userModel");
+const bot = require("../../loukyasribot/utils/telegramBot");
+const User = require("../../loukyasribot/models/userModel");
 
 bot.command("stats", async (ctx) => {
   const user = await User.findOne({ telegramId: ctx.from.id });

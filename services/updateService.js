@@ -28,6 +28,7 @@ async function recordEvent(message) {
           : part,
         {
           ...(topicId ? { message_thread_id: topicId } : {}),
+          parse_mode: "Markdown",
         }
       );
     }

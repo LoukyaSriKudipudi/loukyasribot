@@ -89,12 +89,11 @@ bot.command("loukya", async (ctx) => {
     const loadingMsg = await ctx.reply("⏳ Thinking...");
     const userId = ctx.from.id;
 
-    if (!groupSessions[userId]) groupSessions[userId] = [];
-    groupSessions[userId].push({ role: "user", text: query });
+    // 🔹 Clear previous session completely
+    groupSessions[userId] = [];
 
-    if (groupSessions[userId].length > 6) {
-      groupSessions[userId] = groupSessions[userId].slice(-6);
-    }
+    // Initialize new session with this query
+    groupSessions[userId].push({ role: "user", text: query });
 
     const conversation = groupSessions[userId].map((m) => m.text);
 
@@ -103,7 +102,7 @@ bot.command("loukya", async (ctx) => {
       contents: conversation,
     });
 
-    let data = cleanText(response.text);
+    const data = cleanText(response.text);
     groupSessions[userId].push({ role: "model", text: data });
 
     await ctx.telegram
@@ -116,11 +115,10 @@ bot.command("loukya", async (ctx) => {
         reply_to_message_id: ctx.message.message_id,
         protect_content: true,
       });
-
       botMessageSessions[sentMsg.message_id] = userId;
     }
 
-    // Optional: log to file as before
+    // Logging
     const userName = ctx.from.first_name || "unknown";
     const fileName = `user_${userId}.txt`;
     const logDir = path.join(__dirname, "..", "localDB", "AI");
@@ -274,9 +272,7 @@ bot.command("explainloukya", async (ctx) => {
     return ctx.reply("❌ The replied message has no text to explain.");
   }
 
-  let query = `Explain this text in a clear and simple way as if you are talking to a beginner. 
-Use a conversational style, with step-by-step explanation, examples if needed, 
-and avoid just repeating the same words. Here is the text:\n\n"${originalText}"`;
+  let query = `Explain briefly:\n\n"${originalText}"`;
 
   try {
     const loadingMsg = await ctx.reply("⏳ Thinking...");

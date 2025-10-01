@@ -1,5 +1,5 @@
-const bot = require("../utils/telegramBot");
-const User = require("../models/userModel");
+const bot = require("../../loukyasribot/utils/telegramBot");
+const User = require("../../loukyasribot/models/userModel");
 
 bot.start(async (ctx) => {
   try {

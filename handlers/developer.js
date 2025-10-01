@@ -5,6 +5,7 @@ const User = require("../models/userModel");
 const { Markup } = require("telegraf");
 
 // Developer info
+// Developer info
 bot.command("developer", async (ctx) => {
   await ctx.replyWithHTML(
     `👩‍💻 <b>Developer Info</b>\n\n` +
@@ -12,7 +13,11 @@ bot.command("developer", async (ctx) => {
       `Telegram: @LoukyaSri\n` +
       `🌐 Bot Website: <a href="https://bot.loukyasri.pro/">bot.loukyasri.pro</a>\n` +
       `📂 Portfolio: <a href="https://loukyasri.pro/">loukyasri.pro</a>\n\n` +
-      `💡 Want a similar or custom bot? Contact @LoukyaSri.`
+      `💡 Want a similar or custom bot? Contact @LoukyaSri.\n\n` +
+      `✨ Try our other bots:\n` +
+      `@APPSCQuizBot - Andhra Pradesh Exams Preparation Bot\n` +
+      `@TGPSCQuizBot - Telangana Exams Preparation Bot\n` +
+      `@LoukyaSriBot - All Exams Preparation Bot with AI`
   );
 });
 
