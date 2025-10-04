@@ -54,6 +54,7 @@ module.exports = () => {
         );
       }
 
+      // New User (First time start)
       await User.create({
         telegramId: id,
         username,
@@ -64,14 +65,16 @@ module.exports = () => {
       });
 
       await ctx.reply(
-        `👋 Hello *${first_name}*!\n\n` +
-          `I am *@${ctx.botInfo.username}*, your exam preparation assistant.\n\n` +
-          `📌 *What I Can Do:*\n` +
-          `📝 Share interesting *facts* in your group\n` +
-          `❓ Run *quizzes* for exam prep\n` +
-          `🛠️ Use */help* to see all available commands.\n` +
-          `📢 Use */startfacts* in a group to begin receiving facts and quizzes.\n\n` +
-          `💡 Want a similar or custom bot? Contact */developer* or *@LoukyaSri*.`,
+        `🤖 I (*${ctx.botInfo.username}*) am unlike anything else on Telegram!  \n\n` +
+          `😎 There’s simply *no true alternative in my space.*  \n\n` +
+          `✨ *The most advanced all-in-one bot:*  \n` +
+          `📚 Answer questions & explain concepts  \n` +
+          `📢 Broadcast *facts and quizzes* every hour, 24/7  \n` +
+          `🗂 Manage topics smartly  \n` +
+          `🙈 Hide join/leave messages  \n` +
+          `🚫 Remove unwanted links  \n\n` +
+          `💡 Other bots do a little — 🔥 *I do it all, in one place!*\n\n` +
+          `👉 Curious? Use /help command and discover my features ✨`,
         {
           parse_mode: "Markdown",
           ...Markup.inlineKeyboard([

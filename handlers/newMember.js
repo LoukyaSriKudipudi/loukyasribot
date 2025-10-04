@@ -30,7 +30,18 @@ module.exports = () => {
       setTimeout(async () => {
         try {
           await ctx.reply(
-            `👋 Thank you for adding me in ${chatTitle}!\n\n⚠️ For the bot to work smoothly, please grant it admin rights in this group.`
+            `👋 😍 Thank you for adding me in ${chatTitle}! 🥰\n\n` +
+              `⚠️ Please grant me *admin rights* so *I can work smoothly.*\n\n` +
+              `🌸 I (*${ctx.botInfo.username}*) am unlike anything else on Telegram!  \n\n` +
+              `✨ *The most advanced all-in-one bot:*  \n` +
+              `📚 Answer questions & explain concepts  \n` +
+              `📢 Broadcast *facts and quizzes* every hour, 24/7  \n` +
+              `🗂 Manage topics smartly  \n` +
+              `🙈 Hide join/leave messages  \n` +
+              `🚫 Remove unwanted links  \n\n` +
+              `💡 Other bots do a little — 🔥 *I do it all, in one place!*\n\n` +
+              `👉 *Curious?* Use */help* command and discover my features ✨`,
+            { parse_mode: "Markdown" }
           );
         } catch (err) {
           console.warn(

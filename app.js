@@ -54,20 +54,18 @@ connectDB()
     cron.schedule("* * * * *", broadcastQuizQuestion, {
       timezone: "Asia/Kolkata",
     });
-    cron.schedule("45 9-21/2 * * *", broadcastFact, {
-      timezone: "Asia/Kolkata",
-    });
+    // cron.schedule("45 9-21/2 * * *", broadcastFact, {
+    //   timezone: "Asia/Kolkata",
+    // });
     console.log("---All cron jobs scheduled---");
   })
   .catch((err) => console.error("MongoDB connection error:", err));
 
 // const chatId = -1001880696019;
-// const messageId = 392198;
+// const messageId = 393141;
 // const message = "Thank You!";
-
 // bot.telegram.sendMessage(chatId, message, {
 //   reply_to_message_id: messageId,
 // });
 
 // bot.telegram.deleteMessage(chatId, messageId);
-// https://t.me/venky123studyhub/392198

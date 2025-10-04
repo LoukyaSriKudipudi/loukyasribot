@@ -110,9 +110,17 @@ async function broadcastQuizQuestion() {
             explanation,
           });
           if (validationError) {
-            logs.push(`❌ Failed in ${chatTitle}: ${validationError}`);
+            logs.push(`❌ Skipped in ${chatTitle}: ${validationError}`);
             failedBatch.push(chatTitle);
             allFailedChats.push(chatTitle);
+
+            // Still move to the next question
+            chat.quizIndex = (chat.quizIndex + 1) % quizQuestions.length;
+            chat.nextQuizTime = new Date(
+              Date.now() + (chat.quizFrequencyMinutes || 60) * 60 * 1000
+            );
+            await chat.save();
+
             continue;
           }
 
