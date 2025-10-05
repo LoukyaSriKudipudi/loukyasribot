@@ -18,29 +18,44 @@ async function saveChat(
         existing.lastFactMessageId = lastFactMessageId;
       }
 
-      // 🔑 Force enable facts again if bot is re-added to a group/channel
+      // Force enable
       if (
         chatType === "group" ||
         chatType === "supergroup" ||
         chatType === "channel"
       ) {
         existing.factsEnabled = true;
+
+        // Auto-enable
+        existing.canSend = true;
+
+        // Fix next time
+        if (!existing.nextQuizTime || existing.nextQuizTime < new Date()) {
+          existing.nextQuizTime = new Date(
+            Date.now() + (existing.quizFrequencyMinutes || 60) * 60 * 1000
+          );
+        }
       }
 
       await existing.save();
     } else {
-      // Auto-enable facts only if group or channel
+      // Group check
       const isGroupOrChannel =
         chatType === "group" ||
         chatType === "supergroup" ||
         chatType === "channel";
 
+      // New chat
       const chat = new Chat({
         chatId,
         topicId,
         chatTitle,
         lastFactMessageId,
         factsEnabled: isGroupOrChannel,
+        canSend: isGroupOrChannel,
+        nextQuizTime: isGroupOrChannel
+          ? new Date(Date.now() + 60 * 60 * 1000)
+          : null,
       });
 
       await chat.save();

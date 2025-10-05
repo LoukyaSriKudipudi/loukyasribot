@@ -3,10 +3,10 @@ const bot = require("./utils/telegramBot");
 const connectDB = require("./utils/db");
 const cron = require("node-cron");
 
-// 1️⃣ Connect to MongoDB
+// DB connect
 connectDB()
   .then(() => {
-    // 2️⃣ Load essential services first (dependencies)
+    // Essential services
     const newMember = require("./handlers/newMember");
     newMember();
     require("./services/factsService");
@@ -16,47 +16,42 @@ connectDB()
     require("./services/pvtFwdService");
     require("./services/chatSettings");
 
-    // 3️⃣ Load update/broadcast services AFTER dependencies
+    // Broadcast services
     const { broadcastFact } = require("./services/updateService");
     const { broadcastQuiz } = require("./services/broadcastQuiz");
     const {
       broadcastQuizQuestion,
     } = require("./services/quizQuestionsService");
 
-    // 4️⃣ Load handlers after DB and essential services are ready
+    // Handlers load
     const start = require("./handlers/start");
     start();
 
     const setTopic = require("./handlers/setTopic");
     setTopic();
     require("./handlers/developer");
-
-    // // 5️⃣ Load controllers
-    // require("./controllers/history");
-    // require("./controllers/deleteAllMessages");
-    // require("./controllers/deleteMessage");
-    // require("./controllers/stats");
-    // require("./controllers/searchMessages");
-    // require("./controllers/saveMessage");
     require("./controllers/helpCommand");
 
-    // 6️⃣ Event record bot
+    // Event bot
     const eventRecordBot = require("./utils/eventRecordBot");
 
-    // 7️⃣ Launch bots
+    // Launch bots
     bot.launch();
     console.log("---bot is running---");
 
     eventRecordBot.launch();
     console.log("---event record bot is running---");
 
-    // 8️⃣ Start cron jobs AFTER DB, services, and bots are ready
+    // Cron jobs
     cron.schedule("* * * * *", broadcastQuizQuestion, {
       timezone: "Asia/Kolkata",
     });
-    // cron.schedule("45 9-21/2 * * *", broadcastFact, {
-    //   timezone: "Asia/Kolkata",
-    // });
+
+    const checkAndUpdateCanSend = require("./utils/canSend");
+
+    cron.schedule("0 6-21 * * *", async () => {
+      await checkAndUpdateCanSend();
+    });
     console.log("---All cron jobs scheduled---");
   })
   .catch((err) => console.error("MongoDB connection error:", err));
@@ -69,3 +64,7 @@ connectDB()
 // });
 
 // bot.telegram.deleteMessage(chatId, messageId);
+// facts cron
+// cron.schedule("45 9-21/2 * * *", broadcastFact, {
+//   timezone: "Asia/Kolkata",
+// });

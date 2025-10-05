@@ -1,10 +1,11 @@
 const fs = require("fs");
 const path = require("path");
+const Chat = require("../models/chats");
+const bot = require("../utils/telegramBot");
 
 const factsFile = fs.readFileSync(
   path.join(__dirname, "..", "localDB", "facts.json")
 );
-
 const facts = JSON.parse(factsFile);
 let index = 0;
 
@@ -14,21 +15,23 @@ function getFact() {
   return fact;
 }
 
-const Chat = require("../models/chats");
-const bot = require("../utils/telegramBot");
-
 bot.command("startfacts", async (ctx) => {
   if (ctx.chat.type === "private" || ctx.chat.id > 0) {
-    const message = await ctx.reply(
-      "❌ Facts and quizzes are not available in private chats."
-    );
-    setTimeout(
-      () => ctx.telegram.deleteMessage(ctx.chat.id, message.message_id),
-      10000
-    );
+    try {
+      const message = await ctx.reply(
+        "❌ Facts and quizzes are not available in private chats."
+      );
+      setTimeout(
+        () => ctx.telegram.deleteMessage(ctx.chat.id, message.message_id),
+        10000
+      );
+    } catch (err) {
+      console.log("⚠ Could not send private chat message:", err.message);
+    }
     return;
   }
-  const nextTime = new Date(Date.now() + 60 * 60 * 1000); // first quiz 30 mins later
+
+  const nextTime = new Date(Date.now() + 60 * 60 * 1000); // first quiz 60 mins later
 
   await Chat.updateOne(
     { chatId: ctx.chat.id },
@@ -38,48 +41,75 @@ bot.command("startfacts", async (ctx) => {
         quizEnabled: true,
         chatTitle: ctx.chat.title,
         nextQuizTime: nextTime,
-        quizFrequencyMinutes: 60, // optional, store frequency
+        quizFrequencyMinutes: 60,
       },
     },
     { upsert: true }
   );
 
-  setTimeout(() => ctx.deleteMessage(ctx.message.message_id), 3000);
+  try {
+    await ctx.deleteMessage(ctx.message.message_id);
+  } catch (err) {
+    console.log("⚠ Could not delete user command message:", err.message);
+  }
 
-  const message = await ctx.reply("✅ Facts and quizzes enabled in this chat.");
-
-  setTimeout(
-    () => ctx.telegram.deleteMessage(ctx.chat.id, message.message_id),
-    30000
-  );
+  try {
+    const message = await ctx.reply(
+      "✅ Facts and quizzes enabled in this chat."
+    );
+    setTimeout(
+      () => ctx.telegram.deleteMessage(ctx.chat.id, message.message_id),
+      30000
+    );
+  } catch (err) {
+    console.log(
+      `🚫 Cannot send enable message to chat ${ctx.chat.id}:`,
+      err.message
+    );
+  }
 });
 
 bot.command("stopfacts", async (ctx) => {
   if (ctx.chat.type === "private" || ctx.chat.id > 0) {
-    const message = await ctx.reply(
-      "❌ No facts/quizzes are running in private chats."
-    );
-    setTimeout(
-      () => ctx.telegram.deleteMessage(ctx.chat.id, message.message_id),
-      10000
-    );
+    try {
+      const message = await ctx.reply(
+        "❌ No facts/quizzes are running in private chats."
+      );
+      setTimeout(
+        () => ctx.telegram.deleteMessage(ctx.chat.id, message.message_id),
+        10000
+      );
+    } catch (err) {
+      console.log("⚠ Could not send private chat message:", err.message);
+    }
     return;
   }
+
   await Chat.updateOne(
     { chatId: ctx.chat.id },
     { $set: { factsEnabled: false, quizEnabled: false, nextQuizTime: null } }
   );
 
-  setTimeout(() => {
-    ctx.deleteMessage(ctx.message.message_id);
-  }, 3000);
+  try {
+    await ctx.deleteMessage(ctx.message.message_id);
+  } catch (err) {
+    console.log("⚠ Could not delete user command message:", err.message);
+  }
 
-  const message = await ctx.reply(
-    "🛑 Facts and quizzes disabled in this chat."
-  );
-  setTimeout(() => {
-    ctx.telegram.deleteMessage(ctx.chat.id, message.message_id);
-  }, 30000);
+  try {
+    const message = await ctx.reply(
+      "🛑 Facts and quizzes disabled in this chat."
+    );
+    setTimeout(
+      () => ctx.telegram.deleteMessage(ctx.chat.id, message.message_id),
+      30000
+    );
+  } catch (err) {
+    console.log(
+      `🚫 Cannot send disable message to chat ${ctx.chat.id}:`,
+      err.message
+    );
+  }
 });
 
 module.exports = { getFact };

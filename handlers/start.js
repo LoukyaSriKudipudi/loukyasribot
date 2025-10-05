@@ -65,11 +65,11 @@ module.exports = () => {
       });
 
       await ctx.reply(
-        `🤖 I (*${ctx.botInfo.username}*) am unlike anything else on Telegram!  \n\n` +
+        `🌸 I (*${ctx.botInfo.username}*) am unlike anything else on Telegram!  \n\n` +
           `😎 There’s simply *no true alternative in my space.*  \n\n` +
           `✨ *The most advanced all-in-one bot:*  \n` +
           `📚 Answer questions & explain concepts  \n` +
-          `📢 Broadcast *facts and quizzes* every hour, 24/7  \n` +
+          `📢 Broadcast *facts and quizzes* for APPSC, TGPSC, SSC, Police and other exams, every hour, 24/7  \n` +
           `🗂 Manage topics smartly  \n` +
           `🙈 Hide join/leave messages  \n` +
           `🚫 Remove unwanted links  \n\n` +

@@ -26,18 +26,15 @@ async function recordEvent(message) {
     const groupId = Number(process.env.EVENT_RECORD_GROUP_ID);
     const topicId = Number(process.env.EVENT_RECORD_GROUP_TOPIC_ID);
 
-    // Telegram max message length = 4096
-    const MAX_LENGTH = 4000; // keep safe margin
+    const MAX_LENGTH = 4000; // message size limit
 
-    // Split into parts if too long
     const parts = [];
     for (let i = 0; i < message.length; i += MAX_LENGTH) {
       parts.push(message.slice(i, i + MAX_LENGTH));
     }
 
     for (const [index, part] of parts.entries()) {
-      // Small delay between parts
-      await new Promise((res) => setTimeout(res, 500));
+      await new Promise((res) => setTimeout(res, 500)); // small delay
 
       await eventRecordBot.telegram.sendMessage(
         groupId,
@@ -78,6 +75,7 @@ async function broadcastQuizQuestion() {
     while (true) {
       const chats = await Chat.find({
         quizEnabled: true,
+        canSend: true,
         nextQuizTime: { $lte: new Date() },
       }).limit(batchSize);
 
@@ -91,7 +89,7 @@ async function broadcastQuizQuestion() {
         const { chatId, topicId, chatTitle, lastQuizMessageId } = chat;
 
         try {
-          // Delete previous quiz
+          // delete old quiz
           if (lastQuizMessageId) {
             try {
               await bot.telegram.deleteMessage(chatId, lastQuizMessageId);
@@ -99,6 +97,13 @@ async function broadcastQuizQuestion() {
             } catch (err) {
               logs.push(`⚠ Could not delete in ${chatTitle}: ${err.message}`);
             }
+          }
+
+          if (chat.canSend === false) {
+            logs.push(
+              `🚫 Skipped ${chatTitle}: bot has no send rights (canSend=false)`
+            );
+            continue;
           }
 
           const { question, options, correct, explanation } =
@@ -114,7 +119,6 @@ async function broadcastQuizQuestion() {
             failedBatch.push(chatTitle);
             allFailedChats.push(chatTitle);
 
-            // Still move to the next question
             chat.quizIndex = (chat.quizIndex + 1) % quizQuestions.length;
             chat.nextQuizTime = new Date(
               Date.now() + (chat.quizFrequencyMinutes || 60) * 60 * 1000
@@ -140,7 +144,7 @@ async function broadcastQuizQuestion() {
           successBatch.push(chatTitle);
           allSuccessChats.push(chatTitle);
 
-          // Update chat progress
+          // update progress
           chat.lastQuizMessageId = sentQuiz.message_id;
           chat.quizIndex = (chat.quizIndex + 1) % quizQuestions.length;
           chat.nextQuizTime = new Date(
@@ -152,7 +156,8 @@ async function broadcastQuizQuestion() {
             err.response?.error_code === 403 ||
             err.message.includes("bot was kicked")
           ) {
-            // Bot removed from group
+            // bot removed
+            chat.canSend = false;
             chat.quizEnabled = false;
             chat.nextQuizTime = null;
             await chat.save();
@@ -160,14 +165,27 @@ async function broadcastQuizQuestion() {
           } else if (
             err.response?.error_code === 400 &&
             (err.description?.includes("not enough rights to send") ||
-              err.description?.includes("polls"))
+              err.description?.includes("polls") ||
+              (err.description &&
+                err.description.toLowerCase().includes("chat_write_forbidden")))
           ) {
-            // Group is locked → disable quizzes
-            chat.quizEnabled = false;
+            // locked group
+            chat.canSend = false;
+            chat.quizEnabled = null;
             chat.nextQuizTime = null;
             await chat.save();
             logs.push(
-              `❌ Quiz disabled for ${chatTitle}: group is locked (no send rights)`
+              `❌ Quiz auto disabled for ${chatTitle}: group is locked (no send rights)`
+            );
+          } else if (
+            err.response?.error_code === 400 &&
+            err.description?.toLowerCase().includes("message thread not found")
+          ) {
+            chat.topicId = null;
+            chat.nextQuizTime = new Date(Date.now() + 5000);
+            await chat.save();
+            logs.push(
+              `⚠ Topic deleted in ${chatTitle}, sending future quizzes in main chat`
             );
           } else {
             logs.push(`❌ Failed in ${chatTitle}: ${err.message}`);
@@ -179,7 +197,7 @@ async function broadcastQuizQuestion() {
         await new Promise((res) => setTimeout(res, delayPerMessage));
       }
 
-      // Batch summary
+      // batch summary
       if (successBatch.length > 0 || failedBatch.length > 0) {
         const now = new Date().toLocaleString("en-IN", {
           timeZone: "Asia/Kolkata",
@@ -199,7 +217,7 @@ async function broadcastQuizQuestion() {
       }
     }
 
-    // Final summary
+    // final summary
     if (allSuccessChats.length > 0 || allFailedChats.length > 0) {
       const now = new Date().toLocaleString("en-IN", {
         timeZone: "Asia/Kolkata",

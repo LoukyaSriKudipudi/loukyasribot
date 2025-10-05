@@ -23,7 +23,10 @@ const chatSchema = new mongoose.Schema(
     factIndex: { type: Number, default: 0 },
     nextFactTime: { type: Date, default: null },
     factFrequencyMinutes: { type: Number, default: 60 },
-
+    canSend: {
+      type: Boolean,
+      default: true,
+    },
     // Optional createdAt for ordering by join time
     createdAt: { type: Date, default: Date.now },
   },
