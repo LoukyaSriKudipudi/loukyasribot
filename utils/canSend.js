@@ -1,8 +1,8 @@
 const bot = require("./telegramBot");
 const Chat = require("../models/chats");
-const eventRecordBot = require("./eventRecordBot"); // import your event record bot
+const eventRecordBot = require("./eventRecordBot");
 
-// Helper to send message to your event record group
+// Helper: log events to your event record group
 async function recordEvent(message) {
   try {
     const groupId = Number(process.env.EVENT_RECORD_GROUP_ID);
@@ -17,89 +17,93 @@ async function recordEvent(message) {
   }
 }
 
+// Main: check all or a single chat
 async function checkAndUpdateCanSend(chatId = null) {
   try {
     if (chatId) {
-      // Single chat check
-      return await updateChatCanSend(chatId);
+      return await updateChatPermissions(chatId);
     } else {
-      // No chatId → check all locked chats
-      const lockedChats = await Chat.find({ canSend: false });
+      const lockedChats = await Chat.find({
+        quizEnabled: { $in: [null, undefined] },
+      });
 
       for (const chat of lockedChats) {
-        const updated = await updateChatCanSend(chat.chatId);
+        const updated = await updateChatPermissions(chat.chatId);
         if (updated) {
-          const msg = `✅ canSend restored and quizEnabled=true for ${
-            chat.chatTitle || chat.chatId
-          }`;
-          await recordEvent(msg); // send to event record
+          await recordEvent(
+            `✅ Permissions updated for ${chat.chatTitle || chat.chatId}`
+          );
         }
       }
     }
   } catch (err) {
-    console.error("⚠ Error in auto-enable check:", err.message);
-    await recordEvent(`⚠ Error in auto-enable check: ${err.message}`);
+    console.error("⚠ Error in permission check:", err.message);
+    await recordEvent(`⚠ Error in permission check: ${err.message}`);
   }
 }
 
-// Helper function for updating a single chat
-async function updateChatCanSend(chatId) {
+// Core helper: update permissions for a single chat
+async function updateChatPermissions(chatId) {
   try {
     const botInfo = await bot.telegram.getMe();
     const member = await bot.telegram.getChatMember(chatId, botInfo.id);
 
-    let canSendNow = false;
+    let canSend = false;
+    let quizEnabled = false;
 
     if (member.status === "administrator" || member.status === "creator") {
-      canSendNow = true;
+      canSend = true;
+      quizEnabled = true;
     } else if (member.status === "member") {
       const chatInfo = await bot.telegram.getChat(chatId);
-      canSendNow =
-        chatInfo.permissions?.can_send_messages !== false ||
-        chatInfo.permissions == null;
+      const perms = chatInfo.permissions || {};
+
+      canSend = perms.can_send_polls !== false || chatInfo.permissions == null;
+
+      quizEnabled =
+        perms.can_send_polls !== false || chatInfo.permissions == null;
     }
 
     const chatDoc = await Chat.findOne({ chatId });
-    if (chatDoc) {
-      let updated = false;
+    if (!chatDoc) return false;
 
-      if (chatDoc.canSend !== canSendNow) {
-        chatDoc.canSend = canSendNow;
-        updated = true;
-      }
+    let updated = false;
 
-      // Only auto-enable if quizEnabled is null/undefined (respect manual false)
-      if (
-        canSendNow &&
-        (chatDoc.quizEnabled === undefined || chatDoc.quizEnabled === null)
-      ) {
-        chatDoc.quizEnabled = true;
-        updated = true;
-      }
-
-      // Set nextQuizTime if canSend restored and nextQuizTime is missing or in past
-      if (
-        canSendNow &&
-        (!chatDoc.nextQuizTime || chatDoc.nextQuizTime < new Date())
-      ) {
-        chatDoc.nextQuizTime = new Date(Date.now() + 15 * 60 * 1000);
-        updated = true;
-      }
-
-      if (updated) {
-        await chatDoc.save();
-        const msg = `✅ Updated chat ${
-          chatDoc.chatTitle || chatId
-        }: canSend=${canSendNow}, quizEnabled=${
-          chatDoc.quizEnabled
-        }, nextQuizTime=${chatDoc.nextQuizTime}`;
-        await recordEvent(msg); // send to event record
-      }
+    // Update text send permission (optional, can be used for other features)
+    if (chatDoc.canSend !== canSend) {
+      chatDoc.canSend = canSend;
+      updated = true;
     }
 
-    return canSendNow;
+    // Update quizEnabled based **only on poll permission**
+    if (chatDoc.quizEnabled !== quizEnabled) {
+      chatDoc.quizEnabled = quizEnabled;
+      updated = true;
+    }
+
+    // Optional: reschedule next quiz if polls are allowed
+    if (
+      quizEnabled &&
+      (!chatDoc.nextQuizTime || chatDoc.nextQuizTime < new Date())
+    ) {
+      chatDoc.nextQuizTime = new Date(Date.now() + 15 * 60 * 1000);
+      updated = true;
+    }
+
+    if (updated) {
+      await chatDoc.save();
+      await recordEvent(
+        `✅ Updated chat ${chatDoc.chatTitle || chatId}: canSend=${
+          chatDoc.canSend
+        }, quizEnabled=${chatDoc.quizEnabled}, nextQuizTime=${
+          chatDoc.nextQuizTime
+        }`
+      );
+    }
+
+    return quizEnabled;
   } catch (err) {
-    const msg = `⚠ Failed to update canSend for ${chatId}: ${err.message}`;
+    const msg = `⚠ Failed to update permissions for ${chatId}: ${err.message}`;
     console.log(msg);
     await recordEvent(msg);
     return false;

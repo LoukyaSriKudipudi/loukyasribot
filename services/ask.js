@@ -67,6 +67,19 @@ bot.command("loukya", async (ctx) => {
 
   const query = ctx.message.text.split(" ").slice(1).join(" ");
 
+  if (query.length > 150) {
+    const warnMsg = await ctx.reply(
+      "❌ Your message is too long. Please keep it under 150 characters.",
+      { reply_to_message_id: ctx.message.message_id }
+    );
+    setTimeout(() => {
+      ctx.telegram
+        .deleteMessage(ctx.chat.id, warnMsg.message_id)
+        .catch(() => {});
+    }, 10000);
+    return;
+  }
+
   if (ctx.message.reply_to_message) {
     const msg = await ctx.reply(
       "❌ Please use /replyloukya when replying to a message."
@@ -135,12 +148,12 @@ bot.command("loukya", async (ctx) => {
 });
 
 bot.use(async (ctx, next) => {
-  if (!ctx.message || ctx.message.chat.type === "private") return next();
-  if (ctx.message.text && ctx.message.text.startsWith("/")) {
-    return next();
-  }
-
   const msg = ctx.message;
+
+  if (!msg || msg.chat.type === "private") return next();
+  if (msg.poll || msg.poll_answer) return next();
+  if (msg.text?.startsWith("/")) return next();
+  if (!msg.text || msg.text.trim() === "") return next();
 
   if (
     !msg.reply_to_message ||
@@ -148,7 +161,8 @@ bot.use(async (ctx, next) => {
   ) {
     return next();
   }
-
+  if (!msg.reply_to_message.text) return next();
+  if (msg.reply_to_message.poll) return next();
   const query = msg.text?.trim();
   if (!query) return next();
 
@@ -212,6 +226,20 @@ bot.command("replyloukya", async (ctx) => {
   }
 
   let query = ctx.message.reply_to_message.text;
+
+  if (query.length > 150) {
+    const warnMsg = await ctx.reply(
+      "❌ Your message is too long. Please keep it under 150 characters.",
+      { reply_to_message_id: ctx.message.message_id }
+    );
+    setTimeout(() => {
+      ctx.telegram
+        .deleteMessage(ctx.chat.id, warnMsg.message_id)
+        .catch(() => {});
+    }, 10000);
+    return;
+  }
+
   if (!query) {
     return ctx.reply("❌ The replied message has no text to explain.");
   }
@@ -268,6 +296,20 @@ bot.command("explainloukya", async (ctx) => {
   }
 
   let originalText = ctx.message.reply_to_message.text;
+
+  if (originalText.length > 150) {
+    const warnMsg = await ctx.reply(
+      "❌ Your message is too long. Please keep it under 150 characters.",
+      { reply_to_message_id: ctx.message.message_id }
+    );
+    setTimeout(() => {
+      ctx.telegram
+        .deleteMessage(ctx.chat.id, warnMsg.message_id)
+        .catch(() => {});
+    }, 10000);
+    return;
+  }
+
   if (!originalText) {
     return ctx.reply("❌ The replied message has no text to explain.");
   }
@@ -326,6 +368,18 @@ bot.command("answerloukya", async (ctx) => {
   }
 
   let originalText = ctx.message.reply_to_message.text;
+  if (originalText.length > 150) {
+    const warnMsg = await ctx.reply(
+      "❌ Your message is too long. Please keep it under 150 characters.",
+      { reply_to_message_id: ctx.message.message_id }
+    );
+    setTimeout(() => {
+      ctx.telegram
+        .deleteMessage(ctx.chat.id, warnMsg.message_id)
+        .catch(() => {});
+    }, 10000);
+    return;
+  }
   if (!originalText) {
     return ctx.reply("❌ The replied message has no text to answer.");
   }
