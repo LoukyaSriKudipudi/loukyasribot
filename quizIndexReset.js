@@ -1,6 +1,6 @@
 require("dotenv").config();
 const mongoose = require("mongoose");
-const Chat = require("./models/chats"); // Your chat model
+const Chat = require("./models/chats");
 
 const mongoUri = process.env.DATABASE.replace(
   "<db_password>",

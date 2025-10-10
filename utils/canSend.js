@@ -2,7 +2,6 @@ const bot = require("./telegramBot");
 const Chat = require("../models/chats");
 const eventRecordBot = require("./eventRecordBot");
 
-// Helper: log events to your event record group
 async function recordEvent(message) {
   try {
     const groupId = Number(process.env.EVENT_RECORD_GROUP_ID);
@@ -17,7 +16,6 @@ async function recordEvent(message) {
   }
 }
 
-// Main: check all or a single chat
 async function checkAndUpdateCanSend(chatId = null) {
   try {
     if (chatId) {
@@ -42,26 +40,23 @@ async function checkAndUpdateCanSend(chatId = null) {
   }
 }
 
-// Core helper: update permissions for a single chat
 async function updateChatPermissions(chatId) {
   try {
     const botInfo = await bot.telegram.getMe();
     const member = await bot.telegram.getChatMember(chatId, botInfo.id);
 
     let canSend = false;
-    let quizEnabled = false;
+    let hasPollPermission = false;
 
     if (member.status === "administrator" || member.status === "creator") {
       canSend = true;
-      quizEnabled = true;
+      hasPollPermission = true;
     } else if (member.status === "member") {
       const chatInfo = await bot.telegram.getChat(chatId);
       const perms = chatInfo.permissions || {};
-
-      canSend = perms.can_send_polls !== false || chatInfo.permissions == null;
-
-      quizEnabled =
+      hasPollPermission =
         perms.can_send_polls !== false || chatInfo.permissions == null;
+      canSend = hasPollPermission;
     }
 
     const chatDoc = await Chat.findOne({ chatId });
@@ -69,23 +64,13 @@ async function updateChatPermissions(chatId) {
 
     let updated = false;
 
-    // Update text send permission (optional, can be used for other features)
     if (chatDoc.canSend !== canSend) {
       chatDoc.canSend = canSend;
       updated = true;
     }
 
-    // Update quizEnabled based **only on poll permission**
-    if (chatDoc.quizEnabled !== quizEnabled) {
-      chatDoc.quizEnabled = quizEnabled;
-      updated = true;
-    }
-
-    // Optional: reschedule next quiz if polls are allowed
-    if (
-      quizEnabled &&
-      (!chatDoc.nextQuizTime || chatDoc.nextQuizTime < new Date())
-    ) {
+    if (chatDoc.quizEnabled == null && hasPollPermission) {
+      chatDoc.quizEnabled = true;
       chatDoc.nextQuizTime = new Date(Date.now() + 15 * 60 * 1000);
       updated = true;
     }
@@ -93,7 +78,7 @@ async function updateChatPermissions(chatId) {
     if (updated) {
       await chatDoc.save();
       await recordEvent(
-        `✅ Updated chat ${chatDoc.chatTitle || chatId}: canSend=${
+        `✅ Updated chat ${chatDoc.chatTitle || chatId} → canSend=${
           chatDoc.canSend
         }, quizEnabled=${chatDoc.quizEnabled}, nextQuizTime=${
           chatDoc.nextQuizTime
@@ -101,7 +86,7 @@ async function updateChatPermissions(chatId) {
       );
     }
 
-    return quizEnabled;
+    return hasPollPermission;
   } catch (err) {
     const msg = `⚠ Failed to update permissions for ${chatId}: ${err.message}`;
     console.log(msg);

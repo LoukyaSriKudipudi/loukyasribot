@@ -15,6 +15,7 @@ connectDB()
     require("./services/forwardService");
     require("./services/pvtFwdService");
     require("./services/chatSettings");
+    require("./services/sendTo");
 
     // Broadcast services
     const { broadcastFact } = require("./services/updateService");
@@ -62,17 +63,18 @@ connectDB()
   .catch((err) => console.error("MongoDB connection error:", err));
 
 // // // send message
-// const chatId = -10018806;
-// const messageId = 393;
-// const message = "Thank You!";
+// const chatId = -1002839833;
+// const messageId = 12137;
+// const message =
+//   "Use the /help command to explore my features. I respond only to text messages, not quizzes.";
 // bot.telegram.sendMessage(chatId, message, {
 //   reply_to_message_id: messageId,
 // });
 
 // // // send photo with cap
 // const path = require("path");
-// const chatId = -100206;
-// const messageId = 108;
+// const chatId = -1002839833;
+// const messageId = 12135;
 // const imagePath = path.join(__dirname, "localDB", "images", "image.png");
 // bot.telegram.sendPhoto(
 //   chatId,

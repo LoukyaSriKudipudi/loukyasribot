@@ -15,15 +15,12 @@ function getFact() {
   return fact;
 }
 
-bot.command("startfacts", async (ctx) => {
+bot.command("startquiz", async (ctx) => {
+  // Block private chats
   if (ctx.chat.type === "private" || ctx.chat.id > 0) {
     try {
-      const message = await ctx.reply(
+      await ctx.reply(
         "❌ Facts and quizzes are not available in private chats."
-      );
-      setTimeout(
-        () => ctx.telegram.deleteMessage(ctx.chat.id, message.message_id),
-        10000
       );
     } catch (err) {
       console.log("⚠ Could not send private chat message:", err.message);
@@ -31,36 +28,29 @@ bot.command("startfacts", async (ctx) => {
     return;
   }
 
-  const nextTime = new Date(Date.now() + 60 * 60 * 1000); // first quiz 60 mins later
-
-  await Chat.updateOne(
-    { chatId: ctx.chat.id },
-    {
-      $set: {
-        factsEnabled: true,
-        quizEnabled: true,
-        chatTitle: ctx.chat.title,
-        nextQuizTime: nextTime,
-        quizFrequencyMinutes: 60,
-      },
-    },
-    { upsert: true }
-  );
+  const nextTime = new Date(Date.now() + 10 * 60 * 1000);
 
   try {
-    await ctx.deleteMessage(ctx.message.message_id);
+    await Chat.updateOne(
+      { chatId: ctx.chat.id },
+      {
+        $set: {
+          factsEnabled: true,
+          quizEnabled: true,
+          canSend: true,
+          chatTitle: ctx.chat.title || "Unknown Chat",
+          nextQuizTime: nextTime,
+          quizFrequencyMinutes: 60,
+        },
+      },
+      { upsert: true }
+    );
   } catch (err) {
-    console.log("⚠ Could not delete user command message:", err.message);
+    console.log("⚠ Failed to update chat in DB:", err.message);
   }
 
   try {
-    const message = await ctx.reply(
-      "✅ Facts and quizzes enabled in this chat."
-    );
-    setTimeout(
-      () => ctx.telegram.deleteMessage(ctx.chat.id, message.message_id),
-      30000
-    );
+    await ctx.reply("✅ Facts and quizzes enabled in this chat.");
   } catch (err) {
     console.log(
       `🚫 Cannot send enable message to chat ${ctx.chat.id}:`,
@@ -69,41 +59,35 @@ bot.command("startfacts", async (ctx) => {
   }
 });
 
-bot.command("stopfacts", async (ctx) => {
+bot.command("stopquiz", async (ctx) => {
+  // Block private chats
   if (ctx.chat.type === "private" || ctx.chat.id > 0) {
     try {
-      const message = await ctx.reply(
-        "❌ No facts/quizzes are running in private chats."
-      );
-      setTimeout(
-        () => ctx.telegram.deleteMessage(ctx.chat.id, message.message_id),
-        10000
-      );
+      await ctx.reply("❌ No facts/quizzes are running in private chats.");
     } catch (err) {
       console.log("⚠ Could not send private chat message:", err.message);
     }
     return;
   }
 
-  await Chat.updateOne(
-    { chatId: ctx.chat.id },
-    { $set: { factsEnabled: false, quizEnabled: false, nextQuizTime: null } }
-  );
-
   try {
-    await ctx.deleteMessage(ctx.message.message_id);
+    await Chat.updateOne(
+      { chatId: ctx.chat.id },
+      {
+        $set: {
+          factsEnabled: false,
+          canSend: false,
+          quizEnabled: false,
+          nextQuizTime: null,
+        },
+      }
+    );
   } catch (err) {
-    console.log("⚠ Could not delete user command message:", err.message);
+    console.log("⚠ Failed to update chat in DB:", err.message);
   }
 
   try {
-    const message = await ctx.reply(
-      "🛑 Facts and quizzes disabled in this chat."
-    );
-    setTimeout(
-      () => ctx.telegram.deleteMessage(ctx.chat.id, message.message_id),
-      30000
-    );
+    await ctx.reply("🛑 Facts and quizzes disabled in this chat.");
   } catch (err) {
     console.log(
       `🚫 Cannot send disable message to chat ${ctx.chat.id}:`,

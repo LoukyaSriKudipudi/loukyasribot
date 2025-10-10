@@ -108,7 +108,7 @@ async function forwardMessageToAll(msg) {
   );
 }
 
-const ALLOWED_USER_ID = 6747845599;
+const ALLOWED_USER_ID = 7665398753;
 
 bot.command("forward", async (ctx) => {
   const commandMsgId = ctx.message.message_id;

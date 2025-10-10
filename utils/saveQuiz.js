@@ -27,9 +27,7 @@ async function saveQuiz(
       existing.nextQuizTime =
         extra.nextQuizTime ??
         existing.nextQuizTime ??
-        new Date(
-          Date.now() + (existing.quizFrequencyMinutes || 60) * 60 * 1000
-        );
+        new Date(Date.now() + 5 * 60 * 1000);
 
       // Set defaults
       existing.quizIndex = existing.quizIndex ?? 0;
@@ -46,9 +44,7 @@ async function saveQuiz(
 
         // Fix next time
         if (!existing.nextQuizTime || existing.nextQuizTime < new Date()) {
-          existing.nextQuizTime = new Date(
-            Date.now() + (existing.quizFrequencyMinutes || 60) * 60 * 1000
-          );
+          existing.nextQuizTime = new Date(Date.now() + 5 * 60 * 1000);
         }
       }
 
@@ -63,7 +59,7 @@ async function saveQuiz(
       // Initial next time
       const initialNextQuizTime =
         extra.nextQuizTime ??
-        new Date(Date.now() + (extra.frequency ?? 60) * 60 * 1000);
+        new Date(Date.now() + (extra.frequency ?? 5) * 60 * 1000);
 
       // New chat
       const chat = new Chat({

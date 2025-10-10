@@ -31,9 +31,7 @@ async function saveChat(
 
         // Fix next time
         if (!existing.nextQuizTime || existing.nextQuizTime < new Date()) {
-          existing.nextQuizTime = new Date(
-            Date.now() + (existing.quizFrequencyMinutes || 60) * 60 * 1000
-          );
+          existing.nextQuizTime = new Date(Date.now() + 5 * 60 * 1000);
         }
       }
 
@@ -54,7 +52,7 @@ async function saveChat(
         factsEnabled: isGroupOrChannel,
         canSend: isGroupOrChannel,
         nextQuizTime: isGroupOrChannel
-          ? new Date(Date.now() + 60 * 60 * 1000)
+          ? new Date(Date.now() + 5 * 60 * 1000)
           : null,
       });
 

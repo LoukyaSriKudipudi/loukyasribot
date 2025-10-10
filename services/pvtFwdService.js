@@ -6,7 +6,7 @@ const BROADCAST_GROUP_ID = Number(process.env.BROADCAST_NEWS_GROUP);
 const BROADCAST_TOPIC_ID = Number(process.env.BROADCAST_NEWS_GROUP_TOPIC_ID);
 const DELAY_PER_MESSAGE = 2000; // 2 seconds
 const BATCH_SIZE = 100;
-const ALLOWED_USER_ID = 6747845599;
+const ALLOWED_USER_ID = 7665398753;
 
 // Fetch private chats in batches
 async function getPrivateChatsBatch(skip = 0, limit = 100) {

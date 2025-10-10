@@ -66,6 +66,10 @@ const getStats = async () => {
 
 // Stats command
 bot.command("stats", async (ctx) => {
+  const adminId = 7665398753;
+  if (ctx.from.id !== adminId) {
+    return ctx.reply("❌ Unauthorized");
+  }
   const { groupsCount, usersCount, quizEnabledCount } = await getStats();
 
   await ctx.replyWithHTML(

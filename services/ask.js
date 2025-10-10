@@ -40,15 +40,16 @@ function cleanText(text) {
 
 async function ensureAdmin(ctx) {
   if (ctx.chat.type === "private") {
-    return true;
+    await ctx.reply(
+      "⚠ AI features work only in groups. Add me to a group to use my AI powers!"
+    );
+    return false;
   }
   try {
     const isAdmin = await isBotAdmin(ctx.chat.id);
     if (!isAdmin) {
       await ctx.reply(
-        `⚠ Hello ${ctx.chat.title || "this group"}!\n\n` +
-          `To ensure all features of this bot work properly, ` +
-          `please grant the bot admin rights. Some functionalities may not work without it.`
+        `I’m not an admin yet. My AI features can't run in this chat.`
       );
       return false;
     }
@@ -163,6 +164,10 @@ bot.use(async (ctx, next) => {
   }
   if (!msg.reply_to_message.text) return next();
   if (msg.reply_to_message.poll) return next();
+
+  const canRun = await ensureAdmin(ctx);
+  if (!canRun) return;
+
   const query = msg.text?.trim();
   if (!query) return next();
 

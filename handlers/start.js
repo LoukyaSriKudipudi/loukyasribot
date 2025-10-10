@@ -38,7 +38,7 @@ module.exports = () => {
         return ctx.reply(
           `👋 Welcome back, *${first_name}!*\n\n` +
             `Glad to see you again. Use */help* anytime to check available commands.\n\n` +
-            `📌 I will start sending Facts and Quizzes once you use */startfacts* in a group!\n\n` +
+            `📌 I will start sending Facts and Quizzes once you use */starquiz* in a group!\n\n` +
             `💡 Want a similar or custom bot? Contact */developer* or *@LoukyaSri*.`,
           {
             parse_mode: "Markdown",
@@ -65,16 +65,10 @@ module.exports = () => {
       });
 
       await ctx.reply(
-        `🌸 I (*${ctx.botInfo.username}*) am unlike anything else on Telegram!  \n\n` +
-          `😎 There’s simply *no true alternative in my space.*  \n\n` +
-          `✨ *The most advanced all-in-one bot:*  \n` +
-          `📚 Answer questions & explain concepts  \n` +
-          `📢 Broadcast *facts and quizzes* for APPSC, TGPSC, SSC, Police and other exams, every hour, 24/7  \n` +
-          `🗂 Manage topics smartly  \n` +
-          `🙈 Hide join/leave messages  \n` +
-          `🚫 Remove unwanted links  \n\n` +
-          `💡 Other bots do a little — 🔥 *I do it all, in one place!*\n\n` +
-          `👉 Curious? Use /help command and discover my features ✨`,
+        `🌸 I’m *Loukya Sri* — The ultimate *Quiz Bot!*  \n\n` +
+          `✅ I share *facts and quizzes* every hour, 24/7 — for APPSC, TGPSC, SSC, RRB, Police, and more  \n\n` +
+          `📚 For quizzes in Telugu, use *@APPSCQuizBot* or *@TGPSCQuizBot*  \n\n` +
+          `👉 Use */help* command to explore my features ✨`,
         {
           parse_mode: "Markdown",
           ...Markup.inlineKeyboard([

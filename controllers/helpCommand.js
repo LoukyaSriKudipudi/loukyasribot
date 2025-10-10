@@ -20,11 +20,11 @@ _Use as a reply to another message to get a detailed answer from me_
 /explainloukya <text>   
 _Use as a reply to another message to get a clear, concise explanation from me_
 
-/startfacts  
-_Enable fact broadcasts in this chat_
+/startquiz  
+_Enable quiz broadcasts in this chat_
 
-/stopfacts  
-_Disable fact broadcasts in this chat_
+/stopquiz 
+_Disable quiz broadcasts in this chat_
 
 /joinhider  
 _Toggle hiding of join/leave messages in this group_
