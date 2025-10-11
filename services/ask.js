@@ -17,7 +17,11 @@ function getAPIKey() {
   else return process.env.GEMINI_API_KEY1;
 }
 
-const ai = new GoogleGenAI({ apiKey: getAPIKey() });
+function getAI() {
+  const { GoogleGenAI } = require("@google/genai");
+  return new GoogleGenAI({ apiKey: getAPIKey() });
+}
+
 const fs = require("fs");
 const path = require("path");
 function splitMessage(text, limit = 3000) {
@@ -40,25 +44,31 @@ function cleanText(text) {
 
 async function ensureAdmin(ctx) {
   if (ctx.chat.type === "private") {
-    await ctx.reply(
-      "⚠ AI features work only in groups. Add me to a group to use my AI powers!"
-    );
-    return false;
+    try {
+      await ctx.reply(
+        "⚠ AI features work only in groups. Add me to a group to use my AI powers!"
+      );
+      return false;
+    } catch (err) {}
   }
+
   try {
     const isAdmin = await isBotAdmin(ctx.chat.id);
     if (!isAdmin) {
-      await ctx.reply(
-        `I’m not an admin yet. My AI features can't run in this chat.`
-      );
-      return false;
+      try {
+        await ctx.reply(
+          `I’m not an admin yet, so I don’t have permission to send generated messages. My AI features won’t work in this chat.`
+        );
+        return false;
+      } catch (err) {}
     }
     return true;
   } catch (err) {
-    console.warn(`⚠ Could not check admin in ${ctx.chat.id}: ${err.message}`);
+    console.log(`⚠ Could not check admin in ${ctx.chat.id}: ${err.message}`);
     return false;
   }
 }
+
 const groupSessions = {};
 const botMessageSessions = {};
 
@@ -82,25 +92,30 @@ bot.command("loukya", async (ctx) => {
   }
 
   if (ctx.message.reply_to_message) {
-    const msg = await ctx.reply(
-      "❌ Please use /replyloukya when replying to a message."
-    );
-    setTimeout(() => {
-      ctx.telegram.deleteMessage(ctx.chat.id, msg.message_id).catch(() => {});
-    }, 10000);
-    return;
+    try {
+      const msg = await ctx.reply(
+        "❌ Please use /replyloukya when replying to a message."
+      );
+      setTimeout(() => {
+        ctx.telegram.deleteMessage(ctx.chat.id, msg.message_id).catch(() => {});
+      }, 10000);
+      return;
+    } catch (err) {}
   }
 
   if (!query) {
-    const msg = await ctx.reply("❌ Usage: /loukya <your question>");
-    setTimeout(() => {
-      ctx.telegram.deleteMessage(ctx.chat.id, msg.message_id).catch(() => {});
-    }, 10000);
-    return;
+    try {
+      const msg = await ctx.reply("❌ Usage: /loukya <your question>");
+      setTimeout(() => {
+        ctx.telegram.deleteMessage(ctx.chat.id, msg.message_id).catch(() => {});
+      }, 10000);
+      return;
+    } catch (err) {}
   }
 
   try {
     const loadingMsg = await ctx.reply("⏳ Thinking...");
+
     const userId = ctx.from.id;
 
     // 🔹 Clear previous session completely
@@ -110,7 +125,7 @@ bot.command("loukya", async (ctx) => {
     groupSessions[userId].push({ role: "user", text: query });
 
     const conversation = groupSessions[userId].map((m) => m.text);
-
+    const ai = getAI();
     const response = await ai.models.generateContent({
       model: "gemini-2.5-flash-lite",
       contents: conversation,
@@ -144,7 +159,9 @@ bot.command("loukya", async (ctx) => {
     );
   } catch (err) {
     console.error("❌ Error:", err);
-    ctx.reply("❌ Something went wrong. Try again later.");
+    try {
+      ctx.reply("❌ Something went wrong. Try again later.");
+    } catch (err) {}
   }
 });
 
@@ -190,6 +207,7 @@ bot.use(async (ctx, next) => {
     const loadingMsg = await ctx.reply("⏳ Thinking...");
 
     // Generate AI response
+    const ai = getAI();
     const response = await ai.models.generateContent({
       model: "gemini-2.5-flash-lite",
       contents: conversation,
@@ -216,7 +234,9 @@ bot.use(async (ctx, next) => {
     }
   } catch (err) {
     console.error("❌ Reply handler error:", err);
-    await ctx.reply("❌ Something went wrong. Try again later.");
+    try {
+      await ctx.reply("❌ Something went wrong. Try again later.");
+    } catch (err) {}
   }
 
   // Call next middleware/handler
@@ -227,30 +247,37 @@ bot.command("replyloukya", async (ctx) => {
   const canRun = await ensureAdmin(ctx);
   if (!canRun) return;
   if (!ctx.message.reply_to_message) {
-    return ctx.reply("❌ Please reply to a message with /explainloukya.");
+    try {
+      return ctx.reply("❌ Please reply to a message with /replyloukya.");
+    } catch (err) {}
   }
 
   let query = ctx.message.reply_to_message.text;
 
   if (query.length > 150) {
-    const warnMsg = await ctx.reply(
-      "❌ Your message is too long. Please keep it under 150 characters.",
-      { reply_to_message_id: ctx.message.message_id }
-    );
-    setTimeout(() => {
-      ctx.telegram
-        .deleteMessage(ctx.chat.id, warnMsg.message_id)
-        .catch(() => {});
-    }, 10000);
-    return;
+    try {
+      const warnMsg = await ctx.reply(
+        "❌ Your message is too long. Please keep it under 150 characters.",
+        { reply_to_message_id: ctx.message.message_id }
+      );
+      setTimeout(() => {
+        ctx.telegram
+          .deleteMessage(ctx.chat.id, warnMsg.message_id)
+          .catch(() => {});
+      }, 10000);
+      return;
+    } catch (err) {}
   }
 
   if (!query) {
-    return ctx.reply("❌ The replied message has no text to explain.");
+    try {
+      return ctx.reply("❌ The replied message has no text to explain.");
+    } catch (err) {}
   }
 
   try {
     const loadingMsg = await ctx.reply("⏳ Thinking...");
+    const ai = getAI();
     const response = await ai.models.generateContent({
       model: "gemini-2.5-flash-lite",
       contents: query,
@@ -289,7 +316,9 @@ bot.command("replyloukya", async (ctx) => {
     }
   } catch (err) {
     console.error("❌ Error:", err);
-    ctx.reply("❌ Something went wrong. Try again later.");
+    try {
+      ctx.reply("❌ Something went wrong. Try again later.");
+    } catch (err) {}
   }
 });
 
@@ -297,32 +326,39 @@ bot.command("explainloukya", async (ctx) => {
   const canRun = await ensureAdmin(ctx);
   if (!canRun) return;
   if (!ctx.message.reply_to_message) {
-    return ctx.reply("❌ Please reply to a message with /explainloukya.");
+    try {
+      return ctx.reply("❌ Please reply to a message with /explainloukya.");
+    } catch (err) {}
   }
 
   let originalText = ctx.message.reply_to_message.text;
 
   if (originalText.length > 150) {
-    const warnMsg = await ctx.reply(
-      "❌ Your message is too long. Please keep it under 150 characters.",
-      { reply_to_message_id: ctx.message.message_id }
-    );
-    setTimeout(() => {
-      ctx.telegram
-        .deleteMessage(ctx.chat.id, warnMsg.message_id)
-        .catch(() => {});
-    }, 10000);
-    return;
+    try {
+      const warnMsg = await ctx.reply(
+        "❌ Your message is too long. Please keep it under 150 characters.",
+        { reply_to_message_id: ctx.message.message_id }
+      );
+      setTimeout(() => {
+        ctx.telegram
+          .deleteMessage(ctx.chat.id, warnMsg.message_id)
+          .catch(() => {});
+      }, 10000);
+      return;
+    } catch (err) {}
   }
 
   if (!originalText) {
-    return ctx.reply("❌ The replied message has no text to explain.");
+    try {
+      return ctx.reply("❌ The replied message has no text to explain.");
+    } catch (err) {}
   }
 
   let query = `Explain briefly:\n\n"${originalText}"`;
 
   try {
     const loadingMsg = await ctx.reply("⏳ Thinking...");
+    const ai = getAI();
     const response = await ai.models.generateContent({
       model: "gemini-2.5-flash-lite",
       contents: query,
@@ -369,30 +405,37 @@ bot.command("answerloukya", async (ctx) => {
   const canRun = await ensureAdmin(ctx);
   if (!canRun) return;
   if (!ctx.message.reply_to_message) {
-    return ctx.reply("❌ Please reply to a message with /answerloukya.");
+    try {
+      return ctx.reply("❌ Please reply to a message with /answerloukya.");
+    } catch (err) {}
   }
 
   let originalText = ctx.message.reply_to_message.text;
   if (originalText.length > 150) {
-    const warnMsg = await ctx.reply(
-      "❌ Your message is too long. Please keep it under 150 characters.",
-      { reply_to_message_id: ctx.message.message_id }
-    );
-    setTimeout(() => {
-      ctx.telegram
-        .deleteMessage(ctx.chat.id, warnMsg.message_id)
-        .catch(() => {});
-    }, 10000);
-    return;
+    try {
+      const warnMsg = await ctx.reply(
+        "❌ Your message is too long. Please keep it under 150 characters.",
+        { reply_to_message_id: ctx.message.message_id }
+      );
+      setTimeout(() => {
+        ctx.telegram
+          .deleteMessage(ctx.chat.id, warnMsg.message_id)
+          .catch(() => {});
+      }, 10000);
+      return;
+    } catch (err) {}
   }
   if (!originalText) {
-    return ctx.reply("❌ The replied message has no text to answer.");
+    try {
+      return ctx.reply("❌ The replied message has no text to answer.");
+    } catch (err) {}
   }
 
   let query = `Give a direct, clear, and concise answer to the following question. \n\n"${originalText}"`;
 
   try {
     const loadingMsg = await ctx.reply("⏳ Thinking...");
+    const ai = getAI();
     const response = await ai.models.generateContent({
       model: "gemini-2.5-flash-lite",
       contents: query,
@@ -431,7 +474,9 @@ bot.command("answerloukya", async (ctx) => {
     }
   } catch (err) {
     console.error("❌ Error:", err);
-    ctx.reply("❌ Something went wrong. Try again later.");
+    try {
+      ctx.reply("❌ Something went wrong. Try again later.");
+    } catch (err) {}
   }
 });
 

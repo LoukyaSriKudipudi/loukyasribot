@@ -62,6 +62,13 @@ connectDB()
   })
   .catch((err) => console.error("MongoDB connection error:", err));
 
+process.on("unhandledRejection", (err) => {
+  console.log("⚠ Unhandled rejection:", err.message);
+});
+
+process.on("uncaughtException", (err) => {
+  console.log("⚠ Uncaught exception:", err.message);
+});
 // // // send message
 // const chatId = -1002839833;
 // const messageId = 12137;
